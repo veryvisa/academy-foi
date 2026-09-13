@@ -1,0 +1,342 @@
+{
+  "id": "caib-ch09-farm",
+  "title": "农场保险与 BC 农机上路",
+  "title_en": "Farm Insurance & BC Farm Vehicles",
+  "blueprint": "commercial",
+  "source": {
+    "doc": "CAIB1",
+    "chapter": "ch09",
+    "anchor": "farm hybrid policy; BC tractor certificate"
+  },
+  "textbook_edition": "caib1-ai-analysis-2026-07",
+  "est_minutes": 12,
+  "ku": [
+    "KU-0008",
+    "KU-0010"
+  ],
+  "why": "农场主题需要分开识别住宅、经营、人员与车辆风险。现有证据不能确定FOI或CAIB的农场考查比例，不把IIC另一考试路径权重移作官方分值。",
+  "note": "本站原创风险参考；农机公路凭证概念按FOI BC Autoplan增补册交叉核对，产品承保逐单确认。",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "农场风险，逐项核对",
+      "title_en": "Farm Insurance",
+      "lede": "住宅与经营混合，需要按财产、活动、人员和车辆分类。",
+      "points": [
+        "农场同时具有住宅与经营风险",
+        "牲畜致损原因和除外逐单核实",
+        "BC农机上公路须核ICBC车辆类别及凭证安排"
+      ],
+      "core_terms_en": [
+        "Farm Insurance",
+        "Habitational/Personal Risk",
+        "Commercial/Business Risk"
+      ]
+    },
+    {
+      "type": "map",
+      "title": "四类风险分别检查",
+      "hint": "这是学习分类，不是官方考试分值。",
+      "groups": [
+        {
+          "key": "①",
+          "label": "混合性质",
+          "en": "Dwelling + Business",
+          "ns": [
+            "住家",
+            "经营"
+          ],
+          "tone": "principle",
+          "core_terms_en": [
+            "Package Policy",
+            "Mixed Use"
+          ]
+        },
+        {
+          "key": "②",
+          "label": "牲畜与农机",
+          "en": "Livestock & Machinery",
+          "ns": [
+            "列明险",
+            "明细表"
+          ],
+          "tone": "principle",
+          "core_terms_en": [
+            "Livestock Coverage",
+            "Scheduled Machinery"
+          ]
+        },
+        {
+          "key": "③",
+          "label": "责任与人员",
+          "en": "Liability & People",
+          "ns": [
+            "漂移",
+            "雇员"
+          ],
+          "tone": "principle",
+          "core_terms_en": [
+            "Farm Liability",
+            "Employers' Liability"
+          ]
+        },
+        {
+          "key": "④",
+          "label": "BC 农机上路",
+          "en": "Tractor on Highway",
+          "ns": [
+            "ICBC 凭证"
+          ],
+          "tone": "number",
+          "core_terms_en": [
+            "ICBC",
+            "Basic Autoplan",
+            "Motor Vehicle Act"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "key": "①",
+      "title": "农场是两件事叠在一起",
+      "en": "A Hybrid Risk",
+      "lede": "农场既是住宅（个人风险），也是经营场所（商业风险）。风险评估必须同时考虑两面.",
+      "core_terms_en": [
+        "Dual Purpose",
+        "Mixed Use",
+        "Personal Lines",
+        "Commercial Lines"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Hybrid Policy",
+      "cn": "混合保单",
+      "body": "组合安排可把住宅与经营风险统筹，但是否包含建筑、牲畜、机器及责任，须逐项核声明页、条款和批单。",
+      "hook": "标准 Homeowners policy 通常把商业经营除外 (Business Pursuits Exclusion).",
+      "watch": "分界线是用途，不是土地或建筑的法律标签.",
+      "core_terms_en": [
+        "Package Policy",
+        "Coverage Gap",
+        "Dwelling",
+        "Business Property"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Operations, Not Labels",
+      "cn": "看经营，不看标签",
+      "body": "是否需要农场保险取决于实际经营活动：selling crops, raising animals for profit, providing custom farming services, agritourism 等。Hobby farms（兴趣农场）与商业农场的承保与费率会不同.",
+      "hook": "核保关键句：Are farming operations conducted for profit?",
+      "watch": "错误判断会导致保障缝隙或不当承保（例如公众进入场地导致的 premises liability 或产品责任）.",
+      "core_terms_en": [
+        "Farming Operations",
+        "Commercial Activity",
+        "Hobby Farm",
+        "Custom Farming"
+      ]
+    },
+    {
+      "type": "section",
+      "key": "②",
+      "title": "财产侧：牲畜与农机",
+      "en": "Livestock & Machinery",
+      "lede": "牲畜与机械价值高、移动性大，承保规则与住宅财产不同.",
+      "core_terms_en": [
+        "Livestock Coverage",
+        "Farm Machinery & Equipment"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Livestock — Named Perils",
+      "cn": "牲畜先核致损原因",
+      "body": "列明风险型保障须逐项检查火灾、袭击或运输事故等是否列入；疾病与死亡原因的排除或扩展按具体条款确认。",
+      "hook": "不能只凭野兽袭击或疾病名称推定所有产品赔付结果。",
+      "watch": "疫病可能涉及群体损失，应核防损与保障边界。",
+      "core_terms_en": [
+        "Named Perils",
+        "Disease / Contagious Illness",
+        "Attack by Wild Animals",
+        "Livestock Mortality Policy"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Machinery — Scheduled",
+      "cn": "农机按明细表",
+      "body": "高价值可移动设备（tractors, combines, balers 等）通常需在保单中作为 scheduled items 列明，单独申报价值与序列号以确定保额与免赔。小型工具与零散设备可用 blanket/unscheduled coverage 列入总额。保险价值计价可用 ACV（实际现金价值）或 Replacement Cost.",
+      "hook": "逐台明细与总额安排不同；核新增设备、申报、估值与期限，不单凭未列明认定全部不保。",
+      "watch": "设备购入、出售或租用后要及时更新 schedule.",
+      "core_terms_en": [
+        "Scheduled Machinery",
+        "Blanket Coverage",
+        "ACV (Actual Cash Value)",
+        "Replacement Cost"
+      ]
+    },
+    {
+      "type": "check",
+      "tier": 2,
+      "q": "教学条款已列明野兽袭击、排除病毒死亡。一头牛被郊狼咬死，另一头死于病毒，按本题条款哪项可进入赔款分析？",
+      "a": "郊狼袭击损失符合题设列明原因，病毒死亡落入题设除外。",
+      "why": "先找条款再判原因。本例条件不外推为统一的标准牲畜保单。",
+      "core_terms_en": [
+        "Covered Cause of Loss",
+        "Exclusion",
+        "Named Perils",
+        "Mortality Coverage"
+      ]
+    },
+    {
+      "type": "section",
+      "key": "③",
+      "title": "责任侧：谁在干活，出了事算谁的",
+      "en": "Liability & People",
+      "lede": "责任分配主要看受伤/损失发生时谁在控制作业、谁是雇主，以及合同/控制关系.",
+      "core_terms_en": [
+        "Third-Party Bodily Injury & Property Damage",
+        "Farm Liability Policy"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Employee / Volunteer / Contractor",
+      "cn": "三种身份要分开问",
+      "body": "三类人员的法律后果不同：雇员 (employees) 受 workers' compensation 制度保护，雇主可能承担 employers' liability；志愿者 (volunteers) 与独立承包商 (independent contractors) 的责任归属取决于控制程度与合同条款，保险覆盖需求不同.",
+      "hook": "核保问卷要分别列出每类人员并核对工资记录/合同/证据.",
+      "watch": "错误分类会导致理赔被拒或追偿失败.",
+      "core_terms_en": [
+        "Farm Employees",
+        "Employers' Liability",
+        "Workers' Compensation",
+        "Independent Contractor"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "Chemical Drift",
+      "cn": "农药漂移",
+      "body": "喷洒农药漂移到邻田可能产生第三方责任。应核作业范围、污染或喷洒除外、可用扩展与条件，不能保证某名称的批单一定可以买到或适用。",
+      "hook": "核查要点：spraying records, wind/weather, buffer zones, notification procedures, expert evidence.",
+      "watch": "理赔争议往往在于施药记录与当日气象证据是否完整.",
+      "core_terms_en": [
+        "Chemical Drift",
+        "Crop Spraying Liability",
+        "Endorsement",
+        "Rider"
+      ]
+    },
+    {
+      "type": "section",
+      "key": "④",
+      "title": "BC 特例：农机开上公路",
+      "en": "The BC Exception",
+      "lede": "在 BC，一旦农用机械进入公共公路，适用的责任框架通常由汽车保险体系（ICBC）与 Motor Vehicle Act 决定，而非农场责任险.",
+      "core_terms_en": [
+        "Motor Vehicle Act",
+        "Public Highway",
+        "ICBC"
+      ]
+    },
+    {
+      "type": "concept",
+      "n": null,
+      "en": "ICBC — Unlicensed Farm Tractor Certificate",
+      "cn": "公路段归车险",
+      "body": "FOI BC增补册介绍Unlicensed Farm Tractor Certificate，为符合类别的农用机具在公共道路使用提供第三方责任。须先核资格并安排保险，凭证应按要求携带。",
+      "hook": "上公路不是自动取得保险；出发前确认车辆类别、凭证与使用条件。",
+      "watch": "General Liability / CGL 通常把机动车责任排除在外，不能指望它在公路事故上兜底.",
+      "core_terms_en": [
+        "ICBC",
+        "Basic Autoplan",
+        "Motor Vehicle Third Party Liability",
+        "CGL Exclusion"
+      ]
+    },
+    {
+      "type": "check",
+      "tier": 3,
+      "q": "Debbie准备以符合指定类别的拖拉机横穿公路，出发前应核对哪项保险安排？",
+      "a": "核对Unlicensed Farm Tractor Certificate及车辆适用条件，安排所需保险并携带凭证。",
+      "why": "教材专门列出该公路保障；不能以农场经营责任替代，也不能认为上路会自动产生保障。",
+      "core_terms_en": [
+        "Crossing a Highway",
+        "Primary Coverage",
+        "Autoplan Coverage"
+      ]
+    },
+    {
+      "type": "numbers",
+      "title": "不把代理权重当官方分值",
+      "hint": "保障金额与免赔额逐产品核，考试分布须有相应路径证据。",
+      "aside": "IIC、FOI与CAIB是不同课程路径。",
+      "rows": [
+        {
+          "v": "待核",
+          "k": "FOI及CAIB农场主题的具体官方卷面权重"
+        }
+      ],
+      "core_terms_en": [
+        "Concept-based Evaluation",
+        "Policy Principles"
+      ]
+    },
+    {
+      "type": "recap",
+      "title": "四句话带走",
+      "hint": "记住四个要点，遇题按这四句快速判别.",
+      "items": [
+        {
+          "v": "混合体",
+          "k": "农场＝住所＋经营；判断依据是实际经营活动 (Operations)"
+        },
+        {
+          "v": "牲畜保障",
+          "k": "先核牲畜受保原因、除外与扩展，不凭统一清单认赔",
+          "flag": true
+        },
+        {
+          "v": "农机承保",
+          "k": "高价值设备按 schedule 列明；未列设备可能无保 (Scheduled vs Blanket)"
+        },
+        {
+          "v": "公路段归车险",
+          "k": "公路使用前核车辆类别及ICBC凭证，不假设自动承保",
+          "flag": true
+        }
+      ],
+      "core_terms_en": [
+        "Package Policy",
+        "Named Perils",
+        "Scheduled Machinery",
+        "ICBC/Autoplan"
+      ]
+    },
+    {
+      "type": "outro",
+      "title": "去练这一组",
+      "lede": "建议做题方向：Livestock exclusions、Chemical Drift endorsement、Coverage boundary questions (Farm Liability vs Autoplan).",
+      "honest": "本站原创学习参考，不是官方CAIB教材；农机概念由FOI BC增补册支持，其他具体产品保障须逐单核。",
+      "actions": [
+        {
+          "label": "练商业险与责任",
+          "href": "drill.html?bp=commercial"
+        }
+      ],
+      "core_terms_en": [
+        "Livestock Exclusions",
+        "Chemical Drift Endorsement",
+        "Coverage Boundary"
+      ]
+    }
+  ],
+  "lesson": "caib-ch09"
+}

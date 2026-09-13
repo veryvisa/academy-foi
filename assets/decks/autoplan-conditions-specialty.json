@@ -1,0 +1,214 @@
+{
+  "id": "autoplan-conditions-specialty",
+  "title": "保障条件与专项险",
+  "title_en": "Conditions, Registration and Specialty Products",
+  "blueprint": "auto",
+  "source": {
+    "doc": "Autoplan Supplement",
+    "chapter": "Coverage Conditions / Specialized Coverages",
+    "anchor": "conditions and specialty"
+  },
+  "textbook_edition": "autoplan-supplement-2024-04",
+  "est_minutes": 22,
+  "why": "前面几讲讲的是**保障本身**。这一讲讲**保障的边界**：车什么时候才算合法上路，什么情况下 ICBC 可以一分不赔还回头找你要钱。这一块有三处教材与现行法条对不上，是这个板块最容易在真客户面前说错话的地方。",
+  "note": "配套讲解页 `auto-conditions-and-specialty`。⚠️ RoadStar 与临时保障里那些金额，增补册明说**不考**，本讲一律讲机制不背数。",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "保单在什么条件下成立",
+      "title_en": "When the Policy Holds: Conditions & Specialty Products",
+      "lede": "违反保障条件的后果不是「保单失效」四个字那么简单。<br>它是**拒赔 ＋ 追偿**（Denial & Recovery）——第三方照拿钱，那笔钱回头找你要。",
+      "points": [
+        "登记与检验：车辆合法上路资格 (Registration & Inspection)",
+        "保障条件：违反条款的后果与除外规定 (Statutory Conditions & Breach)",
+        "专项险：Garage Policy / Collector / Vintage / Farm Tractor",
+        "双重标准：考场答题 vs 柜台实务的脱节考点"
+      ]
+    },
+    {
+      "type": "concept",
+      "en": "Breach of Policy Conditions",
+      "cn": "违反条件 ＝ 拒赔 ＋ 追偿 (Denial + Right of Recovery)",
+      "body": "Andrew 驾照过期三个月，送货撞伤 Bert，两车共损 $20,000。<br><br>· ICBC **照赔** Bert 的伤与车（Third-Party Protection）<br>· **不赔** Andrew 自己的车（Denial of Own Coverage）<br>· 赔给 Bert 的那笔，**要 Andrew 还回来**（Right of Recovery）",
+      "why": "强制险存在的理由是保护**路上的第三方**（Third Party Protection），不是保护违规投保人。制度不会让无辜第三方为你的违章/违规买单，而是采取**先赔后追**机制。<br><br>客户问「我保险还有效吧？」——其实是对第三人有效，对自己已失效，且面临追偿责任。",
+      "tier": 2
+    },
+    {
+      "type": "check",
+      "q": "客户违反了保障条件（Breach of Conditions），问：「对方是不是就拿不到赔偿了？」怎么答？",
+      "a": "对方照拿！ICBC 先向第三方赔付，再向违规车主/司机追偿（Right of Recovery）。",
+      "why": "把「拒赔」误解成「所有人都拿不到钱」是最高频考题死穴。<br><br>正确的切分方式是**按主体划分**：<br>· **第三方无辜受害人 (Third Party)** —— ICBC 照赔<br>· **违规者自己的车损 (Own Damage)** —— ICBC 拒赔<br>· **ICBC 已垫付的第三方赔款** —— ICBC 向违规者追偿<br><br>总结口诀：**第三方照拿，你自己没有，还欠 ICBC 一笔钱。**",
+      "tier": 2
+    },
+    {
+      "type": "compare",
+      "title": "酒后理赔：行政轨道 vs 保险轨道",
+      "hint": "BAC 0.05 是警察的行政处罚门槛，不是保险拒赔的法定标准",
+      "why": "Regulation s.55(8)(a) 法条原文为能力判据「incapable of proper control」，**不含任何数字**。<br><br>· 吹 0.04 但受影响无法控车 → **构成 Breach**（保险拒赔）<br>· 吹 0.06 但未丧失控车能力且非肇事原因 → **警察开罚单（IRP），但保险不自动拒赔**<br><br>⚠️ 教材考点：官方增补册清单写了 0.05 括号，但 Ida 案例方框用的是法条原文「incapable of properly controlling the vehicle」——答题看清题干问的是行政处罚还是保险拒赔。",
+      "cols": [
+        {
+          "head": "行政轨道 (MVA)",
+          "head_en": "MVA s.215.41 · Immediate Roadside Prohibition (IRP)",
+          "tone": "warn",
+          "term": "警察与交通法",
+          "body": "· 门槛：呼气 BAC $\\ge$ 0.05（WARN 范围）<br>· 后果：现场吊照（3-90天）、扣车、罚款<br>· 执法：警方现场行政惩罚，不涉及理赔"
+        },
+        {
+          "head": "保险轨道 (Regulation)",
+          "head_en": "Insurance (Vehicle) Regulation s.55(8)",
+          "tone": "danger",
+          "term": "ICBC 保单拒赔",
+          "body": "· 判据：受酒精影响到**无法正常控制车辆**<br>· 或：刑事犯罪定罪（Criminal Code Conviction）<br>· 后果：违反条件（Breach）→ **拒赔 ＋ 追偿**"
+        }
+      ]
+    },
+    {
+      "type": "concept",
+      "en": "Licence Restrictions vs No Licence (s.55(3.1))",
+      "cn": "无照驾驶 ≠ 违反驾照限制条款",
+      "body": "· **无驾照 / 过期 / 被吊销**（Unlicensed / Suspended） → **算 Breach**，ICBC 拒赔（s.55(3)(a)）<br>· **有驾照但违反限制**（L/N 限制，如无 Supervisor / 超载 / 没贴 N 牌） → **不算 Breach**，保险照赔！（s.55(3.1)）",
+      "why": "s.55(3.1) 明确排除：仅仅违反 Driver's Licence Restriction 不构成 Breach。<br><br>这两者在日常中都叫「驾驶违规」，但在保险法上是**相反**结果：没资格开（无照）直接拒赔；有资格开但违反限制（违规）只吃警察罚单，保险照赔。",
+      "tier": 3
+    },
+    {
+      "type": "check",
+      "q": "家长问：「孩子拿着 N 牌违反限制载了朋友出车祸，ICBC 保险赔不赔？」",
+      "a": "理赔照走！违反驾照限制条款（Licence Restriction）不构成保险 Breach（依据 s.55(3.1)）。",
+      "why": "区分两条线：<br>· **保险线 (ICBC Claim)** —— 依据 s.55(3.1)，限制违规不算 Breach，自车车损与第三方责任均覆盖<br>· **行政线 (Police Ticket)** —— 警察开违章罚单、扣分并计入驾驶记录<br><br>答错会让客户误以为无法理赔而放弃索赔。",
+      "tier": 3
+    },
+    {
+      "type": "concept",
+      "en": "Out-of-Province Registration Exemption (MVA s.21)",
+      "cn": "外省车上牌豁免：判据是车辆用途，而非居住时长",
+      "body": "MVA s.21 外省车进 BC 省免重新登记的法定豁免分两档：<br>· **纯旅游用途 (Touring Purposes)** → 最长 **6 个月**<br>· **非旅游用途 (Non-touring / Moving / Work)** → 限 **30 天**<br><br>起算点：**车辆开始在 BC 公路上行驶**的第一天（Driven on BC Highways）。",
+      "why": "判据是**车辆用途**，不是车主住在 BC 的天数。<br><br>· 旅游度假（Touring）：给 6 个月缓冲期<br>· 搬家定居/工作/生活（Non-touring）：必须在 30 天内完成 BC 登记与 ICBC 检验上牌<br><br>⚠️ 考场提示：官方教材写「新居民 30 天」，做选择题认准 30 天与 6 个月两档。",
+      "tier": 3
+    },
+    {
+      "type": "concept",
+      "en": "Refuse-to-Issue Order",
+      "cn": "拒绝发牌/出单令：ICBC 柜台是政府追讨欠款的卡点",
+      "body": "触发情形：欠交通罚单、扣车拖车费、环保检验不合格、机械检验不合规、公交罚款、**抚养费欠款 (Family Maintenance Debt)**。<br><br>处理机制：保险经纪 (Broker) **部分项可代收**后出单，或客户必须**直接向政府机构缴清**后方可办理。",
+      "why": "所有 BC 车辆每年必须续保强制基本险（Basic Autoplan），政府利用此关卡拦截未缴债务。<br><br>实务提示：若弹出抚养费或非车辆相关债务，经纪需区分是可柜台代收还是需客户自行前往部门结清。",
+      "tier": 2
+    },
+    {
+      "type": "check",
+      "q": "车主把车送去修车厂，明确同意技师试车。技师试车时撞了人，优先走谁的保单？",
+      "a": "修车厂的商用车行保单 (Garage Policy / APV4)。车主保单对此自动除外 (Excluded)。",
+      "why": "一般情况下「有效驾照 ＋ 车主同意」受车主保单覆盖，但**从事汽车行业人员例外**。<br><br>以汽车买卖、维修、保养、保管、代客泊车等为业者 (Garage / Repair Shop / Valet)，必须自行购买 Garage Policy (APV4) 承保其保管照管下的客户车辆。",
+      "tier": 2
+    },
+    {
+      "type": "concept",
+      "en": "Binder Double Meaning: FOI vs ICBC APV38",
+      "cn": "Binder 双重含义：通用财产险凭证 vs ICBC 跨省购车单程险",
+      "body": "· **FOI 通用财产险 (General Insurance)**：任何险种在正式保单签发前的临时承保凭证 (Temporary Contract)<br>· **ICBC 专项 Binder (APV38)**：仅限**省外新购车辆**（加拿大其他省或美国）开回 BC 办登记的临时车险，期限 **1–31 天**",
+      "why": "教材明示：「ICBC uses the term binder in a different way.」<br><br>高频考点：题目给定「省外买车开回 BC 途中的保险」，认准 **APV38 (1 to 31 days)**。<br>注意：APV38 提供车辆保险，但车辆在跨省公路行驶仍需满足当地临时通行许可规则。",
+      "tier": 3
+    },
+    {
+      "type": "compare",
+      "title": "收藏车 vs 古董车：年限、牌照与用途对比",
+      "hint": "高频考点：区别 Rate Class 优惠费率与 Vintage 专属牌照",
+      "why": "古董车 (Vintage) 实行白名单用途制：只限往返修车厂、游行展览、俱乐部活动、婚丧典礼。日常行驶一律禁止。<br><br>若古董车不符合现代 MVA 安全灯光规定，限制**仅限白天行驶 (Daylight Hours Only)**。",
+      "cols": [
+        {
+          "head": "收藏车 (Collector)",
+          "head_en": "Collector Vehicle (Rate Class)",
+          "tone": "ok",
+          "term": "低保费费率类别",
+          "body": "· 门槛：满 **25 年**（普通）或满 **15 年**（限量/停产款）<br>· 状态：严格保持或复原至原厂规格 (Stock)<br>· 用途：**仅供娱乐用途 (Pleasure Use Only)**，不可用于通勤代步<br>· 性质：ICBC 保费折扣费率类别 (Rate Class)"
+        },
+        {
+          "head": "古董车 (Vintage)",
+          "head_en": "Vintage Motor Vehicle (Certificate)",
+          "tone": "danger",
+          "term": "专属 Vintage 车牌",
+          "body": "· 门槛：必须满 **30 年**<br>· 状态：保持历史真实原状 ＋ 具备良好机械安全性能<br>· 用途：**白名单严格限制**（游行/展览/保养等）<br>· 性质：独立核发的 Vintage 专属牌照与证书"
+        }
+      ]
+    },
+    {
+      "type": "check",
+      "q": "农场拖拉机（Unlicensed Farm Tractor）仅仅是穿过一段公共公路到另一块田，需要保险证书吗？",
+      "a": "必须办理！须持有 Unlicensed Farm Tractor Certificate (APV330)，且证书必须随车携带。",
+      "why": "虽然拖拉机在 MVA 下免予车辆登记上牌，但**只要轮子踏上公共公路（哪怕仅仅是横穿）**，就必须持有该保险证书。<br><br>必考细节：**证书必须随车携带 (Must be carried on the tractor)**。",
+      "tier": 2
+    },
+    {
+      "type": "numbers",
+      "title": "本讲核心数字与期限速记",
+      "rows": [
+        {
+          "k": "越野车 (ORV) 走林业道路 (Forestry Service Roads)",
+          "v": "至少 $200,000 第三方责任险 (TPL)",
+          "flag": true
+        },
+        {
+          "k": "高价值车辆 (High-Value Vehicles) 专选项",
+          "v": "MSRP > $150,000 (≤7年) 或 > $400,000 (≤14年)",
+          "flag": false
+        },
+        {
+          "k": "APV38 省外购车开回 BC 临时保单期限",
+          "v": "1 – 31 天",
+          "flag": true
+        },
+        {
+          "k": "收藏车 (Collector) vs 古董车 (Vintage) 年限门槛",
+          "v": "25 年 (或 15 年限量) vs 30 年",
+          "flag": true
+        },
+        {
+          "k": "外省车上牌豁免期限 (Registration Exemption)",
+          "v": "旅游 6 个月 / 非旅游 30 天",
+          "flag": true
+        },
+        {
+          "k": "重型商用车 (Heavy Commercial) 立即上牌门槛",
+          "v": "GVW > 5,000 kg (无缓冲期)",
+          "flag": false
+        }
+      ],
+      "aside": "⚠️ 增补册中明确写明「will not be asked about on your exam」的数字（如 RoadStar 每日代步车限额、学习驾驶者附加费等）无需记忆。上述数字均为必考真题点。"
+    },
+    {
+      "type": "recap",
+      "title": "四句话带走核心考点",
+      "hint": "保障条件、行政违规、外省登记与专项险一表通关",
+      "items": [
+        {
+          "n": 1,
+          "en": "Breach & Recovery",
+          "cn": "违反条件 ＝ **第三方照赔、自车拒赔、ICBC 向违规者追偿**",
+          "g": "拒"
+        },
+        {
+          "n": 2,
+          "en": "Police vs Insurance",
+          "cn": "无照/吊销算 Breach（拒赔）；L/N 限制违规与 0.05 属行政处罚（保险照赔）",
+          "g": "规"
+        },
+        {
+          "n": 3,
+          "en": "Registration Exemption",
+          "cn": "外省车看用途：旅游豁免 **6 个月**，搬家/工作限 **30 天**，重型商用立即办理",
+          "g": "记"
+        },
+        {
+          "n": 4,
+          "en": "Specialty & Binder",
+          "cn": "省外买车开回 BC 认准 **APV38（1-31天）**；收藏车 25年/15年，古董车 30年",
+          "g": "险"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "title": "下一步",
+      "lede": "配套讲解页 `auto-conditions-and-specialty` 里有完整的法条对照表与四问自查。<br><br>练习时重点做 `acs-` 开头那 16 道——其中 4 道是**双口径题**，考场答案与柜台答案不同，值得反复过。"
+    }
+  ]
+}
