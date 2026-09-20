@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>讲解 · 微出国 · 学</title>
+<link rel="stylesheet" href="../assets/style.css?v=1789948717">
+
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body class="vv">
+<header class="vv-header">
+  <a class="vv-brand" href="../index.html"><svg viewBox="102.305 90.391 73.617 59.957" width="28" aria-hidden="true" class="mark">
+<path fill="#30D9C4" d="M 107.894531 95.808594 L 127.277344 95.808594 C 127.277344 95.808594 129.507812 95.628906 130.835938 97.679688 C 131.585938 98.910156 131.65625 100.316406 131.082031 101.546875 L 121.609375 117.953125 C 121.609375 117.953125 120.335938 120.65625 117.011719 120.824219 C 113.714844 120.910156 112.242188 118.40625 112.242188 118.40625 L 103.722656 103.652344 C 103.722656 103.652344 102.304688 101.792969 103.09375 99.332031 C 103.878906 96.878906 106.148438 95.773438 107.894531 95.808594 "/>
+<path fill="#0082CA" d="M 115.964844 124.792969 C 115.847656 124.59375 116.09375 124.378906 116.277344 124.519531 C 117.195312 125.21875 118.664062 125.902344 120.683594 125.515625 C 122.164062 125.210938 123.550781 124.296875 124.402344 122.757812 C 125.242188 121.300781 138.8125 97.8125 138.8125 97.8125 C 138.8125 97.8125 141.9375 90.917969 150.207031 90.550781 L 169.96875 90.550781 C 169.96875 90.550781 173 90.390625 174.503906 93.40625 C 175.921875 96.433594 173.941406 98.695312 173.667969 99.109375 C 173.394531 99.523438 142.203125 146.726562 142.203125 146.726562 C 142.203125 146.726562 140.003906 150.347656 135.40625 150.347656 C 130.808594 150.347656 128.707031 146.878906 128.417969 146.398438 C 128.175781 145.992188 118.835938 129.78125 115.964844 124.792969 "/></svg>微出国 · 学</a>
+  <nav><a href="../index.html">路线</a><a href="../slides.html">讲义</a><a href="../docs/" aria-current="page">讲解</a><a href="../cards/">知识卡</a><a href="../drill.html">练习</a><a href="../exam.html">模考</a><a href="../progress.html">进度</a></nav>
+  <button class="theme" onclick="var r=document.documentElement,d=r.getAttribute('data-theme')==='dark';r.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('vv-theme',d?'light':'dark')">◐</button>
+</header>
+<main><section class="sec">
+  <h1 style="font-size:var(--vv-fs-2xl);margin:0 0 8px">讲解 · 32 篇</h1>
+  <p class="sub">168,478 字。想不起来「共保在第几章」时，直接搜「共保」。<br>
+  先按标题与小标题匹配；<b>正文索引在你敲下第一个字时才加载</b>（约 360 KB，只下一次），
+  所以打开这一页仍然很快，而搜得到的东西是完整的。</p>
+  <input id="q" class="doc-search" type="search" placeholder="搜索：共保 / 法定条件 / UMP / statutory …"
+         autocomplete="off" spellcheck="false">
+  <p id="qn" class="sub" style="margin:10px 0 0"></p>
+  <div id="qr" class="doc-results"></div>
+</section>
+<script>
+const DOCS = [{"s": "industry-licence-conduct", "t": "你这张牌照的边界：Level 1 能做什么、必须报什么、什么情况下自动停牌", "sub": "", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["一、Level 1 销售员的四条限制（RULE 6）", "二、你只能挂靠两种主体（RULE 7(15)）", "三、必须主动报告的事：5 个工作日 vs 30 个日历日", "四、E&O 保险：两个限额、两个 30 天", "五、与「无牌保险人」交易：一条完整的合规链", "六、保密义务：例外只有两个", "七、还有两条容易被忽略的", "数字总表（先看单位）", "术语对照", "自查四问"], "c": 5771}, {"s": "industry-privacy-intermediaries", "t": "客户信息归谁管、中间还站着谁：三块 GICF 缺口的入口", "sub": "", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["三块各去哪一页", "一张图先分清「谁在管你」", "两个口径", "相关"], "c": 1570}, {"s": "industry-mga-delegated-authority", "t": "MGA 与委托权限：保险人把「说了算」外包出去之后，责任链是怎么走的", "sub": "", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["一 · 制度设计：委托的是执行，不是责任", "二 · 底层逻辑：为什么保险人愿意把「说了算」交出去", "三 · 历史变革：这个词为什么在两条线上分了岔", "四 · 现行政策：BC 对一般保险的 MGA **没有**单独的牌照类别", "五 · 实务指导：拿到一份委托安排，按顺序问这六件事", "六 · 案例：同一个风险，两条路走出来的差别", "七 · 两个口径怎么分流", "术语对照", "自查五问"], "c": 5105}, {"s": "industry-unlicensed-insurers", "t": "无牌保险人：一条被开了口的禁令，和你必须按顺序走完的四步", "sub": "", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["一 · 制度设计：禁令、口子、程序，三层叠起来", "二 · 底层逻辑：规则为什么不是「禁止」，而是「留痕 ＋ 转移」", "三 · 现行政策：完整的合规链，事前一次 ＋ 逐笔四步", "四 · 历史与边界：这条规则想防的到底是什么", "五 · 案例：一份本地接不了的仓储责任险", "六 · 两个口径", "术语对照", "自查五问"], "c": 4882}, {"s": "industry-privacy-law", "t": "隐私法两部半：BC 看 PIPA、跨境看 PIPEDA、牌照看 Council Rules", "sub": "", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["一 · 制度设计：三层，后果各不相同", "二 · 底层逻辑：为什么责任跟的是「控制」而不是「保管」", "三 · 现行政策 A：BC 到底适用哪部？分界不是省，是活动", "四 · 现行政策 B：PIPA 里必须记住的八件事", "五 · PIPEDA 的十项公平信息原则", "六 · 实务指导：一份能直接照做的清单", "七 · 案例：三个场景，三种答案", "八 · 两个口径", "术语对照", "自查六问"], "c": 6353}, {"s": "auto-enhanced-care-benefits", "t": "Enhanced Care 给付全图：谁先赔、赔多少、什么情况下减发", "sub": "", "b": "汽车保险", "w": 30, "tr": "authored", "h": ["一、先看骨架：一个 Enhanced Care，三部法规", "二、谁先掏钱：first payer 与 last payer", "三、收入替代：考试口径给了一条公式，现行制度有两条", "四、永久伤残：按百分比去分一个上限", "五、未成年人与学生：赔的是「没能读完的那一年」", "六、家属照护给付：同一张表，两个年份", "七、给付会被减发甚至停发——「无过失」不等于「怎么都赔」", "八、不服怎么办：两条路，一条在 ICBC 内，一条在 ICBC 外", "九、两条会决定你明年工作量的机制", "术语对照", "自查四问", "案例分析"], "c": 9249}, {"s": "auto-premium-basics", "t": "保费是怎么搭出来的：基础保费、驾驶员系数、六项折扣", "sub": "", "b": "汽车保险", "w": 30, "tr": "authored", "h": ["一、三步搭一个保费", "二、驾驶员系数：一个从 1.000 开始的乘数", "三、六项折扣", "四、费率冻结：讲之前先看证据等级", "术语对照", "自查四问"], "c": 4610}, {"s": "auto-conditions-and-specialty", "t": "上路之前与拒赔之后：登记、检验、保障条件与专项险", "sub": "", "b": "汽车保险", "w": 30, "tr": "authored", "h": ["一、先讲最贵的那一块：违反条件会怎样", "二、上路之前：登记、检验，以及那个被讲错的 30 天", "三、不长在主干上的那些产品", "术语对照", "自查四问"], "c": 7981}, {"s": "claims-process", "t": "理赔术语与流程 —— 占 5% 的分，串起前面所有章节", "sub": "理赔术语与流程", "b": "理赔", "w": 5, "tr": "authored", "h": ["一、流程：五步，以及每一步的门槛是什么", "二、理赔人：三种身份，判据是「谁付钱」", "三、术语：定义 + 背后的博弈 + 怎么读", "四、法定条件在理赔环节的三个执法点", "五、赔款怎么算（这里只给顺序，细节见财产险部分）", "六、财产险 vs 车险：同一套原理，落地差很多", "七、这一页对应的练习"], "c": 9677}, {"s": "caib-foi-differences", "t": "CAIB1 与 FOI 说法不一致时，该信哪个", "sub": "两套备考资料的差异对照", "b": "行业与监管", "w": 30, "tr": "authored", "h": ["先说一件影响全局的事：本地 CAIB 资料是什么", "一、收入替代上限：四个数字在流传，而它们**全都对过**", "二、Basic Vehicle Damage：按比例，还是「不负责才赔」", "三、UMP：是不是「只在省外才有用」", "四、农机上公路：农场责任险还是车险", "五、最大的差异不是说法不同，而是「有没有讲」", "怎么用这一页"], "c": 3113}, {"s": "property-payment", "t": "财产险：赔多少，以及谁能合法地把赔款减下去", "sub": "赔款计算 + BC 对财产险条款设的四道法定天花板", "b": "财产保险", "w": 30, "tr": "authored", "h": ["一、第一关：保不保 —— 两个「看着像除外其实赔」的地方", "二、第二关：三项取最小 —— 这一步是财产险最爱考的算法", "三、第三关：按哪条基础算 —— 三条路，两条有前置条件", "四、第四关：谁能合法地把赔款减下去 —— BC 在这里加了一道门", "五、火险有个法定底线：保单再怎么写都拿不掉", "六、损失证明搞砸了，是不是就没救了", "七、最后一关：钱付给谁", "八、术语：中文 · 英文 · 怎么念", "九、这一页对应的练习"], "c": 5411}, {"s": "liability-principles", "t": "法律责任与责任险：考试口径讲的是共同法，BC 用的是三部成文法", "sub": "过失原理 · 占用人责任 · 连带与分摊 · 责任保单怎么接住这些", "b": "财产保险", "w": 30, "tr": "authored", "h": ["一、过失：四个要件，缺一不成立", "二、占用人责任：这一节考试口径与 BC 法差得最远", "三、多人有责：对外连带，对内按比例", "四、保单在哪一层接住：责任险的五个机关", "五、多久之后还可能被告：考试口径没有这个数", "六、术语：中文 · 英文 · 怎么念", "七、这一页对应的练习"], "c": 5478}, {"s": "commercial-property-bi", "t": "商业财产与营业中断：钱从哪一格出", "sub": "", "b": "商业险与责任", "w": 5, "tr": "authored", "h": ["一、先分格：商业财产的三类", "二、共保条款：目的、算法，以及 BC 的那道额外要求", "三、营业中断：赔的是\"没赚到的\"，不是\"被烧掉的\"", "四、犯罪险与几条容易背反的通用条款", "五、商业责任：分格比住宅险细", "术语对照", "自查四问"], "c": 4344}, {"s": "guide-autoplan-basics", "t": "ICBC Basic Autoplan 完整学习指南", "sub": "ICBC 深度指南", "b": "汽车保险", "w": 30, "tr": "guide", "h": ["目录", "一、制度背景：为什么 BC 省这么特殊", "二、Basic Autoplan 默认保障全图", "三、Enhanced Accident Benefits 深度讲解", "四、TPL 第三方责任险", "五、UMP 不足保险驾驶员保护", "六、UDP 未登记驾驶员保护", "七、有责事故后的保费逻辑", "八、车辆用途与费率分类", "九、可选险：填补强制险的缺口", "十、考试高频陷阱总结", "十一、华人客群的专属沟通话术", "附录：关键数字速查表"], "c": 13446}, {"s": "kb-00-INDEX", "t": "知识库索引（kb/）", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["一句话摘要（给赶时间的自己）"], "c": 1137}, {"s": "kb-01-licensing-paths-2026", "t": "BC General Insurance Level 1 — 四条持牌路径全对比", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["0. 先搞清楚制度：这是**两段式**，不是一段式", "1. 四条路径硬指标对比", "2. 客观分析：每条路的真实取舍", "3. 推荐（有理由的，不是拍脑袋）", "4. 立即行动清单（FOI 路线）", "5. 从\"找工作/含金量\"角度复核（补充核实，2026-07-15）", "Sources（核实于 2026-07-13）"], "c": 8241}, {"s": "kb-02-exam-blueprint", "t": "考纲权重（Exam Blueprint）—— 一切学习计划的地基", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["官方权重（IIBC BC Level 1 Licensing Exam）", "⚠️ 本项目原设计的重大偏差（已修正）", "修正后的学习路线（20 周，目标 2026-12 前）", "出题配比铁律（写给 AI）", "Sources"], "c": 3005}, {"s": "kb-03-fees-dates-2026H2", "t": "费用、折扣、考期、考场 —— 2026 下半年", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["1. 费用总表", "2. 折扣：有哪些，你能拿到哪些", "3. 2026 下半年考期与考场", "4. 拿牌的其它成本（别忘了算进去）", "Sources（核实于 2026-07-13）"], "c": 3939}, {"s": "kb-04-official-sources", "t": "权威源清单 —— 什么能进知识库，什么不能", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["分级标准", "T0 — 用书（待购买）", "T1 — 法规与监管原文（免费，可立即抓取）", "T2 — 官方一手 PDF", "T3 — 练习题", "❌ T4/T5 — 已从项目移除（原 sources.py 里的）", "抓取状态"], "c": 3911}, {"s": "kb-05-fact-ledger", "t": "数字台账（Fact Ledger）—— 所有会被考到、且会变的数字", "sub": "制度与事实层", "b": "行业与监管", "w": 30, "tr": "kb", "h": ["⚠️ 已发现的数据冲突（必须知道）", "ICBC / Enhanced Care（核实 2026-07-13）", "考试制度（核实 2026-07-13）", "二次核验记录（2026-07-13，独立复核）", "BC 牌照与年度持有成本（核实 2026-07-15，Council 官网 Fee Schedule + 2026 费率公告）", "CAIB New Edition 1.0 —— 新捆绑模式（核实 2026-07-15，IBABC CAIBNewEdition 页面）", "待核实清单（下次联网时补）", "维护规则"], "c": 4626}, {"s": "quiz-ch01", "t": "保险导论 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "行业与监管", "w": 30, "tr": "quiz", "h": ["一、温习目标与核心脉络", "二、底层机制：保险功能、组织形式与分销渠道", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 7427}, {"s": "quiz-ch02", "t": "合同法与风险管理 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "行业与监管", "w": 30, "tr": "quiz", "h": ["一、温习目标与核心脉络", "二、底层机制：合同法要件与法定条件体系", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 7785}, {"s": "quiz-ch03", "t": "保险流程与参与主体 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "行业与监管", "w": 30, "tr": "quiz", "h": ["一、温习目标与业务全景", "二、底层机制：全流程运转与参与主体职责", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 7764}, {"s": "quiz-ch04", "t": "财产保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "财产保险", "w": 30, "tr": "quiz", "h": ["一、温习目标与知识体系", "二、底层机制：估值基准、共同保险与抵押权保护", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 7654}, {"s": "quiz-ch05", "t": "个人财产保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "财产保险", "w": 30, "tr": "quiz", "h": ["一、温习目标与分析骨架", "二、底层机制：保障区块、保单形态与特殊水损", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 8609}, {"s": "quiz-ch06", "t": "商业财产保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "商业险与责任", "w": 5, "tr": "quiz", "h": ["一、温习目标与商业险全景", "二、底层机制：商业财产三大分类、营业中断与设备破损", "三、实务口径与 2026 易错边界（R16 考试 vs 实务分流）", "四、开放式场景闭卷自测", "五、参考答案与判分基准", "六、错题复盘与追问清单"], "c": 8873}, {"s": "quiz-ch07", "t": "法律责任基础 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "财产保险", "w": 30, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1128}, {"s": "quiz-ch08", "t": "责任保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "财产保险", "w": 30, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1442}, {"s": "quiz-ch09", "t": "农场保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "商业险与责任", "w": 5, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1189}, {"s": "quiz-ch10", "t": "意外疾病与旅行保险 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "考纲外/低产", "w": 0, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1416}, {"s": "quiz-ch11", "t": "经纪人监管 · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "行业与监管", "w": 30, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1402}, {"s": "quiz-ch12", "t": "汽车保险（BC） · 温习与自测", "sub": "闭卷自测 + 判分点", "b": "汽车保险", "w": 30, "tr": "quiz", "h": ["温习目标", "温习卡", "2026 易错边界", "闭卷自测", "参考答案与判分点", "错题记录"], "c": 1940}];
+const qi = document.getElementById("q"), qr = document.getElementById("qr"), qn = document.getElementById("qn");
+const E = (x) => String(x).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const TRACK = {foi:"FOI 考纲", caib:"CAIB1 导读", quiz:"温习自测", kb:"制度事实", guide:"ICBC 指南"};
+let BODY = null, bodyState = "idle";
+async function loadBody() {
+  if (bodyState !== "idle") return;
+  bodyState = "loading"; qn.textContent = "正在载入正文索引…";
+  try {
+    const rows = await fetch("../assets/search-index.json").then((r) => r.json());
+    BODY = Object.fromEntries(rows.map((r) => [r.s, r.b.toLowerCase()]));
+    bodyState = "ready";
+  } catch (e) { bodyState = "failed"; }
+  draw();
+}
+function hit(d, q) {
+  if (!q) return {ok:true, why:""};
+  const inTitle = (d.t + d.sub).toLowerCase().includes(q);
+  const hs = d.h.filter((h) => h.toLowerCase().includes(q));
+  if (inTitle || hs.length || d.b.includes(q)) return {ok:true, why:hs.slice(0,3).join(" · ")};
+  // 正文命中：给一段上下文，让人不用点进去就知道是不是要找的那一处
+  const body = BODY && BODY[d.s];
+  if (body) {
+    const i = body.indexOf(q);
+    if (i >= 0) {
+      const from = Math.max(0, i - 24);
+      return {ok:true, why:"正文：…" + body.slice(from, i + q.length + 40).trim() + "…"};
+    }
+  }
+  return {ok:false};
+}
+function draw() {
+  const q = qi.value.trim().toLowerCase();
+  const rows = DOCS.map((d) => ({d, m:hit(d, q)})).filter((x) => x.m.ok);
+  if (q && bodyState === "idle") loadBody();
+  qn.textContent = q
+    ? `${rows.length} 篇命中` + (bodyState === "loading" ? "（正文索引载入中…）"
+        : bodyState === "failed" ? "（正文索引没载上，当前只搜了标题）" : "")
+    : "";
+  qr.innerHTML = rows.map(({d, m}) => `<a class="doc-row" href="${d.s}.html">
+    <span class="doc-row-b"><b>${E(d.t)}</b>
+      <span class="doc-row-m">${E(TRACK[d.tr]||d.tr)} · ${E(d.b)} 考纲 ${d.w}% · ${d.c.toLocaleString()} 字</span>
+      ${m.why ? `<span class="doc-row-h">↳ ${E(m.why)}</span>` : ""}</span></a>`).join("")
+    || `<p class="sub">没找到「${E(q)}」${bodyState === "ready" ? "（标题与正文都搜过了）" : ""}。试试更短的词，或去<a href="../drill.html">练习</a>里搜题。</p>`;
+}
+qi.addEventListener("input", draw);
+qi.addEventListener("keydown", (e) => { if (e.key === "Escape") { qi.value = ""; draw(); } });
+draw();
+</script></main>
+<footer class="foot">
+  <p><b>微出国 · 学</b> — BC 省保险 Level 1 备考。内容是学习者视角的整理，与任何培训机构无隶属关系。<br>
+  考试以官方考纲与考试口径为准；实务以监管机构现行文件为准。发现错的地方，回论坛帖里说一声。</p>
+</footer>
+<script>var UP_PATH="../";var BUILD_TIME="1789948717";</script>
+<script>
+if((localStorage.getItem('vv-theme')||'')==='dark')
+  document.documentElement.setAttribute('data-theme','dark');
+
+// 自动版本更新检测：对比 DOM 的 BUILD_TIME 与服务器最新 manifest.json，出现新版本时带时间戳无缝重载绕过 HTTP 磁盘缓存
+(function(){
+  function checkVersion(){
+    var up = typeof UP_PATH !== 'undefined' ? UP_PATH : '';
+    fetch(up + 'assets/manifest.json?t=' + Date.now(), { cache: 'no-store' }).then(function(r){
+      return r.ok ? r.json() : null;
+    }).then(function(m){
+      if(!m || !m.build_time) return;
+      var serverBuild = String(m.build_time);
+      var clientBuild = typeof BUILD_TIME !== 'undefined' ? String(BUILD_TIME) : '';
+      if(clientBuild && serverBuild && clientBuild !== serverBuild){
+        var reloaded = sessionStorage.getItem('vv_reloaded_build');
+        if(reloaded !== serverBuild){
+          sessionStorage.setItem('vv_reloaded_build', serverBuild);
+          var u = new URL(location.href);
+          u.searchParams.set('_v', serverBuild);
+          location.replace(u.href);
+        } else if(!document.getElementById('vv-update-banner')) {
+          var bar = document.createElement('div');
+          bar.id = 'vv-update-banner';
+          bar.className = 'vv-update-banner';
+          bar.innerHTML = '🎉 网站已更新到最新版本，建议按 <b>Ctrl+F5</b> (或 <b>Cmd+Shift+R</b>) 强制刷新页面。<button onclick="location.reload(true)">立即刷新</button>';
+          document.body.prepend(bar);
+        }
+      }
+    }).catch(function(){});
+  }
+
+  checkVersion();
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible') checkVersion();
+  });
+  window.addEventListener('focus', checkVersion);
+  setInterval(checkVersion, 5 * 60 * 1000);
+})();
+
+// 页眉登录态。身份服务不在（纯静态托管、或还没起 dev-server）时静默跳过——
+// 内容页是公开的，永远不该因为身份服务缺席而坏掉。
+fetch('/api/me').then(function(r){return r.ok?r.json():null;}).then(function(m){
+  if(!m||document.getElementById('vv-auth'))return;
+  var n=document.querySelector('.vv-header nav');if(!n)return;
+  var e=document.createElement('span');e.id='vv-auth';e.className='auth';
+  e.innerHTML=m.loggedIn
+    ?'<span title="学习记录已跨设备同步">'+m.username+'</span> <a href="/auth/logout">退出</a>'
+    :'<a href="/auth/login?next='+encodeURIComponent(location.pathname)+'">登录</a>';
+  n.after(e);
+}).catch(function(){});
+
+// ── 阅读器增强：专注/最大化模式 & 键盘/手势切页 ──
+(function(){
+  var prevUrl = typeof PREV_URL !== 'undefined' ? PREV_URL : '';
+  var nextUrl = typeof NEXT_URL !== 'undefined' ? NEXT_URL : '';
+
+  function updateMaxBtns(isMax) {
+    var btns = document.querySelectorAll('.vv-reader-btn-max');
+    for(var i=0; i<btns.length; i++) {
+      btns[i].innerHTML = isMax ? '✕ 退出专注' : '⛶ 专注阅读';
+    }
+  }
+
+  window.toggleDocMaximize = function() {
+    var root = document.documentElement;
+    var isMax = root.classList.toggle('is-doc-maximized');
+    try { localStorage.setItem('vv_doc_maximized', isMax ? 'true' : 'false'); } catch(e){}
+    updateMaxBtns(isMax);
+  };
+
+  function updateAsideBtns(isCol) {
+    var btns = document.querySelectorAll('.vv-aside-btn');
+    for(var i=0; i<btns.length; i++) {
+      btns[i].innerHTML = isCol ? '◨ 展开侧栏' : '◧ 折叠侧栏';
+    }
+  }
+
+  window.toggleSidebarCollapse = function() {
+    var root = document.documentElement;
+    var isCol = root.classList.toggle('is-aside-collapsed');
+    try { localStorage.setItem('vv_aside_collapsed', isCol ? 'true' : 'false'); } catch(e){}
+    updateAsideBtns(isCol);
+  };
+
+  try {
+    if(localStorage.getItem('vv_aside_collapsed') === 'true') {
+      document.documentElement.classList.add('is-aside-collapsed');
+      setTimeout(function(){ updateAsideBtns(true); }, 0);
+    }
+  } catch(e){}
+
+  // 本页目录 <details> 状态记忆
+  var tocDet = document.querySelector('.doc-toc-details');
+  if(tocDet) {
+    try {
+      if(localStorage.getItem('vv_toc_open') === 'false') {
+        tocDet.removeAttribute('open');
+      }
+    } catch(e){}
+    tocDet.addEventListener('toggle', function() {
+      try { localStorage.setItem('vv_toc_open', tocDet.open ? 'true' : 'false'); } catch(e){}
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+    // 知识卡弹窗开着时 ← → 归弹窗（翻卡），不归阅读器（翻页）。
+    // 2026-09-20 实伤：bin/site_cards_ui.py 第一次跑就抓到——弹窗里按 →，整页跳到了下一篇讲解页。
+    if (document.body.classList.contains('lb-open')) return;
+    if (e.key === 'ArrowLeft' && prevUrl) {
+      location.href = prevUrl;
+    } else if (e.key === 'ArrowRight' && nextUrl) {
+      location.href = nextUrl;
+    } else if (e.key === 'f' || e.key === 'F' || e.key === 'm' || e.key === 'M') {
+      toggleDocMaximize();
+    } else if (e.key === 'Escape' && document.documentElement.classList.contains('is-doc-maximized')) {
+      toggleDocMaximize();
+    }
+  });
+
+  var touchStartX = 0, touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    if (e.touches && e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    if (!e.changedTouches || e.changedTouches.length !== 1) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 90 && Math.abs(dy) < 60) {
+      if (dx > 0 && prevUrl) {
+        location.href = prevUrl;
+      } else if (dx < 0 && nextUrl) {
+        location.href = nextUrl;
+      }
+    }
+  }, { passive: true });
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body></html>

@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>MGA 与委托权限：保险人把「说了算」外包出去之后，责任链是怎么走的 · 微出国 · 学</title>
+<link rel="stylesheet" href="../assets/style.css?v=1789948717">
+<script>var PREV_URL="industry-privacy-intermediaries.html";var NEXT_URL="industry-unlicensed-insurers.html";</script>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body class="vv">
+<header class="vv-header">
+  <a class="vv-brand" href="../index.html"><svg viewBox="102.305 90.391 73.617 59.957" width="28" aria-hidden="true" class="mark">
+<path fill="#30D9C4" d="M 107.894531 95.808594 L 127.277344 95.808594 C 127.277344 95.808594 129.507812 95.628906 130.835938 97.679688 C 131.585938 98.910156 131.65625 100.316406 131.082031 101.546875 L 121.609375 117.953125 C 121.609375 117.953125 120.335938 120.65625 117.011719 120.824219 C 113.714844 120.910156 112.242188 118.40625 112.242188 118.40625 L 103.722656 103.652344 C 103.722656 103.652344 102.304688 101.792969 103.09375 99.332031 C 103.878906 96.878906 106.148438 95.773438 107.894531 95.808594 "/>
+<path fill="#0082CA" d="M 115.964844 124.792969 C 115.847656 124.59375 116.09375 124.378906 116.277344 124.519531 C 117.195312 125.21875 118.664062 125.902344 120.683594 125.515625 C 122.164062 125.210938 123.550781 124.296875 124.402344 122.757812 C 125.242188 121.300781 138.8125 97.8125 138.8125 97.8125 C 138.8125 97.8125 141.9375 90.917969 150.207031 90.550781 L 169.96875 90.550781 C 169.96875 90.550781 173 90.390625 174.503906 93.40625 C 175.921875 96.433594 173.941406 98.695312 173.667969 99.109375 C 173.394531 99.523438 142.203125 146.726562 142.203125 146.726562 C 142.203125 146.726562 140.003906 150.347656 135.40625 150.347656 C 130.808594 150.347656 128.707031 146.878906 128.417969 146.398438 C 128.175781 145.992188 118.835938 129.78125 115.964844 124.792969 "/></svg>微出国 · 学</a>
+  <nav><a href="../index.html">路线</a><a href="../slides.html">讲义</a><a href="../docs/" aria-current="page">讲解</a><a href="../cards/">知识卡</a><a href="../drill.html">练习</a><a href="../exam.html">模考</a><a href="../progress.html">进度</a></nav>
+  <button class="theme" onclick="var r=document.documentElement,d=r.getAttribute('data-theme')==='dark';r.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('vv-theme',d?'light':'dark')">◐</button>
+</header>
+<main><a href="industry-privacy-intermediaries.html" class="vv-float-nav vv-float-nav--prev" title="上一篇: 客户信息归谁管、中间还站着谁：三块 GICF 缺口的入口"><span class="vv-float-nav__icon">‹</span><span class="vv-float-nav__card"><small>← 上一篇</small><strong>客户信息归谁管、中间还站着谁：三块 GICF</strong></span></a><a href="industry-unlicensed-insurers.html" class="vv-float-nav vv-float-nav--next" title="下一篇: 无牌保险人：一条被开了口的禁令，和你必须按顺序走完的四步"><span class="vv-float-nav__card"><small>下一篇 →</small><strong>无牌保险人：一条被开了口的禁令，和你必须按顺</strong></span><span class="vv-float-nav__icon">›</span></a><div class="vv-max-dock"><span class="vv-max-dock__hint">键盘 ← → 切页 | Esc 退出</span><button class="vv-reader-btn vv-reader-btn-max" onclick="toggleDocMaximize()">✕ 退出专注</button></div>
+<section class="cover short" aria-label="页面封面"><div class="cover-in"><p class="cover-eyebrow">行业与监管 · 考纲 30%</p><p class="crumb"><a href="../index.html">路线</a> › 行业与监管</p><h1>MGA 与委托权限：保险人把「说了算」外包出去之后，责任链是怎么走的</h1><div class="doc-meta"><span class="vv-badge vv-badge--accent">行业与监管 · 考纲 30%</span><span class="vv-badge">5,105 字</span><span class="vv-badge">约 10 分钟</span></div></div></section>
+<div class="doc-wrap">
+  <article class="doc">
+    <div class="doc-bar">
+      
+      <div class="doc-bar-actions">
+        <span class="vv-reader-hint">键盘 ← → 翻页</span>
+        <button class="vv-reader-btn vv-aside-btn" onclick="toggleSidebarCollapse()" title="折叠/展开右侧栏">◧ 折叠侧栏</button>
+        <button class="vv-reader-btn vv-reader-btn-max" onclick="toggleDocMaximize()" title="最大化专注阅读 (快捷键 F)">⛶ 专注阅读</button>
+      </div>
+    </div>
+    
+    <p>监管方的 Level 1 通用保险胜任力框架（GICF）在三个地方点名 <strong>MGA</strong>：
+保险人与 MGA 之间的合同义务、MGA 的<strong>委托权限</strong>（delegated authority）、
+以及代理与 MGA 同其他相关方的关系。考试口径几乎没讲这块——
+它讲的是「保险人 → 代理／经纪 → 客户」这条三段链，
+而 MGA 是<strong>插在保险人与零售经纪之间的那一段</strong>。</p>
+<p>这一讲把这段补上。它不难，但有一个<strong>极容易掉进去的坑</strong>：
+同样三个字母，在一般保险和人寿险里指的是<strong>两种不同的机构</strong>，
+而且两边在「能不能承保」这件事上说的话<strong>正好相反</strong>。</p>
+<div class="vv-callout vv-callout--danger">
+<p><span class="vv-callout__icon">✕</span></p>
+<div>
+<p><strong>先记住这一条，后面所有内容都挂在它上面</strong></p>
+<p><strong>一般保险（P&amp;C）的 MGA，定义特征就是「获保险人授权承保并出单」。</strong>
+<strong>BC 人寿侧口径的 MGA，恰恰被明令「不得承担承保」。</strong>
+看到 MGA 三个字母，第一件事不是回忆定义，是<strong>问它属于哪条线</strong>。</p>
+</div>
+</div>
+<h2 id="一-制度设计委托的是执行不是责任">一 · 制度设计：委托的是执行，不是责任</h2>
+<p>保险人手里有两样东西：<strong>承保的权力</strong>（决定要不要接这个风险、什么条件接）
+和<strong>对保单持有人的最终责任</strong>。MGA 制度做的事情是：
+把第一样按合同<strong>划出一块</strong>交给一个专精的中介，第二样<strong>一点都不动</strong>。</p>
+<pre><code>保险人  ──委托（合同界定范围与限额）──▶  MGA  ──▶  零售经纪  ──▶  客户
+   ▲                                                              │
+   └──────────────  对外的最终责任仍在保险人  ◀──────────────────┘
+</code></pre>
+<p>三件事一起记：</p>
+<ol>
+<li><strong>权限是委托来的，不是天生的。</strong> MGA 能接哪些风险类别、能签多大的单、
+   能给多少折扣、能不能定损理赔，<strong>全部由它与保险人之间的合同界定</strong>。
+   超出合同范围的动作，不叫「MGA 的权限」，叫<strong>越权</strong>。</li>
+<li><strong>委托出去的是执行，不是责任。</strong> 客户拿的保单上写的是<strong>保险人</strong>的名字，
+   赔不赔、赔多少，最终对客户负责的是保险人。MGA 出了错，
+   保险人先对客户负责，再回头按合同找 MGA。</li>
+<li><strong>MGA 与零售经纪的分界线只有一条：有没有承保权限。</strong>
+   不在规模，不在客户数量，不在办公室有多大。
+   零售经纪代表<strong>客户</strong>去市场上找保障；MGA 代表<strong>保险人</strong>决定要不要承保。</li>
+</ol>
+<div class="vv-callout vv-callout--warn">
+<p><span class="vv-callout__icon">⚠️</span></p>
+<div>
+<p><strong>「批发」这个词容易让人抓错重点</strong></p>
+<p>MGA 常被叫作「批发中介」（wholesale intermediary），
+于是很多人以为区别在<strong>量</strong>——它做的单子多、面对的是同业不是公众。
+<strong>量只是结果，不是定义。</strong> 一个只服务三家小经纪行、一年出两百张单的机构，
+只要它握着保险人给的 binding authority，它就是 MGA；
+一个规模大十倍、但每一张单都要报回保险人核保的经纪行，不是。</p>
+</div>
+</div>
+<h2 id="二-底层逻辑为什么保险人愿意把说了算交出去">二 · 底层逻辑：为什么保险人愿意把「说了算」交出去</h2>
+<p>一个保险人自己养核保团队，最划算的是<strong>量大且同质</strong>的业务——
+标准家财、标准私家车。这类风险有海量数据，规则可以写成手册，甚至写成代码。</p>
+<p>难做的是另一头：<strong>小众、专业、量少的风险</strong>。
+拖车公司的责任险、艺术品运输、无人机作业、旧木结构公寓、
+高价值收藏、影视制作、某个特定行业的职业责任。
+这些风险要接得对，需要<strong>懂那个行业的人</strong>；而它们的保费总量又撑不起
+保险人内部专门养一支队伍。</p>
+<p>于是出现一个交换：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>保险人给出</th>
+<th>换回来</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一个<strong>划定好边界</strong>的承保权限（哪些类别、多大限额、什么条件）</td>
+<td>一支它自己养不起的专业核保能力</td>
+</tr>
+<tr>
+<td>一部分佣金／手续费</td>
+<td>一条它自己够不到的分销渠道</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>理解了这个交换，就理解了为什么合同里「范围与限额」是核心条款</strong>——
+那不是法务的套话，那是整个安排的定价基础。范围越宽，保险人让渡的风险越大。</p>
+<div class="vv-callout vv-callout--info">
+<p><span class="vv-callout__icon">🔧</span></p>
+<div>
+<p><strong>从客户那一侧看，MGA 通常是隐形的</strong></p>
+<p>客户找的是他熟悉的零售经纪；经纪把这个难做的风险递给 MGA；
+MGA 用保险人给的权限当场出单。客户拿到的保单抬头是<strong>保险人</strong>。
+所以「我的保单是不是 MGA 出的」这个问题，客户通常答不上来，也不需要答。
+但<strong>你要能答上来</strong>——因为出问题时，找谁改批单、找谁谈理赔，
+走的是 MGA 那条线还是保险人那条线，差别很大。</p>
+</div>
+</div>
+<h2 id="三-历史变革这个词为什么在两条线上分了岔">三 · 历史变革：这个词为什么在两条线上分了岔</h2>
+<p>这三个字母在加拿大的两条业务线上，<strong>各自独立长成了不同的东西</strong>，
+而且都合法地叫 MGA。</p>
+<p><strong>一般保险这一侧</strong>，MGA 是从「专业核保」这个需求里长出来的。
+2017 年成立的 <strong>CAMGA</strong>（Canadian Association of Managing General Agents）
+是这一侧的行业组织，代表数十家 P&amp;C MGA；
+它也是通用保险胜任力框架的贡献机构之一——
+<strong>所以框架里那个 MGA，说的是 P&amp;C 义</strong>。</p>
+<p><strong>人寿险这一侧</strong>，MGA 是从「分销」这个需求里长出来的：
+一名持牌人寿代理与保险人直接签约，然后去组织和支持一批下线人寿代理，
+促成代理与保险人之间的交易。它「rarely deal with the public」——
+它的客户是<strong>代理和保险人</strong>，不是消费者。</p>
+<p>两条线互不知情地用了同一个缩写，然后在几十年后撞在一起。</p>
+<div class="vv-callout vv-callout--warn">
+<p><span class="vv-callout__icon">⚠️</span></p>
+<div>
+<p><strong>这条搜索陷阱已经害过本库两轮，写在这里免得你再踩</strong></p>
+<p>用「Insurance Council of BC MGA」去搜，返回的<strong>几乎全是人寿侧材料</strong>
+（典型特征：出现 life agent、nominee 须持人寿代理牌照满五年这类字样）。
+<strong>看到 life agent 字样立刻停手</strong>——你搜到的不是你要的那条线。</p>
+<p>而且 BC Insurance Council 那份 MGA 通知还有第二个问题：
+文件顶部红字写着 <em>This notice is no longer in effect.</em>
+它对一般保险<strong>双重不适用</strong>——线错了，而且已经失效。
+本讲引用它，只是为了说明「一词两义」这件事本身。</p>
+</div>
+</div>
+<h2 id="四-现行政策bc-对一般保险的-mga-没有单独的牌照类别">四 · 现行政策：BC 对一般保险的 MGA <strong>没有</strong>单独的牌照类别</h2>
+<p>这是本讲最需要说清楚、也最容易被想当然的一句：</p>
+<blockquote>
+<p><strong>BC Insurance Council 的规则体系里，没有一般保险 MGA 的监管定义，
+也没有对应的牌照类别。</strong></p>
+</blockquote>
+<p>不是「我们没查到」，是<strong>它不存在</strong>。落到实处是三条：</p>
+<ol>
+<li><strong>MGA 里做承保、出单的人，按其实际做的事持牌</strong>——
+   在 BC 卖保险、为客户安排保险的人，走的是 general insurance
+   salesperson／agent 那一套牌照与规则，与他受雇于 MGA 还是零售经纪行无关。</li>
+<li><strong>保险人一侧的监管在 BCFSA</strong>：谁有资格在 BC 经营保险业务、
+   偿付能力与市场行为，归 BC Financial Services Authority 管。
+   委托安排出问题时，<strong>监管上追的是那家保险人</strong>。</li>
+<li><strong>所以「MGA 要不要牌照」这个问题问错了</strong>。要问的是两句：
+   <em>这家机构在做什么？</em> 和 <em>做这件事的那个人有没有对应的牌照？</em></li>
+</ol>
+<div class="vv-callout vv-callout--info">
+<p><span class="vv-callout__icon">ℹ️</span></p>
+<div>
+<p><strong>如果考题问「BC 的 MGA 牌照要求是什么」</strong></p>
+<p><strong>先怀疑题目问的是人寿线。</strong> 一般保险这一侧没有这个东西可问。</p>
+</div>
+</div>
+<h2 id="五-实务指导拿到一份委托安排按顺序问这六件事">五 · 实务指导：拿到一份委托安排，按顺序问这六件事</h2>
+<p>Level 1 阶段你不会去谈这类合同，但你会<strong>在这条链上工作</strong>——
+你递出去的单子由 MGA 核保，你的客户拿的是委托权限下出的保单。
+所以要会读这条链。</p>
+<ol>
+<li><strong>权限的范围</strong>：哪些险类、哪些行业、哪些地区。范围之外的单子，
+   MGA 当场答应也不算数。</li>
+<li><strong>权限的限额</strong>：单笔最高多少、总账口多少。超限的单必须<strong>报回保险人</strong>。</li>
+<li><strong>含不含理赔</strong>：很多委托安排把定损与小额赔付一并交出去，
+   也有很多只给承保。<strong>这决定了出险后第一个电话打给谁。</strong></li>
+<li><strong>出单以谁的名义</strong>：保单抬头是保险人，这一点不能含糊；
+   若一份文件让客户以为自己买的是「MGA 的保险」，那是个问题。</li>
+<li><strong>保费怎么流</strong>：客户 → 经纪 → MGA → 保险人，中间每一段的
+   信托与结算义务分别是谁的。</li>
+<li><strong>权限终止后怎么办</strong>：委托合同终止时，已出的保单继续有效
+   （对客户的责任在保险人），但<strong>续保权限没了</strong>——
+   这是客户会真实感受到的一件事。</li>
+</ol>
+<div class="vv-callout vv-callout--info">
+<p><span class="vv-callout__icon">🔧</span></p>
+<div>
+<p><strong>一句能直接用在客户面前的话</strong></p>
+<p>「这张保单的承保人是 X 保险公司，出单是通过它授权的 Y 承办；
+无论中间是谁经手，<strong>对您负责的是 X</strong>。」
+这句话既准确，又不会把客户绕进他不需要知道的链条里。</p>
+</div>
+</div>
+<h2 id="六-案例同一个风险两条路走出来的差别">六 · 案例：同一个风险，两条路走出来的差别</h2>
+<p><strong>场景</strong>：你的客户经营一家小型无人机航拍公司，
+需要一份含<strong>空中作业责任</strong>的商业保单。你把资料递给平时合作的保险公司，
+两周后回来一句「这个类别我们不做」。</p>
+<p><strong>走 MGA 那条路会发生什么</strong>：
+你把同一份资料递给一家专做航空与新兴风险的 MGA。
+对方的核保人<strong>当天</strong>回话——因为他手上有保险人给的 binding authority，
+在合同划定的范围与限额内，他<strong>自己就能拍板</strong>。
+条件谈定，保单当周出，抬头是那家保险人。</p>
+<p><strong>这里面有三件事值得你记住</strong>：</p>
+<ol>
+<li><strong>快，来自「不必层层上报」</strong>，不是来自谁更宽松。
+   如果这单超出了委托限额，MGA 一样要报回保险人，一样慢。</li>
+<li><strong>专业，来自那个人真的懂无人机</strong>——他知道该问什么
+   （夜航吗？超视距吗？飞行员执照？作业半径？），
+   所以他敢在授权范围内接。你递资料时把这些<strong>提前备齐</strong>，
+   谈判会顺很多。</li>
+<li><strong>出险后打给谁，取决于委托含不含理赔。</strong>
+   含，就打给 MGA；不含，直接进保险人的理赔系统。
+   <strong>投保时就问清楚，别等出险再找。</strong></li>
+</ol>
+<div class="vv-callout vv-callout--danger">
+<p><span class="vv-callout__icon">✕</span></p>
+<div>
+<p><strong>如果对方说的 MGA 是人寿义，这个案例整个不成立</strong></p>
+<p>人寿侧口径下的 MGA <strong>不承保</strong>——它促成代理与保险人之间的交易，
+没有当场拍板的权限。所以你把商业风险递给它，它只能替你转交。
+<strong>判断方法就一句：问它有没有承保权限。</strong></p>
+</div>
+</div>
+<h2 id="七-两个口径怎么分流">七 · 两个口径怎么分流</h2>
+<p><strong>考试口径</strong>：这是一般保险 Level 1 的考纲，框架由 CAMGA 等 P&amp;C 机构参与制定，
+所以卷面上的 MGA 一律按 <strong>P&amp;C 义</strong>答——<strong>持有保险人委托的承保出单权限的批发中介</strong>。
+要答的是委托关系：权限从哪来、合同界定什么、责任落在谁身上。</p>
+<p><strong>实务口径</strong>：真到了行业里，对面嘴里的「MGA」可能是人寿线那种<strong>分销中间人</strong>。
+<strong>判断方法只有一句：问它有没有承保权限。</strong> 有，是 P&amp;C 义；
+没有、只做代理与保险人之间的对接，那是人寿侧的用法，
+那套规则与你手上这张一般保险牌照无关。</p>
+<p>只记一个口径，两种后果都不好：
+只记 P&amp;C 义 → 跟人寿线同事沟通时对不上；
+只记人寿义 → <strong>考场上会答出完全相反的答案</strong>。</p>
+<h2 id="术语对照">术语对照</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>中文</th>
+<th>英文</th>
+<th>缩写／读音</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>管理总代理</td>
+<td>Managing General Agent</td>
+<td><strong>MGA</strong></td>
+<td>/ˈmænɪdʒɪŋ ˈdʒenrəl ˈeɪdʒənt/ 一词两义，先问哪条线</td>
+</tr>
+<tr>
+<td>委托权限</td>
+<td>delegated authority</td>
+<td>—</td>
+<td>保险人按合同划给 MGA 的那一块权力</td>
+</tr>
+<tr>
+<td>承保出单权</td>
+<td>binding authority</td>
+<td>—</td>
+<td><strong>P&amp;C MGA 的定义特征</strong>：能当场把保障绑上</td>
+</tr>
+<tr>
+<td>批发中介</td>
+<td>wholesale intermediary</td>
+<td>—</td>
+<td>面向经纪不面向公众；「批发」说的是位置不是量</td>
+</tr>
+<tr>
+<td>零售经纪</td>
+<td>retail broker</td>
+<td>—</td>
+<td>代表<strong>客户</strong>去找保障</td>
+</tr>
+<tr>
+<td>越权</td>
+<td>acting outside authority</td>
+<td>—</td>
+<td>超出合同范围的动作，不受委托保护</td>
+</tr>
+<tr>
+<td>加拿大管理总代理协会</td>
+<td>Canadian Association of Managing General Agents</td>
+<td><strong>CAMGA</strong></td>
+<td>P&amp;C 侧行业组织，2017 年成立</td>
+</tr>
+<tr>
+<td>分销中间人</td>
+<td>distribution intermediary</td>
+<td>—</td>
+<td>人寿侧 MGA 的角色，<strong>不承保</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="自查五问">自查五问</h2>
+<ol>
+<li><strong>MGA 和零售经纪的根本区别是什么？</strong> 为什么「规模大」不是答案？</li>
+<li><strong>保险人把承保权委托出去之后，谁对客户负最终责任？</strong></li>
+<li><strong>一份委托安排里，为什么「范围与限额」是核心条款？</strong></li>
+<li><strong>为什么搜「BC 的 MGA 规则」几乎搜不到一般保险的材料？</strong> 看到什么字样该立刻停手？</li>
+<li><strong>有人跟你说「我们公司是 MGA」，你用哪一句话判断他说的是哪条线？</strong></li>
+</ol>
+<p>本板块题库现有 110 题，其中练习池 50 题、模考专属池 60 题。</p>
+<p>延伸：<a href="industry-privacy-intermediaries.html">客户信息归谁管、中间还站着谁</a> 是这块内容的早期合并简版；
+<strong>MGA 部分以本页为准</strong>。牌照本身的边界见
+<a href="industry-licence-conduct.html">你这张牌照的边界</a>。</p>
+    
+    <div class="doc-nav"><a href="industry-privacy-intermediaries.html">← 客户信息归谁管、中间还站着谁：三块 GICF 缺口的</a><a href="industry-unlicensed-insurers.html" class="r">无牌保险人：一条被开了口的禁令，和你必须按顺序走完的 →</a></div>
+    <div class="doc-src">本站依据官方原文自撰</div>
+  </article>
+  <aside class="doc-aside">
+    <details class="doc-toc-details" open>
+      <summary class="doc-toc-summary"><span>本页目录</span><span class="doc-toc-icon">▾</span></summary>
+      <div class="toc"><div class="toc">
+<ul>
+<li><a href="#一-制度设计委托的是执行不是责任">一 · 制度设计：委托的是执行，不是责任</a></li>
+<li><a href="#二-底层逻辑为什么保险人愿意把说了算交出去">二 · 底层逻辑：为什么保险人愿意把「说了算」交出去</a></li>
+<li><a href="#三-历史变革这个词为什么在两条线上分了岔">三 · 历史变革：这个词为什么在两条线上分了岔</a></li>
+<li><a href="#四-现行政策bc-对一般保险的-mga-没有单独的牌照类别">四 · 现行政策：BC 对一般保险的 MGA 没有单独的牌照类别</a></li>
+<li><a href="#五-实务指导拿到一份委托安排按顺序问这六件事">五 · 实务指导：拿到一份委托安排，按顺序问这六件事</a></li>
+<li><a href="#六-案例同一个风险两条路走出来的差别">六 · 案例：同一个风险，两条路走出来的差别</a></li>
+<li><a href="#七-两个口径怎么分流">七 · 两个口径怎么分流</a></li>
+<li><a href="#术语对照">术语对照</a></li>
+<li><a href="#自查五问">自查五问</a></li>
+</ul>
+</div>
+</div>
+    </details>
+    <h3>CAIB1 侧</h3><p class="pair-gap">这一块 <b>CAIB1 没有讲</b>。考那一场时按本页学。</p>
+    <h3>同板块</h3><ul class="rel"><li><a href="industry-licence-conduct.html">你这张牌照的边界：Level 1 能做什么、必须报什么、什么情况下自动停牌</a></li><li><a href="industry-privacy-intermediaries.html">客户信息归谁管、中间还站着谁：三块 GICF 缺口的入口</a></li><li><a href="industry-unlicensed-insurers.html">无牌保险人：一条被开了口的禁令，和你必须按顺序走完的四步</a></li><li><a href="industry-privacy-law.html">隐私法两部半：BC 看 PIPA、跨境看 PIPEDA、牌照看 Council </a></li><li><a href="caib-foi-differences.html">CAIB1 与 FOI 说法不一致时，该信哪个</a></li><li><a href="kb-00-INDEX.html">知识库索引（kb/）</a></li></ul>
+    
+    <a class="vv-btn vv-btn--primary" style="width:100%;margin-top:16px"
+       href="../drill.html?bp=industry">练这个板块的题 →</a>
+  </aside>
+</div></main>
+<footer class="foot">
+  <p><b>微出国 · 学</b> — BC 省保险 Level 1 备考。内容是学习者视角的整理，与任何培训机构无隶属关系。<br>
+  考试以官方考纲与考试口径为准；实务以监管机构现行文件为准。发现错的地方，回论坛帖里说一声。</p>
+</footer>
+<script>var UP_PATH="../";var BUILD_TIME="1789948717";</script>
+<script>
+if((localStorage.getItem('vv-theme')||'')==='dark')
+  document.documentElement.setAttribute('data-theme','dark');
+
+// 自动版本更新检测：对比 DOM 的 BUILD_TIME 与服务器最新 manifest.json，出现新版本时带时间戳无缝重载绕过 HTTP 磁盘缓存
+(function(){
+  function checkVersion(){
+    var up = typeof UP_PATH !== 'undefined' ? UP_PATH : '';
+    fetch(up + 'assets/manifest.json?t=' + Date.now(), { cache: 'no-store' }).then(function(r){
+      return r.ok ? r.json() : null;
+    }).then(function(m){
+      if(!m || !m.build_time) return;
+      var serverBuild = String(m.build_time);
+      var clientBuild = typeof BUILD_TIME !== 'undefined' ? String(BUILD_TIME) : '';
+      if(clientBuild && serverBuild && clientBuild !== serverBuild){
+        var reloaded = sessionStorage.getItem('vv_reloaded_build');
+        if(reloaded !== serverBuild){
+          sessionStorage.setItem('vv_reloaded_build', serverBuild);
+          var u = new URL(location.href);
+          u.searchParams.set('_v', serverBuild);
+          location.replace(u.href);
+        } else if(!document.getElementById('vv-update-banner')) {
+          var bar = document.createElement('div');
+          bar.id = 'vv-update-banner';
+          bar.className = 'vv-update-banner';
+          bar.innerHTML = '🎉 网站已更新到最新版本，建议按 <b>Ctrl+F5</b> (或 <b>Cmd+Shift+R</b>) 强制刷新页面。<button onclick="location.reload(true)">立即刷新</button>';
+          document.body.prepend(bar);
+        }
+      }
+    }).catch(function(){});
+  }
+
+  checkVersion();
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible') checkVersion();
+  });
+  window.addEventListener('focus', checkVersion);
+  setInterval(checkVersion, 5 * 60 * 1000);
+})();
+
+// 页眉登录态。身份服务不在（纯静态托管、或还没起 dev-server）时静默跳过——
+// 内容页是公开的，永远不该因为身份服务缺席而坏掉。
+fetch('/api/me').then(function(r){return r.ok?r.json():null;}).then(function(m){
+  if(!m||document.getElementById('vv-auth'))return;
+  var n=document.querySelector('.vv-header nav');if(!n)return;
+  var e=document.createElement('span');e.id='vv-auth';e.className='auth';
+  e.innerHTML=m.loggedIn
+    ?'<span title="学习记录已跨设备同步">'+m.username+'</span> <a href="/auth/logout">退出</a>'
+    :'<a href="/auth/login?next='+encodeURIComponent(location.pathname)+'">登录</a>';
+  n.after(e);
+}).catch(function(){});
+
+// ── 阅读器增强：专注/最大化模式 & 键盘/手势切页 ──
+(function(){
+  var prevUrl = typeof PREV_URL !== 'undefined' ? PREV_URL : '';
+  var nextUrl = typeof NEXT_URL !== 'undefined' ? NEXT_URL : '';
+
+  function updateMaxBtns(isMax) {
+    var btns = document.querySelectorAll('.vv-reader-btn-max');
+    for(var i=0; i<btns.length; i++) {
+      btns[i].innerHTML = isMax ? '✕ 退出专注' : '⛶ 专注阅读';
+    }
+  }
+
+  window.toggleDocMaximize = function() {
+    var root = document.documentElement;
+    var isMax = root.classList.toggle('is-doc-maximized');
+    try { localStorage.setItem('vv_doc_maximized', isMax ? 'true' : 'false'); } catch(e){}
+    updateMaxBtns(isMax);
+  };
+
+  function updateAsideBtns(isCol) {
+    var btns = document.querySelectorAll('.vv-aside-btn');
+    for(var i=0; i<btns.length; i++) {
+      btns[i].innerHTML = isCol ? '◨ 展开侧栏' : '◧ 折叠侧栏';
+    }
+  }
+
+  window.toggleSidebarCollapse = function() {
+    var root = document.documentElement;
+    var isCol = root.classList.toggle('is-aside-collapsed');
+    try { localStorage.setItem('vv_aside_collapsed', isCol ? 'true' : 'false'); } catch(e){}
+    updateAsideBtns(isCol);
+  };
+
+  try {
+    if(localStorage.getItem('vv_aside_collapsed') === 'true') {
+      document.documentElement.classList.add('is-aside-collapsed');
+      setTimeout(function(){ updateAsideBtns(true); }, 0);
+    }
+  } catch(e){}
+
+  // 本页目录 <details> 状态记忆
+  var tocDet = document.querySelector('.doc-toc-details');
+  if(tocDet) {
+    try {
+      if(localStorage.getItem('vv_toc_open') === 'false') {
+        tocDet.removeAttribute('open');
+      }
+    } catch(e){}
+    tocDet.addEventListener('toggle', function() {
+      try { localStorage.setItem('vv_toc_open', tocDet.open ? 'true' : 'false'); } catch(e){}
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+    // 知识卡弹窗开着时 ← → 归弹窗（翻卡），不归阅读器（翻页）。
+    // 2026-09-20 实伤：bin/site_cards_ui.py 第一次跑就抓到——弹窗里按 →，整页跳到了下一篇讲解页。
+    if (document.body.classList.contains('lb-open')) return;
+    if (e.key === 'ArrowLeft' && prevUrl) {
+      location.href = prevUrl;
+    } else if (e.key === 'ArrowRight' && nextUrl) {
+      location.href = nextUrl;
+    } else if (e.key === 'f' || e.key === 'F' || e.key === 'm' || e.key === 'M') {
+      toggleDocMaximize();
+    } else if (e.key === 'Escape' && document.documentElement.classList.contains('is-doc-maximized')) {
+      toggleDocMaximize();
+    }
+  });
+
+  var touchStartX = 0, touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    if (e.touches && e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    if (!e.changedTouches || e.changedTouches.length !== 1) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 90 && Math.abs(dy) < 60) {
+      if (dx > 0 && prevUrl) {
+        location.href = prevUrl;
+      } else if (dx < 0 && nextUrl) {
+        location.href = nextUrl;
+      }
+    }
+  }, { passive: true });
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body></html>
