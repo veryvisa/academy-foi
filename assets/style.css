@@ -935,6 +935,10 @@ body[data-vf-native-home="true"] .cover-in{padding-top:20px;padding-bottom:20px}
 
 @media(max-width:700px){.reader-table,.reader-table tbody,.reader-table tr,.reader-table td,.reader-table th{display:block;width:100%;min-width:0}.reader-table .reader-table-head{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.reader-table tr:not(.reader-table-head){margin:12px 0;border:1px solid var(--vv-border);border-radius:8px;overflow:hidden}.reader-table td,.reader-table th{white-space:normal;text-align:left!important;overflow-wrap:anywhere}.reader-table td::before{content:attr(data-label);display:block;font-weight:600;color:var(--vv-text-muted);font-size:12px}}
 
+/* Long source domains must not widen the mobile viewport. */
+.doc :not(pre)>code{overflow-wrap:anywhere}
+.doc pre:focus-visible{outline:2px solid var(--vv-link);outline-offset:2px}
+
 /* ── 知识卡与封面（用户令 2026-09-20：每页配知识卡；点图开弹窗或详情页，绝不裸开原图；图做封面）──
    展示层正本＝site/cards.py。样式只用 tokens.css 的 --vv-* 变量，所以浅色/深色两套主题自动都对。
    照 youth-care-guide/src/components/GuideLayout.astro 的结构移植，变量换成本站的设计系统。 */
