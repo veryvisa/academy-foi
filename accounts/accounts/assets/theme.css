@@ -1,0 +1,6 @@
+html{--paper:#f1f3f9;--surface:#ffffff;--ink:#202c45;--muted:#455776;--accent:#344d83;--tint:#e5eaf6;--line:#a6b3ce}.passport{border-radius:24px 4px 24px 4px}.passport:before{border-radius:50%;opacity:.3}.article{padding:32px 0 48px}.article>h2{margin-top:48px}.comparison-section{margin:42px 0;padding-top:20px;border-top:1px solid var(--line)}.result-lead{font-size:1.2rem;font-weight:650}.source-line{margin-top:36px}.main-nav{flex-wrap:wrap}.table-scroll td{overflow-wrap:anywhere;max-width:40em}table{font-size:.92rem}td{min-width:7em}th{min-width:6em}label{overflow-wrap:anywhere}
+@media(prefers-color-scheme:dark){html:not([data-theme=light]){--paper:#131c2d;--surface:#1c2940;--ink:#ecf1ff;--muted:#c1cce0;--accent:#b7ccff;--tint:#293954;--line:#7d91b5;--focus:#ffd58b}}
+html[data-theme=dark]{--paper:#131c2d;--surface:#1c2940;--ink:#ecf1ff;--muted:#c1cce0;--accent:#b7ccff;--tint:#293954;--line:#7d91b5;--focus:#ffd58b}
+@media(max-width:420px){.passport-grid{grid-template-columns:1fr}.article>h2{margin-top:32px}}
+
+.knowledge-sheet{padding:28px;margin:28px 0;border:1px solid var(--line);border-left:5px solid var(--accent);background:var(--surface);border-radius:8px}.knowledge-sheet a{display:inline-block;min-height:44px;padding:8px 0}

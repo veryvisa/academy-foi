@@ -1,0 +1,4 @@
+/* Yearbook: ink blue, cool paper, concentric time rings. */
+html[data-account=rrsp]{--paper:#f0f3f7;--surface:#fff;--ink:#203247;--muted:#46586d;--accent:#254e80;--tint:#e1e9f2;--line:#9fadc0;--bad:#933938;--focus:#803f9b;--shadow:0 16px 44px #172e4910}
+@media(prefers-color-scheme:dark){html[data-account=rrsp]:not([data-theme=light]){--paper:#111a26;--surface:#182638;--ink:#edf3fb;--muted:#bdcde1;--accent:#a9cff5;--tint:#293d55;--line:#7289a3;--bad:#ffb5b1;--focus:#f3d77e}}
+html[data-account=rrsp][data-theme=dark]{--paper:#111a26;--surface:#182638;--ink:#edf3fb;--muted:#bdcde1;--accent:#a9cff5;--tint:#293d55;--line:#7289a3;--bad:#ffb5b1;--focus:#f3d77e}
