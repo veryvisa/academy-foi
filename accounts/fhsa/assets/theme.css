@@ -1,0 +1,4 @@
+/* Doorway: warm clay, linen, square corners. */
+html[data-account=fhsa]{--paper:#faf4e9;--surface:#fffdf8;--ink:#3a2b23;--muted:#654d3c;--accent:#854522;--tint:#efe1ce;--line:#bbaa93;--bad:#982e35;--focus:#214ab0;--shadow:0 16px 44px #6533100d}
+@media(prefers-color-scheme:dark){html[data-account=fhsa]:not([data-theme=light]){--paper:#211911;--surface:#2b2118;--ink:#fcf0df;--muted:#dec6a9;--accent:#f0ba81;--tint:#453322;--line:#977c61;--bad:#ffb5ba;--focus:#a9caff}}
+html[data-account=fhsa][data-theme=dark]{--paper:#211911;--surface:#2b2118;--ink:#fcf0df;--muted:#dec6a9;--accent:#f0ba81;--tint:#453322;--line:#977c61;--bad:#ffb5ba;--focus:#a9caff}
