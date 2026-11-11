@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 12 讲 · BC 车险入门：制度、ICBC 与保费 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 12 讲 · BC 车险入门：制度、ICBC 与保费</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 12 讲</span>
+
+# BC 车险入门
+
+制度、ICBC，以及保费到底怎么算出来的
+
+<div class="chips"><span>BC 车险考试口径</span><span>三种省别制度</span><span>Enhanced Care</span><span>driver factor</span><span>折扣与附加费</span></div>
+
+Note:
+开场约 2 分钟。先说最重要的一句：BC 考生的车险题按 BC 车险考试口径（也就是 ICBC 的 Autoplan 体系）作答，不按全国通用的私营车险保单那一套。车险在卷面上约占三成（官方没有公布配比，是本站的估计），是全卷最重的一块。问学员：你的车险保费，是谁定的？和你的年龄有关吗？（后者的答案是：没有。）
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 三种制度** <br>私营 · 混合 · 政府强制
+- **② ICBC** <br>来历 · 监管 · 好处
+- **③ 侵权与无过失** <br>2021 年的 Enhanced Care
+- **④ 登记与检验** <br>30 天 · 越野车
+- **⑤ 保费三层** <br>base · 三因子 · 折扣附加费
+- **⑥ driver factor** <br>75／25 · 宽免
+- **⑦ 折扣** <br>六类
+- **⑧ 罚金** <br>DPP · DRP · UDAP
+
+</div>
+
+Note:
+约 1 分钟。⑥ 和 ⑧ 的计算题最容易丢分，一会儿都有情景练。
+
+---
+
+## 🏛️ 三种省别制度
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🚗 车险一省一个样"]:::good --> B["🏢 私营<br/>AB · ON · 大西洋省"]:::step
+    A --> C["🤝 混合<br/>魁北克"]:::ask
+    A --> D["🏛️ 政府强制<br/>BC · SK · MB"]:::good
+    C --> C1["人身伤害：省政府<br/>财产损失：私营"]:::ask
+    D --> D1["政府卖基本险<br/>车主必须买"]:::good
+```
+
+魁北克的方向别记反：**政府管人，私营管车**。 {takeaway}
+
+Note:
+约 3 分钟。强制省的基本险含意外给付和最低 $200,000 第三方责任。有些省别对照表把 BC 的车损写「可选」：沿用改制前写法，2021 年起 Basic 已含基本车损，但为自己负责的那部分买的 Collision 仍然可选，卷子照抄表问就答 Optional。
+
+---
+
+## 🏷️ 在 BC，私营公司只能卖「超额」
+
+<div class="cards c3">
+
+- **① 加高第三方责任** <br>限额超过 Basic
+- **② 加强无保险与保额不足驾驶人的保障** <br>
+- **③ 自车损失** <br>physical damage
+- **🚫 不能卖** <br>Basic 本身
+- **💡 SK、MB 例外** <br>私营可卖更低车损免赔额
+- **📄 文件** <br>两联：保险证明＋车辆登记，不另发保单
+
+</div>
+
+Note:
+约 2 分钟。「找不是的」题：三项都是私营能卖的，唯一不是的通常是「卖 Basic 强制保险」之类。强制省不另发保单，因为保障细节写在法规、官网和经纪人的说明册里。
+
+---
+
+## 🎯 课堂快问 ①
+
+Lena lives in Kamloops. She wants $2,000,000 in third-party liability and a lower physical-damage deductible than the government plan offers. Where can she obtain each? {quiz-q}
+
+<div class="opts">
+
+- A. Extra liability only from ICBC; the lower deductible from either source
+- B. Extra liability from either ICBC or a private insurer; the lower deductible only from a private insurer
+- C. Both from ICBC, because private insurers may sell only the compulsory basic coverage
+- D. Both only from a private insurer, because ICBC sells no liability above $200,000
+
+</div>
+
+✅ **B** — 加高责任险政府和私营都能买；更低的车损免赔额只有私营公司提供。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。A 把两样的归属说反了；C、D 都错在以为私营只能卖基本险，或 ICBC 不卖高限额。
+
+---
+
+## 🏛️ ICBC：从皇冠公司到 BCUC 监管
+
+```mermaid
+%% h=380
+flowchart LR
+    A["1973-04-19<br/>ICBC 成立<br/>皇冠公司"]:::step --> B["后来<br/>私营可竞争<br/>可选险"]:::step --> C["2003<br/>BCUC 管 Basic 费率<br/>禁交叉补贴"]:::good
+```
+
+交叉补贴＝拿 Basic 的钱去压低可选险价格。2003 年起**禁止**。 {takeaway}
+
+Note:
+约 3 分钟。皇冠公司：政府所有、按公司方式运作，比政府部门少受政治控制，但向公众负责。同年《Insurance (Motor Vehicle) Act》改名 Insurance (Vehicle) Act。ICBC 还做驾照考试、检验站、车辆登记，并代收车辆相关的政府罚款和欠款。
+
+---
+
+## ✅ ICBC 制度的好处
+
+<div class="cards">
+
+- **🛡️ 人人强制投保** <br>无保险司机大减；**只有极高风险的司机会被拒**
+- **⚖️ 费率不按年龄、性别、婚姻** <br>但按驾驶记录，有事故照样多交
+- **🏪 各经纪行产品相同** <br>比的是服务
+- **🔗 牌照、登记、保险一体** <br>一次到店拿齐
+- **🏥 Enhanced Care** <br>不问过错的广泛意外给付
+
+</div>
+
+Note:
+约 2 分钟。「找不是的」的典型错项：说 ICBC 按年龄性别定价、说各经纪行的价格由市场竞争决定。Basic 的产品与价格各经纪行相同，所以不比价格。
+
+---
+
+## ⚖️ 侵权制 vs 无过失制
+
+<div class="cols">
+<div class="col bad">
+
+### 侵权制 tort
+- 可以就损害、痛苦**起诉**
+- 通常要证明对方有**过错**
+- 过失 negligence 是最常见的非故意侵权
+- 例：不守交规撞车
+
+</div>
+<div class="col good">
+
+### 无过失制 no-fault
+- 受害人**没有诉权**
+- 保险公司付医疗康复费
+- 按标准补偿永久伤害的收入损失
+- 受害人与肇事人**同样能拿给付**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。纯无过失省份：Manitoba 和 Quebec，没有诉权。其余省是组合：规定意外给付限额，伤重、永久时允许另行起诉。故意侵权：蓄意侵犯他人权利或理性人预期会造成伤害的行为，与保险关系不大。
+
+---
+
+## 🔄 2021 年 5 月 1 日：Enhanced Care
+
+```mermaid
+%% h=380
+flowchart LR
+    A["⚖️ 侵权制<br/>可以告肇事司机"]:::warn --> B["📅 2021-05-01"]:::ask --> C["🛡️ Enhanced Care<br/>不问过错给付<br/>车损并入 Basic"]:::good
+```
+
+限制告肇事司机，**居民和非居民都适用**。 {takeaway}
+
+Note:
+约 3 分钟。Enhanced Care：所有 BC 居民都拿广泛的照护与康复给付，非居民特定情形也能拿，需要时可终身领取。投保人自己的车在碰撞中的损坏也并入 Basic，无责司机不必再告对方来修车。少数例外：涉及非标准车辆的非公路事故，居民与非居民都可起诉。
+
+---
+
+## 🎬 情景：俄勒冈来的游客
+
+2026 年，一位**俄勒冈**游客在 BC 公路上被一位**温哥华**司机闯停车标志撞伤，她想起诉这位司机。 {scene}
+
+<span class="ask">问：能告吗？</span> {f}
+
+✅ **原则上不能**。起诉限制**对居民和非居民都适用**；她可以按情况从 ICBC 拿给付。 {ans f}
+
+Note:
+约 2 分钟。对应本讲题库里关于非居民诉讼限制的题。最诱人的错项是「限制只保护 BC 居民」。
+
+---
+
+## ❌ vs ✅ 「无过失」的误解
+
+<div class="xv">
+
+- ❌ 无过失＝不分对错，大家同等对待 {f}
+- ✅ 无过失说的是**不打官司**；ICBC 照样认定**责任比例** {f}
+- ❌ 责任比例只影响司机的面子 {f}
+- ✅ 它决定 **BVD 赔多少**、driver factor 升不升、要不要收 UDAP {f}
+
+</div>
+
+Note:
+约 2 分钟。BVD＝Basic Vehicle Damage，第 13 讲会细讲。
+
+---
+
+## 🪪 登记、上牌与检验
+
+<div class="cards c3">
+
+- **📦 定居者带车来** <br>**30 天**内登记上牌投保
+- **🚛 5,000 kg 以上商用** <br>**立即**登记上牌
+- **🏔️ 公有土地越野车** <br>不必上牌投保，要**登记**挂 ORV 牌
+- **🛣️ 上公共道路的越野车** <br>上牌＋Autoplan Basic
+- **🌲 只在林业道路** <br>第三方责任至少 **$200,000**
+- **🔧 省外来的车** <br>先过**机械与安全检验**；境外车联邦、省两道
+
+</div>
+
+Note:
+约 3 分钟。BC 现行：MVA s.21 的触发条件是车辆在 BC 作「非旅游用途」使用，判据是用途不是定居，考场按 30 天、按定居答。林业道路的责任险可以买 ICBC 的 Off-Highway TPL，也可以买私营的。
+
+---
+
+## 🧱 保费三层
+
+```mermaid
+%% h=380
+flowchart LR
+    A["💵 Base premium<br/>人人一样"]:::step --> B["🎚️ 三个调整因子<br/>地区 · 费率类别 · 驾驶因子"]:::ask --> C["🏷️ 折扣与附加费"]:::good
+```
+
+先是人人相同的底价，再按**你的情况**调，最后看折扣和罚金。 {takeaway}
+
+Note:
+约 3 分钟。Base premium 是 Autoplan Basic 在加任何可选险、套任何折扣附加费之前的标准费率，金额不考。地区：14 个加 Z 区，私家车按停放地，出租车、巴士按通常行驶地归区。费率类别：用途，150 多种。注意 rate class 是用途，调 Basic；rate group 是按车型赔案和维修成本分组，调自车损失险。
+
+---
+
+## 🎛️ Driver factor：三位小数的经验分
+
+<div class="cards">
+
+- **🔢 起点 1.000** <br>无事故越久越低，有责事故就升
+- **🗄️ 保存 40 年** <br>ICBC 的记录
+- **🎁 事故宽免** <br>在 BC 驾驶至少 **20 年**、最近 **10 年**无事故，宽免**一次**
+- **📛 chargeable claim** <br>ICBC 对有责事故的叫法
+
+</div>
+
+Note:
+约 2 分钟。保费 ＝ base premium × driver factor。现行 ICBC 写法略不同：驾龄满 20 年、其中至少 10 年在 BC，考场按「在 BC 满 20 年」答。
+
+---
+
+## 🎯 课堂快问 ③
+
+Gordon has driven in British Columbia for 24 years. He caused one crash 12 years ago and none since. Last month he caused a crash. Under ICBC's crash forgiveness: {quiz-q}
+
+<div class="opts">
+
+- A. No forgiveness, because he has an earlier at-fault crash on his 40-year record
+- B. No forgiveness, because forgiveness requires 25 years of driving
+- C. Every future crash is forgiven while he remains crash-free for 10 years
+- D. This single at-fault crash is forgiven
+
+</div>
+
+✅ **D** — 驾龄满 20 年且最近 10 年无事故，宽免一次；12 年前的老事故不在扫描期内。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。C 说「每次都免」是误解，宽免只有一次。
+
+---
+
+## ⚖️ 合并驾驶因子：75／25
+
+```mermaid
+%% h=400
+flowchart LR
+    A["👤 主驾<br/>principal driver"]:::good -->|75| C["🧮 合并驾驶因子"]:::ask
+    B["⚠️ 风险最高的<br/>另一位列名者"]:::warn -->|25| C
+```
+
+只列一个人：100% 看主驾。列两人以上：**75／25**。 {takeaway}
+
+Note:
+约 3 分钟。另一位列名者的因子比主驾好时，只有他是投保人的家庭成员或雇员才会拉低合并因子，防止专门挂一个低风险的人压保费。随时增删列名驾驶人不收费。
+
+---
+
+## 🎬 情景：Priya 一家
+
+Priya 是主驾。还列了**丈夫**（30 年无事故）和**儿子**（去年刚拿驾照）。 {scene}
+
+<span class="ask">问：合并因子怎么算？</span> {f}
+
+✅ **75% 看 Priya，25% 看儿子**——取的是风险最高的那位，不是最好的。 {ans f}
+
+Note:
+约 2 分钟。换个版本：车主列了妻子、成年儿子和雇员，25% 取驾龄最短的儿子。经纪人要提醒客户：多列名不一定让保费升或降。
+
+---
+
+## 🎯 课堂快问 ④
+
+Priya is the principal driver of the family car. Also listed are her husband, who has 30 years of crash-free driving, and her son, who was licensed last year. How is the combined driver factor determined? {quiz-q}
+
+<div class="opts">
+
+- A. 75% Priya's factor and 25% her son's factor
+- B. 100% Priya's factor, because only the principal driver counts
+- C. 75% Priya's factor and 25% her husband's, because he is the best driver
+- D. An equal one-third weighting of all three listed drivers
+
+</div>
+
+✅ **A** — 两人以上列名：75% 看主驾，25% 看风险最高的列名者。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。不是三人平均，也不是挑最好的那位来拉低。
+
+---
+
+## 🎓 学员 vs 🌏 新居民
+
+<div class="cols">
+<div class="col now">
+
+### 学员
+- 一笔费用覆盖**所有**学员，多列不多收
+- 新手起步有**降低的**因子
+- 出有责事故因子上升
+- **同一 10 年扫描期内出第二次**，优惠整个取消
+- 学员期不计驾龄，事故不进记录
+
+</div>
+<div class="col exam">
+
+### 新居民
+- 头 **3 年**给**加高的**因子，无事故每年回落
+- ICBC 看抵达前**最近 15 年**的驾照记录
+- **到 BC 之前的事故不计**
+- 只计 **2017-03-01** 及以后的有责事故
+
+</div>
+</div>
+
+Note:
+约 3 分钟。题库里有一道：Ahmed 从 Manitoba 来，18 年无事故，2022 年在 Winnipeg 出过一次事故，答案是头三年加高，而 2022 年那次不计。
+
+---
+
+## 🚪 没列名的人，和急救车
+
+<div class="cards">
+
+- **👤 未列名驾驶人出事** <br>记录挂在**开车的人**身上，车主的因子和保费**不受影响**
+- **💸 但可能收 UDAP** <br>除非保单有 Unlisted Driver Protection
+- **🚑 急救人员** <br>**执行紧急呼叫时**出事，因子不受影响
+- **⚠️ 不在紧急呼叫中** <br>照样影响
+
+</div>
+
+Note:
+约 2 分钟。题库里有一道：Olivia 把车借给没列名的同事，同事出事，事故记在同事头上。BC 现行：收费表对急救车的写法略有不同，本站没有核到 MVA 的完整定义，考场按考试口径答。
+
+---
+
+## 🏷️ 六类折扣
+
+<div class="cards c3">
+
+- **🧓 长者** <br>65 岁以上，**只保休闲用途**；每月至多 6 天通勤
+- **🛣️ 低里程** <br>Basic 减 10，**少于 5,000 km**
+- **📏 按距离** <br>可选险减 10 到 15，**少于 10,000 km**
+- **🛑 AEB** <br>原厂自动紧急制动，Basic 与部分可选险减 10
+- **🔐 被动防盗器** <br>Specified Perils、Comprehensive；手动的不算；摩托车、挂车不享
+- **♿ 残障** <br>Basic 减 25；须政府文件，**不会自动生效**
+
+</div>
+
+Note:
+约 3 分钟。长者出一次有责事故，折扣减少；10 年内第二次就取消。低里程两类都要年保单，每次买或续保 7 天内交里程凭证（里程表照片、修车收据、实际读数的 ICBC 表格等），不能保期中途补报。摩托车、收藏车不享，它们本来就不全年开，ICBC 收得少。
+
+---
+
+## 🚗 两种低里程折扣，别混
+
+<div class="cols">
+<div class="col exam">
+
+### Low-Kilometre
+- 折的是 **Basic**，10%
+- 年保单
+- **少于 5,000 km**
+
+</div>
+<div class="col now">
+
+### Distance-Based
+- 折的是**可选险**，10 到 15%
+- 年保单
+- **少于 10,000 km**，开得越少折得越多
+- 够低里程的自动够按距离
+
+</div>
+</div>
+
+Note:
+约 2 分钟。BC 现行：2025-06-01 起续保，可选险的按距离门槛放宽到少于 15,000 公里，核的是实际里程。考场仍答 10,000。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Kevin buys an annual policy and expects to drive about 7,500 km this year. Which low-driving-distance discount can he receive? {quiz-q}
+
+<div class="opts">
+
+- A. The Low-Kilometre Discount on Autoplan Basic only
+- B. Both the Low-Kilometre and Distance-Based discounts
+- C. Neither, because both discounts require under 5,000 km
+- D. The Distance-Based Discount on certain optional coverages only
+
+</div>
+
+✅ **D** — 7,500 公里不到低里程的 5,000 公里线，但在按距离的 10,000 公里线内，且只折可选险。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。B 错在两个折扣不是同时享；C 错在把两个门槛都当成 5,000。
+
+---
+
+## 💥 三种罚金
+
+<div class="cards">
+
+- **🚦 DPP 驾驶违章点数费** <br>某些 MVA 违章或刑法定罪；与 Autoplan 保费**分开**，**没车也收**
+- **⚠️ DRP 驾驶风险费** <br>**一次**：刑事定罪、适用的 MVA 定罪、超速；**两次以上**：路边吊销、开车用电子设备
+- **🚪 UDAP 未列名驾驶人事故费** <br>向**登记车主**或租赁**承租人**收，一次性
+
+</div>
+
+Note:
+约 3 分钟。题库里有一道：Jason 因酒驾被定罪，已卖车、不再投保，DPP 与 DRP 照样收，因为它们和有没有车无关。「找不是的」题：一次即触发的清单里，路边吊销不在，是两次以上才触发。
+
+---
+
+## 🧮 UDAP 怎么算
+
+```mermaid
+%% h=420
+flowchart LR
+    A["差额<br/>列名应付 − 实付"]:::ask --> B["Basic 部分<br/>15 × 差额<br/>上限 $5,000"]:::step
+    A --> C["可选部分<br/>15 × 差额<br/>上限＝2 × 应付可选保费"]:::step
+    B --> D["➕ 合计"]:::good
+    C --> D
+```
+
+三个条件**同时**成立才收；差额为零或负数不收。 {takeaway}
+
+Note:
+约 3 分钟。三个条件：保单没有 UDP 或不适用；未列名驾驶人开该车造成有责理赔；ICBC 就该事故实际付了款。ICBC 没付款就不收，紧急送医等情形也不收。避免办法：把所有常开的人列名，再加 UDP。
+
+---
+
+## 🎬 情景：Nina 的室友
+
+Nina 没把**室友**列名，室友开她的车出了有责事故。Nina 实付 Basic **$1,000**＋可选 **$500**；若室友列名，应付 Basic **$1,300**＋可选 **$600**。 {scene}
+
+<span class="ask">问：UDAP 是多少？</span> {f}
+
+✅ **$5,700**。Basic：15×300＝4,500（未超 5,000）；可选：15×100＝1,500，上限 2×600＝1,200，取 1,200。 {ans f}
+
+Note:
+约 3 分钟。让学员自己算一遍再揭晓。可选部分的上限是应付可选保费的两倍，不是实付。BC 现行：附录 APG33J 的措辞是已付保费的两倍，字面套用会得 $5,500，考场按应付保费算。
+
+---
+
+## 💳 分期付款与拒绝出单令
+
+<div class="cards">
+
+- **📆 三种分期** <br>6 个月月付 · 12 个月月付 · 12 个月季付
+- **🆕 新客户** <br>没有付款记录，必须先走 **6 个月**方案
+- **💸 费用** <br>收融资费，**不收销售税**
+- **🛑 拒绝出单令** <br>欠款罚单、扣车费、环保不合规、检验不合格、公交罚款、子女抚养费欠款
+
+</div>
+
+Note:
+约 2 分钟。拒绝出单令：RoadSafetyBC、司法部、交通部等可令 ICBC 拒卖或拒续，直到欠款付清。多数情况经纪人可以当场代收再出单。「找不是的」题：保险理赔次数多不是拒绝出单令的理由。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考场答考试口径，客户用现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径（BC 车险）
+- 事故宽免：在 BC 驾驶至少 20 年
+- 按距离折扣：少于 10,000 km
+- UDAP 可选上限：应付保费 × 2
+- 新居民：30 天、按定居
+
+</div>
+<div class="col now">
+
+### 2026 现行（BC）
+- 驾龄满 20 年、其中至少 **10 年在 BC**
+- 2025-06-01 起续保少于 **15,000 km**，核实际里程
+- 附录写「已付」保费 × 2
+- MVA s.21 按**用途**判，不按定居
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列讲。其他现行信息：Basic 费率省政府宣布冻结到 2027 年春；收入替代年毛收入上限每年 4 月 1 日指数化，2026-04-01 起 $122,500，问的是「哪一年」；分期有一次性手续费 $15。长者折扣现行指南只写 Basic 打 25%，可选险是否另有折扣公开材料没写。给新移民客户讲事故宽免：国内开了二十年车也不能马上宽免，因为至少 10 年要在 BC。
+
+---
+
+## ❌ vs ✅ 易混易错
+
+<div class="xv">
+
+- ❌ rate class 和 rate group 是一回事 {f}
+- ✅ **rate class**＝用途，调 Basic；**rate group**＝车型分组，调自车损失 {f}
+- ❌ 加一位好司机一定能降保费 {f}
+- ✅ 只有他是**家人或雇员**才拉低；而且 25% 取风险**最高**的 {f}
+- ❌ 魁北克是政府管财产、私营管人身 {f}
+- ✅ **政府管人身伤害**，私营管财产损失 {f}
+
+</div>
+
+Note:
+约 2 分钟。三对都是干扰项的高发区。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **制度** <br>BC、SK、MB 政府强制；BC 私营只卖超额；魁北克混合
+- **ICBC** <br>1973 成立；2003 起 BCUC 管 Basic、禁交叉补贴；2021 起 Enhanced Care
+- **保费三层** <br>base × 地区 · 费率类别 · driver factor；75／25；宽免 20／10
+- **折扣与罚金** <br>六类折扣；DPP、DRP 没车也收；UDAP 三条件同时成立
+
+</div>
+
+保费是你的情况的函数——不是你的年龄、性别。 {takeaway}
+
+Note:
+约 2 分钟。让学员用四句话复述，再回到开场的问题：保费由谁定、和年龄有关吗。课后建议：做本讲 40 道题，计算题把每一步写出来。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 12 讲 · BC 车险入门：制度、ICBC 与保费 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 10 讲 · 责任险保单 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 10 讲 · 责任险保单</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 10 讲</span>
+
+# 责任险保单
+
+四个小故事，哪个赔，哪个不赔
+
+<div class="chips"><span>E · F · G · H</span><span>场所</span><span>六条除外</span><span>船艇与器具</span><span>企业七种风险</span><span>E&amp;O 与伞式</span></div>
+
+Note:
+开场约 2 分钟。先抛四个小故事让学员举手：女儿在毕业派对上故意毁坏租来的酒店房间；替朋友修洗碗机时把它弄坏了；自己在门前台阶滑倒摔伤；住家雇员因你提供的有缺陷的梯子倒塌而受伤。哪个赔？答案是只有最后一个。告诉他们：官方练习卷第 78 到 84 题共 7 道，5 道是这种情景判断，没法靠背结论做对，要依次问四件事：是不是被保险人的个人行为或承保的场所？损害落在谁身上？有没有除外？落在 E、F、G、H 哪一项？
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 四项保障** <br>E 法律责任 · F G H 自愿给付
+- **② 场所** <br>列明 + 五类自动
+- **③ E 的六条除外** <br>合同 · 自有 · 照管 · 施工 · 自己人
+- **④ F · G · H** <br>医疗 · 财产 · 住家雇员
+- **⑤ 船艇与拖车** <br>千瓦红线
+- **⑥ 经营活动** <br>六项例外 · 一般除外
+- **⑦ 企业七种风险** <br>CGL
+- **⑧ 专业 · 车行 · 伞式** <br>E&amp;O · SIR
+
+</div>
+
+Note:
+约 1 分钟。八站，③ 和 ④ 要靠情景题练，⑦ 里的区分是高频考点。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **4 张保单** <br>房主 · 租客 · 共管 · 活动房，都含第二部分
+- **90 / 30 天** <br>临时居住租约 · 新主要住所
+- **12 / 21 岁** <br>G 赔故意的上限 · 小经营例外
+- **12 · 38 kW · 8 m** <br>自有船艇自动承保线
+- **19 kW** <br>割草机、扫雪机、园艺拖拉机
+- **2 · 3 · 3** <br>寄宿者 · 车位 · 一至三户
+
+</div>
+
+Note:
+约 2 分钟。各保险公司自己定最低限额，这些数是 IBC 示范条款的举例，对真客户以保单上印的为准。考试里它们是要背的数。
+
+---
+
+## 🧰 第二部分的四项保障
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🏠 第二部分 责任保障"]:::good --> B["E 个人责任<br/>要法律责任"]:::step
+    A --> C["F 医疗给付<br/>不问责任"]:::ask
+    A --> D["G 财产损害给付<br/>不问责任"]:::ask
+    A --> E["H 住家雇员补偿<br/>不问责任"]:::ask
+```
+
+E 接**法律责任**；F、G、H 是用小钱化解纠纷的**自愿给付**。 {takeaway}
+
+Note:
+约 3 分钟。示例限额：E 起步 100 万、F $5,000、G $500、H 按给付表，通常没有免赔额。G 在这一讲里有两个数：限额表 $500，细节里说通常不超过 $1,000。题干给表答 $500，问通常上限答 $1,000。让学员想一想：为什么要有 F、G、H 这三项不问对错的给付？因为小伤小损失当场赔掉，往往就不用打官司。
+
+---
+
+## 🌍 Coverage E：普通居民，全世界
+
+<div class="cards">
+
+- **🌐 范围** <br>世界任何地方的个人行为，加场所的所有、使用、占用
+- **👤 身份** <br>普通居民（private citizen）
+- **✖ 不含** <br>职业责任、汽车责任、经营
+- **🏖️ 例子** <br>去墨西哥度假骑租来的自行车撞了行人，在内
+
+</div>
+
+Note:
+约 3 分钟。E 兜的是一个人作为普通居民的责任，度假、购物、打球时不小心伤人损物都算。场所上的状况是索赔大头：狗咬了送信的人、邻居孩子在你家泳池出事、烧烤的火星烧到邻居的房子。练习卷第 78 题：三个错项各改了一处——只限加拿大境内；把职业责任也算进来；把汽车责任也算进来。
+
+---
+
+## 🏠 场所：列明的 + 五类自动的
+
+<div class="cards c3">
+
+- **📋 列明的住所** <br>含季节性住所，要在摘要页上写明
+- **🏕️ 临时居住** <br>非所有人，租约**不超过连续 90 天**；学生住处例外
+- **🆕 新的主要住所** <br>加拿大，最长 **30 天**
+- **🪦 墓地墓穴** <br>个人或家庭的
+- **🌱 空地** <br>加拿大，**农地除外**
+- **🏗️ 在建住宅** <br>加拿大，自住的一至三户
+
+</div>
+
+Note:
+约 3 分钟。例子：一家人在温哥华有主屋，又在 Osoyoos 有夏天用的小屋，两处都能承保，条件是两处都写在摘要页上。在 Whistler 租滑雪小屋住两周，不用列明，也算场所。练习卷第 79 题：放牧自家牛群的自有土地不在内，那是农地。
+
+---
+
+## ⏳ 新买的房子：保三选一最早的
+
+```mermaid
+%% h=400
+flowchart LR
+    A["🔑 6 月 1 日<br/>取得新主要住所"]:::step --> B["连续 30 天"]:::ask
+    A --> C["保单到期或终止"]:::ask
+    A --> D["另行安排了<br/>责任保险"]:::ask
+    B --> E["⏹️ 自动保障停止<br/>取最早的"]:::warn
+    C --> E
+    D --> E
+```
+
+保单还有 5 天到期，新房子也只保 5 天。 {takeaway}
+
+Note:
+约 3 分钟。三个时间点谁先到听谁的。你给新房子另买了保险，这张保单对它的保障立刻停止。让学员自己造一个例子：买房交割日是 6 月 1 日，保单 6 月 5 日到期，保障到哪天？
+
+---
+
+## 🎯 课堂快问 ①
+
+A retired couple leaves B.C. each winter and rents a condominium in Arizona under a five-month lease. It is not described on their Coverage Summary page. A visitor is hurt because of the condominium's condition. Is it "premises" under Section II? {quiz-q}
+
+<div class="opts">
+
+- A. No, because they are tenants under an agreement longer than 90 consecutive days
+- B. Yes, because it is a place where the insureds are residing temporarily
+- C. Yes, because the personal liability coverage applies anywhere in the world
+- D. No, because premises outside Canada are never included in the definition
+
+</div>
+
+✅ **A** — 临时居住的场所有条件：不是所有人，且租约不超过连续 90 天；五个月已经超过。 {ans f}
+
+Note:
+约 3 分钟。C 是最诱人的错项：E 是全世界范围，但"场所"是另一个定义。D 错在"永远不包括境外"：临时居住的场所在境外也可以算，只要租约不超过 90 天。顺带说一句：对每年出去过冬的雪鸟，这是真实的保障缺口。
+
+---
+
+## 🚫 E 的除外 ①②：合同与自有
+
+<div class="cols">
+<div class="col bad">
+
+### ① 合同承担的责任
+- 答应替朋友承担他借走的滑板车造成的伤害 → **不赔**
+- 例外：没有合同你本来也有责任
+- 例外：与你场所有关的**书面**合同（请承包商搭围栏）
+
+</div>
+<div class="col exam">
+
+### ② 自己拥有的财产
+- 责任险保的是对**第三方**的法律责任
+- 自己的东西坏了，找第一部分
+
+</div>
+</div>
+
+Note:
+约 3 分钟。滑板车本身有缺陷、伤害直接由缺陷造成，你被判有责时照赔，因为没有合同你本来也有责任。这条的来历在第 8 讲：保险公司愿意接法律加给你的责任，不愿意接你自己签字揽下来的责任。
+
+---
+
+## 🚫 E 的除外 ③：照管、保管、控制
+
+<div class="cols">
+<div class="col bad">
+
+### 不赔
+- 借来的高压清洗机用坏了，修理费 $600
+- 租来的船、借来的工具
+- 替朋友存放在你地下室的东西
+
+</div>
+<div class="col good">
+
+### 例外：他人场所及其内财物
+- 非故意的损害，只限四种原因
+- **火灾 · 爆炸 · 水损 · 烟**
+- 壁炉的烟不算
+
+</div>
+</div>
+
+Note:
+约 3 分钟。四个场景各对一种：租来的小木屋外烧烤，火星点着草地烧毁木屋（火）；借住朋友的度假屋，卡式炉漏气爆炸炸碎玻璃门（爆炸）；酒店里忘关浴缸水龙头（水）；酒店房间用自带的煤油取暖器，烟灰熏黑墙和窗帘（烟）。前提是你对损害在法律上有责任。口诀：房子可以，房子里借来的工具不可以。物主自己有保险的，可以直接向他的保险公司报。
+
+---
+
+## 🎯 课堂快问 ②
+
+Bert borrows a neighbour's riding lawnmower and accidentally damages its transmission. Repairs cost $600. Which statement about Bert's Homeowners policy is correct? {quiz-q}
+
+<div class="opts">
+
+- A. Coverage E pays, because Bert is responsible for property he borrowed
+- B. Coverage E pays, but only if the neighbour starts a lawsuit against Bert
+- C. Coverage E excludes it as property in his care, custody or control, but Coverage G may respond
+- D. Neither Coverage E nor Coverage G can respond, because the damage was accidental
+
+</div>
+
+✅ **C** — E 把照管、保管或控制下的财产（包括借来的）除外；G 不问责任，在小限额内可能赔。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。A 错在把借来的东西当成可赔的：它正是被排除的。D 错在以为意外就一律不赔。
+
+---
+
+## 🚫 E 的除外 ④⑤⑥
+
+<div class="cards c3">
+
+- **④ 施工对象** <br>你或他人代你施工而损坏的动产或固定装置（翻新邻居的餐桌却磨坏了）
+- **⑤ 自己人的人身伤害** <br>你和**同住的人**；**住家雇员除外**
+- **⑥ 不住在所列场所** <br>列名被保险人的个人行为；住在护理院的不受影响
+
+</div>
+
+Note:
+约 3 分钟。除外 5 的例外要讲透：住家雇员因被保险人的过失在工作中受伤，有权起诉，保单响应。例子：暑期工没人交代割草机必须装集草袋，拆了袋子被飞石伤了眼睛，法院认定雇主该交代操作要求，E 赔。有些省份法律允许同住的家人互相起诉，判决金额这张保单不保。
+
+---
+
+## 🩺 Coverage F：不问对错的医药费
+
+<div class="cols">
+<div class="col good">
+
+### 赔
+- 被保险人**非故意**伤到别人
+- 或别人在你场所**意外受伤**
+- 事故起 **1 年**内的合理费用
+- 手术、牙科、住院、护理、救护车、**丧葬**
+- 每人最高，常见 $5,000
+
+</div>
+<div class="col bad">
+
+### 不赔
+- **你自己**和**同住的人**（住家雇员除外）
+- 别的计划或保险**已承担**的
+- 受工伤赔偿法保障的人
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个例子对应两种触发：你在院子里玩飞盘砸伤了客人的牙；朋友自己在你家门廊台阶上滑倒，救护车送医，你毫无过错。F 的意义是不用争谁对谁错，小伤小痛保险人主动付了，很多纠纷就停在这里。练习卷第 81 题的错项是：被保险人在加拿大境外旅行时发生的医疗费也赔。
+
+---
+
+## 🧱 Coverage G：小额的财产给付
+
+<div class="cards">
+
+- **📺 第一类** <br>你非故意造成、法律上未必有责任的直接损害
+- **🧒 第二类** <br>**12 岁及以下**孩子故意造成的直接损害
+- **✖ 除外** <br>自己或租客的财产 · 第一部分已保的 · 使用损失、失踪、被盗
+- **📏 赔付基础** <br>类似质量材料修理或更换的费用，与保险金额取低
+
+</div>
+
+Note:
+约 3 分钟。例子：你帮同事抬电视下楼，对方走得太快，你脱了手，屏幕碎了，$400，你在法律上多半没有责任，但对方觉得该你赔。11 岁的孩子赌气用石头砸破教练家的窗，$200，赔。
+
+---
+
+## 🎬 情景：抬电视
+
+你帮同事把一台大电视抬下楼，他走得太快，你一松手，屏幕碎了，估价 **$400**。你大概**没有法律责任**，但同事觉得该你赔。 {scene}
+
+<span class="ask">问：哪一项保障最合适？</span> {f}
+
+✅ **Coverage G**——不问法律责任的自愿财产损害给付；E 以法律责任为前提。 {ans f}
+
+Note:
+约 3 分钟。对照第二个例子：邻居借你割草机前放掉了机油，没跟你说，你用了十分钟发动机抱死，你同样未必有责任，G 也是为这种场合准备的。
+
+---
+
+## 🎯 课堂快问 ③
+
+The insureds' **13-year-old** son, angry at a neighbour, deliberately scratches the neighbour's car. Repairs cost $700. Which coverage under the parents' Homeowners policy responds? {quiz-q}
+
+<div class="opts">
+
+- A. Coverage G, because it pays for damage intentionally caused by a child
+- B. Coverage E, because the parents are legally liable for their child's acts
+- C. Neither E nor G, because the damage was intentional and he is over 12
+- D. Coverage F, because it is paid whether or not the insured is liable
+
+</div>
+
+✅ **C** — G 赔故意损害只限 12 岁及以下；E 不保故意；F 是医疗费。 {ans f}
+
+Note:
+约 2 分钟。题库同章题，选项略有压缩，事实不变。回扣第 8 讲：父母一般不替孩子的侵权负责。13 岁已经过线，一个年龄就让答案翻面。
+
+---
+
+## 👷 Coverage H：住家雇员的小额补偿
+
+<div class="cards">
+
+- **🧹 临时住家雇员** <br>**自动**承保
+- **🏡 长期住家雇员** <br>要在摘要页**列明**才承保
+- **✍️ 弃权书** <br>接受给付要签，放弃起诉被保险人
+- **🛟 不影响 E** <br>雇员不接受或起诉，保险人可撤回，但责任保险仍在
+
+</div>
+
+Note:
+约 3 分钟。住家雇员受伤有两条路：走 H，不问过错、金额小、要弃权；或起诉走 E，要证明被保险人有过失、金额可以大。示范条款里的给付数字很小，考试更看重这几条规则。保险人有权向被保险人以外、对伤亡负责的人追偿。
+
+---
+
+## 🚤 船艇与机动器具：小的自动保
+
+<div class="cols">
+<div class="col good">
+
+### 自有，自动承保
+- 舷外机合计 **12 kW**（16 H.P.）
+- 其他发动机 **38 kW**（50 H.P.）
+- 无动力船长 **8 米**（26 英尺）
+- 割草机、扫雪机、园艺拖拉机 **19 kW**
+- 电动高尔夫球车：球场上；电动轮椅
+
+</div>
+<div class="col now">
+
+### 超标与非自有
+- 超标要**加保**；新购超标自动保 **30 天**
+- **非自有**船艇不论大小都保
+- 但租来的船**本身**的损坏不赔
+- 例：度假租 225 H.P. 的船撞码头，码头与受伤的孩子赔，船不赔
+
+</div>
+</div>
+
+Note:
+约 3 分钟。例子：Okanagan 湖边一艘 22 英尺、200 H.P. 的游艇加一台 60 H.P. 的水上摩托，都超标，索赔会被拒，除非加保。对非自有的保障反而更宽，道理是自己有船的人该知道自己风险增加，偶尔借租的人没法这样要求。多数保险人愿意加费承保雪地摩托、全地形车等。
+
+---
+
+## ❌ vs ✅ 用途与拖车
+
+<div class="xv">
+
+- ❌ 非自有的船，也要看马力才保 {f}
+- ✅ 非自有不看马力和长度，但那条船本身的损坏不赔 {f}
+- ❌ 露营拖车被牵引时脱钩伤人，也赔 {f}
+- ✅ 没挂在上牌机动车上才保；被牵引途中是车险的事 {f}
+- ❌ 出租给他人使用的船也保 {f}
+- ✅ 有偿载客、经营、竞速、出租、未经所有人同意，都不保 {f}
+
+</div>
+
+Note:
+约 3 分钟。竞速那一项，较新的措辞对帆船开了例外，较早的版本没有；考试按帆船除外答，遇到真保单看印的条款。练习卷里有一类题：新买 90 H.P. 舷内机的船，没做任何保险安排，45 天后出事，已经超过 30 天的自动保障。
+
+---
+
+## 💼 经营活动：原则除外，六项例外
+
+<div class="cards c3">
+
+- **① 无直接关系** <br>上班期间与职业**无直接关系**的个人行为（公司羽毛球赛）
+- **② 偶尔出租** <br>自住部分（去夏威夷过冬）
+- **③ 二三户住宅** <br>每单位寄宿者**不超过 2 名**
+- **④ 附带用途** <br>办公、教学、工作室出租
+- **⑤ 车位马厩位** <br>不超过 **3 个**
+- **⑥ 未满 21 岁** <br>临时或兼职（保姆、送报）
+
+</div>
+
+Note:
+约 3 分钟。"经营"的定义：任何为营利而持续或经常从事的活动，包括行业、职业、工作。其他经营活动要在摘要页上列明才承保，有时保险人会要求改用 CGL 或职业责任保单。练习卷里有一道题：会计师在雇主的年度球赛里打伤别人，属于例外①。
+
+---
+
+## 🧱 一般除外：对 E、F、G、H 都适用
+
+<div class="cards c3">
+
+- **💼 经营** <br>除六项例外
+- **🩺 专业服务** <br>提供或未能提供
+- **🔥 故意或犯罪** <br>被保险人或受其指使的人
+- **🚷 虐待、骚扰、体罚** <br>含知情而未阻止
+- **🦠 传播传染病** <br>被保险人传播
+- **✈️ 飞机** <br>所有、使用、操作，及起降设施
+
+</div>
+
+Note:
+约 2 分钟。示范条款另有：战争；须由核能责任保单承保的损害；工伤赔偿法加给你的责任；除特别限制外的船艇、机动车辆和拖车。练习卷第 78 题的方法：看到狗咬送信的人，这不在除外里，所以是 E 赔的那个选项。
+
+---
+
+## 🗂️ 一个活动，一张保单
+
+```mermaid
+%% h=440
+flowchart TD
+    A["👤 你的活动"]:::step --> B["个人 · 场所<br/>第二部分"]:::good
+    A --> C["经营<br/>CGL"]:::ask
+    A --> D["专业意见与服务<br/>E&O 或 Malpractice"]:::ask
+    A --> E["汽车 · 飞机<br/>各有专门保单"]:::warn
+```
+
+经纪人的工作：看出客户的活动跨了几类，每一类有没有保单接着。 {takeaway}
+
+Note:
+约 3 分钟。回扣第 9 讲：责任保单一般针对特定的活动。实务上问客户七个问题：有没有出租的房产或房间？冬天在外面租房住多久？有没有船，多大马力？有没有全地形车、雪地摩托？在家里做不做生意？家里雇不雇人，每周几小时？有没有超过保单限额的资产需要伞式保单？每一个"有"都对应这一讲的一条除外或限制。
+
+---
+
+## 🏭 企业的七种风险
+
+<div class="cards c3">
+
+- **🏪 场所状况** <br>餐馆门口结冰没撒盐，顾客摔断手腕
+- **🚚 经营作业** <br>搬家工人刮坏客户的地板
+- **🩹 医疗给付** <br>场所上受伤者的医药费
+- **🏢 租客法律责任** <br>对房东建筑的损坏
+- **📦 产品责任** <br>卖出的**东西**伤人
+- **🛠️ 完工作业 · 💬 人身权益侵害** <br>干完的**活**出事 · 人身伤害**以外**的伤害
+
+</div>
+
+Note:
+约 3 分钟。七种：场所状况、经营作业、医疗给付、租客法律责任、产品责任、完工作业责任、人身权益侵害责任。前四种个人和企业相似，后三种企业独有。承保多数商业经营的保单是 CGL。
+
+---
+
+## 🔍 三个最容易混的区分
+
+```mermaid
+%% h=440
+flowchart TD
+    A["💥 出事了：是什么出的事？"]:::step --> B["📦 卖出去的东西<br/>产品责任"]:::ask
+    A --> C["🔧 活正在干的时候<br/>经营作业"]:::step
+    A --> D["🏁 活干完交付以后<br/>完工作业"]:::good
+```
+
+另：摔断髋骨是 bodily injury；冤枉扣留、非法驱逐、诽谤是 **personal injury**。 {takeaway}
+
+Note:
+约 3 分钟。完工作业举例：水暖工装完热水器离场，一个月后接头渗漏泡坏了地板。装修、水管、暖气、电气承包商和电器修理店都有完工作业风险。Personal injury 的意思是人身伤害以外的伤害，包括书面诽谤、口头诽谤、恶意控告、非法进入或驱逐、歧视。
+
+---
+
+## 🎬 情景：干完两周后起火
+
+电工给客户重新布线，干完离场。**两周后**，他接的一个接头过热引起火灾。 {scene}
+
+<span class="ask">问：属于哪一种商业责任风险？</span> {f}
+
+✅ **完工作业责任**——活已经干完并交付使用；经营作业指工作**正在进行时**造成的伤害。 {ans f}
+
+Note:
+约 2 分钟。练习卷第 83 题的对照：披萨店顾客咬到馅料里的碎骨崩了牙，是卖出去的东西伤了人，是产品责任，不是场所与作业，也不是完工作业。
+
+---
+
+## 🩺 医疗用 Malpractice，咨询用 E&amp;O
+
+<div class="cols">
+<div class="col bad">
+
+### Malpractice 医疗过失
+- 医生、牙医、药剂师
+- 手术失误、配错药
+
+</div>
+<div class="col good">
+
+### E&amp;O 错漏责任
+- 会计师、律师、建筑师、**保险经纪人**
+- 例：经纪人忘了给客户 Osoyoos 的度假屋加保，房子烧毁后保险公司拒赔，客户起诉经纪人
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两种保单保的都是"提供或未能提供专业服务"引起的责任，正好是家庭保单和 CGL 除外的那一类。判断题"E&O 承保医疗专业人士的责任"要判为错。车行责任：S.P.F. No. 4，A 节第三者责任，E 节顾客汽车在照管下的损坏，因为 CGL 把汽车的所有、使用或操作除外。
+
+---
+
+## ☂️ 伞式保单：加高、补缺
+
+```mermaid
+%% h=400
+flowchart LR
+    A["📄 基础保单<br/>汽车 · 船 · 经营 · 住宅"]:::step --> B["⚖️ 基础不够<br/>伞式赔超出部分"]:::good
+    A --> C["🕳️ 基础不保<br/>伞式无同样除外<br/>先扣 SIR 再赔"]:::ask
+```
+
+SIR：商业常见 $10,000 至 $25,000；个人通常 $500 至 $1,000。 {takeaway}
+
+Note:
+约 3 分钟。伞式保单的前提是先向保险人证明已有现成的责任保单，叫基础保单。保险人可能不愿对任何个人或企业签发超过 $2 million 的保单，所以需要伞式。用伞式去赔基础保单除外的索赔时，要先扣一个高额免赔，叫 SIR（自留额）。
+
+---
+
+## 🎯 课堂快问 ④
+
+A commercial insured's primary liability policy excludes a certain claim, but its Umbrella Liability Policy contains no such exclusion. How will the umbrella policy respond? {quiz-q}
+
+<div class="opts">
+
+- A. It will not respond, because an umbrella policy pays only after a primary policy has paid
+- B. It will pay the claim, subject to a Self-Insured Retention
+- C. It will pay the claim in full from the first dollar, with no deductible of any kind
+- D. It will not respond, because umbrella policies follow every exclusion in the primary policy
+
+</div>
+
+✅ **B** — 伞式有两种赔法：基础保单不够，或基础保单不保而伞式没有同样除外；后者要扣 SIR。 {ans f}
+
+Note:
+约 2 分钟。题库同章题。A 只说对了一种情形。让学员数出两种情形再选。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考试口径 vs 实务现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- E $1M、F $5,000、G $500；12／38 kW、8 米
+- 法定条件第 1、3、4、5、15 条
+- 起诉保险人：一年
+- 经纪人"购买"E&amp;O
+
+</div>
+<div class="col now">
+
+### 2026 年现行（BC）
+- 数是示范条款举例，**以客户保单为准**
+- 法定条件现只有 **14 条**
+- Insurance Act s.23：**2 年**
+- 经纪人 E&amp;O 是持牌条件：每案不低于 $1,000,000，累计 $2,000,000
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列：考场用左边，对 BC 客户用右边。住家雇员是否要参加工伤保险，BC 先分你是雇主还是顾客，是雇主再数工时：课后托育每周 15 小时、日常家务每周 8 小时、一次性零工累计 24 小时，达到就必须向 WorkSafeBC 登记。"未满 21 岁"：条款是合同，写 21 就按 21 读。各家对船艇红线、E F G 限额没有统一答案，对客户不要下断言。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **四项保障** <br>E 要法律责任；F G H 自愿给付、小额
+- **六条除外** <br>合同 · 自有 · 照管 · 施工 · 自己人 · 不住所列场所
+- **四个小数** <br>90 天 · 30 天 · 12 岁 · 21 岁
+- **企业与专业** <br>CGL 七种风险；医疗 malpractice，咨询 E&amp;O；伞式补缺
+
+</div>
+
+先问四件事：谁的行为？伤到谁？有没有除外？落在 E F G H 哪一项？ {takeaway}
+
+Note:
+约 2 分钟。让学员用四句话复述，再把开场的四个小故事重新做一遍。回家作业：做公开题库里这一讲的 35 道题，每题先把四件事写下来。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 10 讲 · 责任险保单 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

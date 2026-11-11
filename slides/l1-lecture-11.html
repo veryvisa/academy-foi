@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 11 讲 · 意外疾病险与旅行险 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 11 讲 · 意外疾病险与旅行险</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 11 讲</span>
+
+# 意外疾病险与旅行险
+
+人自己出事，谁来付钱
+
+<div class="chips"><span>工伤计划</span><span>失能收入保单</span><span>定价三因素</span><span>团体险</span><span>旅行险条款</span><span>除外清单</span></div>
+
+Note:
+开场约 2 分钟。先问学员一个问题：你给房子、车子都买了保险，有没有给"自己哪天不能上班"买过保险？让几个人举手。然后告诉他们：前后两讲都是财产和责任，这一讲讲的是人。官方练习卷在这一块有两道旅行险题（第 86、87 题）和一道工伤计划的判断（第 73 题 c 项）。题型几乎都是"哪一个会赔"或"哪一个不是定价因素"，所以清单要背熟。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 失能从哪来** <br>事故 · 疾病
+- **② 工伤计划** <br>一笔交易，四项给付
+- **③ 个人 A&amp;S** <br>三档定义 · 等待期 · 给付期
+- **④ 定价** <br>理赔成本 · 费用 · 投资
+- **⑤ 合同四特征** <br>可保利益 · 两年不可抗辩
+- **⑥ 团体险** <br>离职即止
+- **⑦ 旅行险条款** <br>保期 · 子女 · 既往症
+- **⑧ 取消 · 中断 · 除外** <br>看出发那一天
+</div>
+
+Note:
+约 1 分钟。八站。前半场讲人身保障，后半场讲旅行险。旅行险没有标准保单，所以靠记定价因素和除外清单拿分。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **1／3** <br>65 岁前失能超过 90 天的人
+- **2 年** <br>平均失能时长以上；也是不可抗辩期
+- **90% 净收入** <br>工伤临时失能给付（考试口径）
+- **13 / 26 / 52 周** <br>团体周给付
+- **第 1 天 · 4 / 8 / 15 天** <br>事故 · 疾病起付
+- **20 / 26 岁** <br>受供养子女 · 在读
+
+</div>
+
+Note:
+约 2 分钟。工伤给付"净收入的 90%"：BC 现行另有最高可保工资封顶，2026 年是 $127,500，考场仍答 90%。180 天是单次旅行保单的上限，年度保单每次可选 30、60、90、180 天。三分之一和九成这两个统计是考试口径，没有找到现行官方来源，对客户不要引用。
+
+---
+
+## 🏥 失能从哪来
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🤕 失能<br/>无法工作"]:::step --> B["🪚 事故"]:::ask
+    A --> C["🤒 疾病<br/>首要原因"]:::warn
+    B --> D["工作相关<br/>工伤计划赔"]:::good
+    B --> E["非工作相关<br/>九成以上<br/>自购 A&S"]:::warn
+    C --> F["职业病<br/>工伤计划赔"]:::good
+    C --> G["自然发生的病<br/>自购 A&S"]:::warn
+```
+
+工伤计划只管**工作造成的那一角**。 {takeaway}
+
+Note:
+约 3 分钟。年纪越大，因病失能的人数远超因事故失能的。自雇人士和某些职业的从业者可能不在工伤计划里，他们的失能给付要另外买。
+
+---
+
+## 🎬 情景：同一双手，两种命运
+
+木工老张在工地用电锯时手滑重伤，休养 **12 周**。复工一周后，他**下班回家路上**被追尾，又休养 **10 天**。 {scene}
+
+<span class="ask">问：两次，工伤计划各赔不赔？</span> {f}
+
+✅ **第一次赔**（工作相关）；**第二次不赔**（下班路上的车祸与工作无关）。 {ans f}
+
+Note:
+约 3 分钟。让学员注意边界：不是"这个人在上班族里"，而是"这次伤是不是工作造成的"。第二次要靠他自己买的 A&S。
+
+---
+
+## 🤝 工伤计划：一笔交易
+
+<div class="cols">
+<div class="col good">
+
+### 雇员得到
+- **无过错给付**，不问谁的错
+- 通常从失能**第一天**起付
+- 医疗、康复、误工收入、身故给付
+
+</div>
+<div class="col exam">
+
+### 雇员放弃
+- **不起诉雇主**
+- 所以没有法院判的痛苦赔偿
+- **保费只由雇主付**，按行业风险浮动
+
+</div>
+</div>
+
+Note:
+约 3 分钟。建筑业的保费通常比零售业贵，因为职业风险高。省级立法一般要求某些行业的雇主参加。这是一笔交易：雇员不用打官司就拿到给付，雇主付保费、换来不被起诉。
+
+---
+
+## 💼 工伤计划的四项给付
+
+<div class="cards">
+
+- **🩹 医疗费用** <br>省医保少赔或不赔的（处方药、物理治疗、按摩、辅助器具）由工伤计划全额付
+- **🏋️ 医疗与职业康复** <br>必要时付再培训
+- **💵 误工收入补偿** <br>临时失能：净收入的 **90%** ；永久失能：估算未来收入损失
+- **🕯️ 身故给付** <br>丧葬费 + 一次性身故金 + 月度收入
+
+</div>
+
+Note:
+约 3 分钟。注意是"净"收入。BC 现行的临时失能给付确实是平均净收入的 90%，但每年有最高可保工资封顶，2026 年是 $127,500，还有法定下限。对 BC 客户要把封顶也说出来。
+
+---
+
+## 🎯 课堂快问 ①
+
+Most workers' compensation plans provide all of the following benefits for work-related disabilities EXCEPT: {quiz-q}
+
+<div class="opts">
+
+- A. Necessary medical and vocational rehabilitation programs
+- B. A lost income benefit of about 90% of net earnings when temporary
+- C. Compensation for pain and suffering awarded by a court
+- D. A death benefit, including basic funeral expenses
+
+</div>
+
+✅ **C** — 工伤计划不走法院，雇员放弃起诉雇主，所以没有法院判的痛苦赔偿；其余三项都在四项给付里。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。错项分别对应医疗康复、临时失能 90%、身故给付，都是真给付。让学员先背四项，再看哪一个不在里面。
+
+---
+
+## 👤 谁该买个人 A&amp;S
+
+<div class="cards">
+
+- **🧑‍🔧 自雇人士** <br>没有雇主的团体计划
+- **🏢 单位没有团体计划的人** <br>只能自己买
+- **💼 高收入雇员** <br>团体计划的上限不够
+- **✨ 想要更好条款的人** <br>比单位计划更宽的定义
+
+</div>
+
+最常见的个人 A&amp;S：**失能收入保单**——失能期间按月给你一笔收入。 {takeaway}
+
+Note:
+约 2 分钟。把"为什么要买"也说一说：失去工作能力丢掉的不只是收入，还有健康、未来收入、可保性（重病之后往往再也买不到保险）、资产、同行里的地位、心理上的安稳和信用评级。
+
+---
+
+## 📏 失能的定义：三档，宽到窄
+
+```mermaid
+%% h=360
+flowchart LR
+    A["🟢 Own occupation<br/>本职业<br/>最宽"]:::good --> B["🟡 Regular occupation<br/>常规职业<br/>居中"]:::ask
+    B --> C["🔴 Any occupation<br/>任何职业<br/>最窄"]:::warn
+```
+
+本职业：做不了本行重要职责就**全额**付，**即使去做别的工作**。任何职业：能做任何相称的工作就**不付**。 {takeaway}
+
+Note:
+约 3 分钟。常规职业这一档考试只要求认得名字。定义越宽，理赔成本越高，保费越贵。让学员排一下：同样的人，哪一份保单更容易赔？
+
+---
+
+## 🎬 情景：牙医的手
+
+一位牙医的手受伤，再也做不了牙科手术，转去大学做**全职**教书。她买的是**本职业**失能保单。 {scene}
+
+<span class="ask">问：给付怎么办？</span> {f}
+
+✅ **照样全额给付**——本职业是最宽的定义，即使在做别的工作也照付。若是任何职业保单，就不付了。 {ans f}
+
+Note:
+约 2 分钟。很多人以为"有收入了就不赔"，那是任何职业定义的后果。
+
+---
+
+## 🎯 课堂快问 ②
+
+A dentist with an 'own occupation' disability policy injures her hand and can no longer perform dental work, but she takes a full-time job teaching at a college. What happens to her disability benefits? {quiz-q}
+
+<div class="opts">
+
+- A. Benefits stop, since she is now working in another occupation
+- B. Benefits continue in full, though she works elsewhere
+- C. Benefits are reduced by the amount of her new teaching income
+- D. Benefits continue only until the end of the elimination period
+
+</div>
+
+✅ **B** — own occupation 是最宽定义：无法履行本职业重要职责就全额给付，即使她在做别的工作。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。A 是任何职业定义的结果；C 把给付抵减当成了规则，考试口径里没有这条。
+
+---
+
+## ⏱️ 等待期与给付期
+
+```mermaid
+%% h=360
+flowchart LR
+    A["🩻 失能开始"]:::step --> B["等待期<br/>自保期"]:::ask
+    B --> C["💵 开始给付"]:::good
+    C --> D["康复 · 身故 · 给付期满<br/>先到者为止"]:::warn
+```
+
+等待期**越长**保费**越低**；给付期可以是 1、2、5、10 年，或到 **65 岁**。可保收入有上限，免得保得太多而不想回去工作。 {takeaway}
+
+Note:
+约 3 分钟。等待期是保险人要求你自己扛的那一段。等待期短意味着合格理赔更频繁，保费更高。可保收入上限由保险人自己定。
+
+---
+
+## 🧮 保费怎么定：三个因素
+
+```mermaid
+%% h=420
+flowchart TD
+    A["💰 保费"]:::good --> B["理赔成本"]:::step
+    A --> C["营运费用"]:::step
+    A --> D["投资收益"]:::step
+    B --> E["保单类型"]:::ask
+    B --> F["申请人资料"]:::ask
+    B --> G["所选给付"]:::ask
+```
+
+理赔成本最重要，又分**保单类型、申请人资料、所选给付**三块。 {takeaway}
+
+Note:
+约 3 分钟。营运费用是保险人的经营成本，投资收益是保险人拿部分保费去投资的回报率，两者都直接影响保费。保单类型：可注销的保单，保险人可以对某一整类被保险人加费，但不能单挑某个人；不可注销的保单，保费保证到 65 岁，保险人不能改。
+
+---
+
+## 🎯 课堂快问 ③
+
+An applicant for disability income insurance wants the lowest possible premium. Which combination of choices would produce the LOWEST premium? {quiz-q}
+
+<div class="opts">
+
+- A. Own occupation definition, 30-day elimination period, benefits to age 65
+- B. Any occupation definition, 120-day elimination, 2-year benefits
+- C. Own occupation definition, 120-day elimination period, benefits to age 65
+- D. Any occupation definition, 30-day elimination period, benefits to age 65
+
+</div>
+
+✅ **B** — 给付期越长、等待期越短、定义越宽，保费越高；最便宜是任何职业＋长等待期＋短给付期。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。让学员把三个维度各自画箭头，再选组合。
+
+---
+
+## 📑 个人 A&amp;S 合同的四个特征
+
+<div class="cards">
+
+- **📝 投保书入合同** <br>含保单、附件和出单后书面同意的修改
+- **🤝 可保利益** <br>没有则合同**无效**；被保险人书面同意可补
+- **⏳ 两年不可抗辩** <br>例外：欺诈、年龄误报
+- **🧾 欠缴保费** <br>可从赔款中**扣除**
+
+</div>
+
+Note:
+约 3 分钟。可保利益的来源：对自己的生命与健康，对子女、孙子女、配偶、雇员、与你有金钱利益的人、依靠其供养或教育的人。BC 现行法补充：团体险不因缺可保利益而无效；被保险人未满 16 岁可由父母同意。
+
+---
+
+## ❌ vs ✅ 不可抗辩的两个例外
+
+<div class="xv">
+
+- ❌ 年龄误报等于欺诈，保险人可以宣告合同无效 {f}
+- ✅ 年龄误报只**按真实年龄调整**给付或保费，合同有效 {f}
+- ❌ 两年后，隐瞒病史也不能再争 {f}
+- ✅ **欺诈**任何时候都能挑战，通常宣告无效 {f}
+
+</div>
+
+Note:
+约 2 分钟。题目最爱把两个例外的后果对调。BC 现行法这一点与考试口径一致：保险法 s.112 和 s.115。
+
+---
+
+## 🎯 课堂快问 ④
+
+Three years after an individual disability policy was issued, the insurer learns the insured understated her age by four years on the application. What is the correct result? {quiz-q}
+
+<div class="opts">
+
+- A. The contract is void, because the statement was false
+- B. Nothing changes, since the two-year period has expired
+- C. The benefits or premium are adjusted to the true age
+- D. The insurer may cancel the policy and refund premium
+
+</div>
+
+✅ **C** — 两年后不可抗辩，但年龄误报例外：按真实年龄调整给付或保费，不是无效。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。B 错在忘了例外；A 和 D 把年龄误报当欺诈处理。
+
+---
+
+## 🏢 团体险：雇主买，离职即停
+
+```mermaid
+%% h=360
+flowchart LR
+    A["📅 事故<br/>第 1 天起付"]:::good --> C["周给付<br/>13 / 26 / 52 周"]:::step
+    B["🤒 疾病<br/>第 4 / 8 / 15 天起付"]:::ask --> C
+    C --> D["🧓 长期失能 LTD<br/>周给付结束后接上<br/>常到 65 岁"]:::good
+```
+
+失能保障在**离职时自动终止**。 {takeaway}
+
+Note:
+约 3 分钟。疾病有等待天数，因为这类保险不打算赔感冒、流感这种几天就好、一年里经常发生的小病。LTD 只要仍然失能、仍符合保单的职业定义，可以一直付下去。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Under a typical group Weekly Indemnity plan, an employee who misses work because of the flu for three days would MOST likely receive: {quiz-q}
+
+<div class="opts">
+
+- A. Benefits from the first day of absence
+- B. No benefits, as sickness pay starts later
+- C. Benefits only after a 13-week waiting period
+- D. Long Term Disability benefits right away
+
+</div>
+
+✅ **B** — 周给付疾病第 4、8 或 15 天才起付，不打算赔几天就好的小病。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。事故和疾病起付日不同，是本题的关键。LTD 要等周给付期结束后才接上。
+
+---
+
+## ✈️ 为什么出省就要买旅行险
+
+<div class="cols">
+<div class="col exam">
+
+### 省医保
+- 省与省之间有互惠安排
+- 但福利和限额**并不相同**
+- 出了国，往往只报销**很小一部分**
+
+</div>
+<div class="col good">
+
+### 补充旅行险
+- 一离开本省或本地区就该买
+- 急诊、住院、牙科
+- 空中救护
+
+</div>
+</div>
+
+Note:
+约 2 分钟。让学员说说自己出国时有没有买过旅行险。提醒：一次急诊加住院的账单可能很高，省医保往往只报销其中很小一部分。具体比例没有取到现行官方页，对客户不要给数字。
+
+---
+
+## 🗂️ 保期与定价因素
+
+```mermaid
+%% h=400
+flowchart LR
+    A["✈️ 旅行险"]:::good --> B["单次行程<br/>不超过 180 天"]:::step
+    A --> C["年度<br/>每次 30/60/90/180 天"]:::step
+    A --> D["定价：计划类型 · 次数 · 长短<br/>地区 · 限额 · 年龄健康"]:::ask
+    D --> E["❌ 不看交通方式"]:::warn
+```
+
+练习卷第 86 题的正解：**交通方式**不是定价因素。 {takeaway}
+
+Note:
+约 3 分钟。选单思路：一家人常年出差、每年两次度假，适合含全家的年度保单；单身雇员每年只去邻省探亲两周，每年一张个人单次保单就够，保费很可能更低。
+
+---
+
+## 📜 旅行险的常见条款
+
+<div class="cards">
+
+- **📍 承保地域** <br>离家 **500 公里**以上，或**出了居住省**才生效；多数保全世界
+- **🚨 紧急情况** <br>保期内突然发生、不可预见、需立即治疗
+- **👧 受供养子女** <br>未满 **20 岁**（在读未满 **26 岁**）、未婚、同住、全额供养；障碍者不限年龄
+- **🩺 既往症** <br>出发前已有的病不自动保；受控 **3 或 6 个月**的有的保单会赔
+
+</div>
+
+Note:
+约 3 分钟。旅行险没有标准保单，所以只能背"最常见的条款"。各法域的年龄与条件可能不同，对客户一律看具体保单。既往症稳定期没有全国统一天数，政府的消费者教育页只要求看清保单的稳定条款。
+
+---
+
+## 🎯 课堂快问 ⑥
+
+A family travels to Hawaii. The husband was diagnosed with a heart condition two months before the trip and faints due to high blood pressure; their unemployed 27-year-old son breaks his leg. Under a typical travel policy, which medical expenses are covered? {quiz-q}
+
+<div class="opts">
+
+- A. Both the husband's and the son's expenses are covered
+- B. Neither the husband's nor son's expenses are covered
+- C. Only the husband's expenses are covered, as an emergency
+- D. Only the son's broken leg is covered, as an accident
+
+</div>
+
+✅ **B** — 儿子 27 岁、没有工作、不在读，不是受供养子女；丈夫的病出发前已存在且未稳定够期。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。注意选项 C 的诱惑：既往症不因发作成紧急情况就变成可赔。
+
+---
+
+## 🚢 取消 vs 中断：看出发那一天
+
+```mermaid
+%% h=360
+flowchart LR
+    A["📅 出发日前"]:::step --> B["行程取消<br/>Trip Cancellation"]:::good
+    C["🛳️ 出发之后"]:::step --> D["行程中断<br/>Trip Interruption<br/>附带保障"]:::ask
+```
+
+出发前遇到承保的医疗紧急情况或指定亲属去世：**取消**。出发后因伤中止，不可退的旅费：**中断**。 {takeaway}
+
+Note:
+约 3 分钟。场景：14 天邮轮第三天，太太摔断腿下船住院，先生订酒店、搭飞机回家，船票不可退。旅行保单赔医疗费，并在限额内赔酒店费、机票和不可退的旅费，这是行程中断，不是取消，因为已经出发了。可选保障另有 AD&amp;D，以及行李、机票、护照遗失和法律咨询这类非医疗费用。
+
+---
+
+## 🚫 旅行险常见除外
+
+<div class="cards c3">
+
+- **🤰 妊娠** <br>预产期前 **8 周**内，或高风险妊娠
+- **⚔️ 战争** <br>自杀 · 自杀未遂
+- **🕵️ 犯罪** <br>实施或企图实施
+- **🍺 酒精药物** <br>相关疾病、滥用
+- **🏅 职业体育** <br>业余运动不在这条
+- **🪂 危险活动** <br>另有一条 · 艾滋病 · 工伤已保的
+
+</div>
+
+Note:
+约 2 分钟。除外里的体育是职业体育，业余运动不在这一条里，但"危险活动"另有一条。已由工伤计划承保的费用，旅行险也不再赔。
+
+---
+
+## 🎯 课堂快问 ⑦
+
+A traveller needs emergency treatment while abroad. Under a typical travel policy, which situation would MOST likely be covered? {quiz-q}
+
+<div class="opts">
+
+- A. Childbirth within eight weeks of the expected due date
+- B. An injury suffered while skydiving on vacation
+- C. Emergency treatment for sudden food poisoning
+- D. Hospitalization following a drug overdose
+
+</div>
+
+✅ **C** — 食物中毒是突然、不可预见、保期内发生、需立即治疗的紧急情况；其余三项各踩一条除外。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。官方练习卷第 87 题同型：临产 8 周内、跳伞、药物过量各对应一条除外。
+
+---
+
+## ❌ vs ✅ 易错对照
+
+<div class="xv">
+
+- ❌ 下班路上的车祸，工伤计划赔 {f}
+- ✅ 只赔**工作相关**的伤与职业病 {f}
+- ❌ 旅行险定价要看你坐飞机还是坐火车 {f}
+- ✅ **交通方式**不是定价因素 {f}
+- ❌ 行程取消险管出发后的中途回家 {f}
+- ✅ 取消管出发**前**，中断管出发**后** {f}
+
+</div>
+
+Note:
+约 2 分钟。三对都是这一讲的高发干扰项。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考试口径 vs 实务现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- 临时失能：**净收入 90%**
+- 工伤计划：某些行业的雇主参加
+- 既往症：稳定 3 或 6 个月
+- 旅行险受法定条件约束
+
+</div>
+<div class="col now">
+
+### 2026 年现行（BC）
+- 另有**最高可保工资**封顶：2026 年 $127,500
+- 先分**雇主还是顾客**，房主雇人再按工时门槛判登记
+- **没有**全国统一天数，看保单的稳定条款
+- 团体险除外；出险后 30 天内书面通知、90 天内交证明
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列：考场用左边，对 BC 客户用右边。两年不可抗辩、年龄误报、可保利益、欠缴保费这四项，BC 保险法与考试口径一致，只是多了几处团体险的例外。BC 保险法 s.114 还给既往症留了一个法定出口，但短期旅行险基本触不到，对客户不要下断言。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **工伤计划** <br>无过错、不起诉、雇主付费；只管工作相关
+- **个人 A&amp;S** <br>三档定义 × 等待期 × 给付期；欺诈随时、年龄误报调整
+- **团体险** <br>离职即止；周给付 → LTD
+- **旅行险** <br>无标准保单；不看交通方式；取消在前、中断在后
+
+</div>
+
+背熟：**定价因素清单** 和 **除外清单**。 {takeaway}
+
+Note:
+约 2 分钟。让学员用四句话复述。回家作业：做公开题库里这一讲的 28 道题，每题先判断是工伤、个人险、团体险还是旅行险。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 11 讲 · 意外疾病险与旅行险 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

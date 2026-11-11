@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 1 讲 · 一般保险导论 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 1 讲 · 一般保险导论</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 1 讲</span>
+
+# 一般保险导论
+
+把少数人的损失，摊给多数人
+
+<div class="chips"><span>五大功能</span><span>定义五要点</span><span>股份 vs 相互</span><span>三种分销</span><span>劳合社</span></div>
+
+Note:
+开场约 2 分钟。先问一句：「你家买过什么保险？为什么买？」让学员说两三个答案，再告诉他们：这一讲讲的就是这个「为什么」，也是后面各讲的词汇表。提醒考试形式：线上、100 道单选、2.5 小时、70% 及格，本讲在卷面分量不大，但官方公开练习卷前 3 题全出自这里，属于「记准就拿分」的章节。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 为什么有保险** <br>风险分担 · 五项功能
+- **② 法律怎么定义** <br>五要点 · risk 与 peril
+- **③ 谁在卖** <br>险种 · 股份/相互 · 政府
+- **④ 怎么卖** <br>直营 · 独立经纪 · 代理
+- **⑤ 一个例外** <br>劳合社不是公司
+- **⑥ 考场 vs 现实** <br>考试口径与 2026 现行
+
+</div>
+
+Note:
+约 1 分钟。念一遍六站，告诉学员每站结束都有一道课堂快问，答对才往下走。预计全程 80 到 90 分钟，其中快问和情景案例占三分之一，让他们开口。
+
+---
+
+## 📌 这一讲考什么
+
+<div class="cards">
+
+- **逐条判真伪** <br>题型是「哪个是**主要**功能」「哪一点**不成立**」
+- **官方练习卷前 3 题** <br>全部出自这一讲：功能 · 定义 · 分销
+- **靠记准，不靠理解深** <br>干扰项往往「也是真的，但不是题干问的」
+- **本讲是词汇表** <br>后面每讲都默认你分得清 risk 与 peril
+ 
+</div>
+
+Note:
+约 2 分钟。强调一个应试心态：这一讲的错题大多错在「没读题干里的关键词」，比如 MAJOR、NOT、独立经纪。让学员把这三个词圈出来。提问：「如果四个选项都是真话，你怎么选？」答案：回到题干的限定词。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **5 项功能** <br>主要功能只有 **spread of risk**
+- **5 个定义要点** <br>保险人可**修**或**换**，不一定给钱
+- **3 大险种** <br>汽车 > 财产 > 责任
+- **2 + 1 类保险人** <br>股份 · 相互 + 政府
+- **3 种分销** <br>直营 · 独立经纪 · 代理
+- **1 个例外** <br>Lloyd's **不是**保险公司
+
+</div>
+
+Note:
+约 2 分钟。这是全讲骨架，让学员抄在笔记本第一页。逐个数字问：「5 大功能里哪一个是主要的？」「三种分销里哪一种占 80% 以上？」答不出来的，后面重点听。
+
+---
+
+## 🥘 风险分担：一口大锅
+
+```mermaid
+%% h=420
+flowchart LR
+    A["👥 很多人<br/>各交一点保费"]:::step --> B(["🍲 一口大锅<br/>保费池"]):::good
+    B --> C["少数人出险<br/>从锅里赔"]:::warn
+    B --> D["锅里也付<br/>运营成本"]:::ask
+    C --> E["没有人<br/>倾家荡产"]:::good
+```
+
+少数人的损失，多数人一起扛。
+
+Note:
+约 3 分钟。用中国古代船户过险滩把货分装到几条船的例子讲原型：翻一条船，大家分摊。问学员：「如果只有你一个人，一次火灾你扛得住吗？」然后指图：保费进锅，锅里付赔款和成本。一句话记住：少数人的损失由多数人分担，这就是主要功能。
+
+---
+
+## ⏳ 保险从哪来
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🚢 古代<br/>船户分装货"]:::step --> B["🔥 1666<br/>伦敦大火"]:::warn
+    B --> C["🦷 次年牙医<br/>承保房屋火险"]:::step
+    C --> D["⚓ 17 世纪末<br/>劳合社写海险"]:::step
+    D --> E["🏢 今天<br/>全职行业"]:::good
+```
+
+考试不考年份，只用它们解释原理。
+
+Note:
+约 2 分钟。讲故事，不要求记年份。强调行业规模数字会逐年变，这里不背；现行数见讲义第④节的官方来源，考试题里若出现旧数字，按考试口径作答。可问：「为什么火灾之后才有人敢专门做火险？」引导到风险可以被汇集和定价。
+
+---
+
+## 🌟 五项功能
+
+```mermaid
+%% h=500
+mindmap
+  root((保险的<br/>五大功能))
+    分散风险
+      主要功能
+    信贷体系的基础
+    消除忧虑
+      鼓励创业
+    防损减损
+    就业与资本
+```
+
+Note:
+约 3 分钟。五个功能全是真的，但公认的主要功能只有第一个。逐个给一句话例子：信贷——银行放房贷要看你有没有买保险；消除忧虑——小额确定的保费换掉大额不确定的损失；防损——行业和政府一起做防火防盗和反欺诈；就业——保险业雇用或外包逾 10 万人。让学员对着图复述五个。
+
+---
+
+## ❌ vs ✅ 「主要」功能
+
+<div class="xv">
+
+- ❌ 「信贷体系的基础」是主要功能 {f}
+- ✅ 它是五项功能之一，**不是** major {f}
+- ❌ 「鼓励创业」「防损」「就业」也是 main {f}
+- ✅ 只有 **spread of risk** 是 the major function {f}
+
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 1 题：四个选项每一个都是真的。错在没读「主要」。让学员先说为什么 ❌，再翻出 ✅。口诀：问主要，选分散。
+
+---
+
+## 🎯 课堂快问 ①
+
+Which of the following is the **MAJOR** function of insurance? {quiz-q}
+
+<div class="opts">
+
+- A. Serving as the basis of the credit system
+- B. Sharing the losses of the few among the many
+- C. Encouraging loss prevention and loss reduction
+- D. Providing employment and investment capital
+
+</div>
+
+✅ **B** — 分散风险才是主要功能；A、C、D 都是五项功能，但不是「主要」。 {ans f}
+
+Note:
+约 2 分钟。先让学员举手选，再揭答案。追问：「A、C、D 错在哪？」答：它们是真话，但不是 MAJOR。这道题改自公开题库同讲的第一类题。
+
+---
+
+## 📜 定义的五个要点
+
+<div class="cards c3">
+
+- **① 转移财务责任** <br>付保费，换对方承担损失
+- **② 特定风险发生才赔** <br>risk 与 peril 要分清
+- **③ 以补偿为限** <br>no more, no less
+- **④ 只保意外、将来的** <br>已发生、故意的不保
+- **⑤ 钱或其他等值物** <br>保险人可选**修**或**换**
+
+</div>
+
+编号顺序本身会考。 {muted}
+
+Note:
+约 3 分钟。这是各省 Insurance Act 里的定义，拆成五点来记。逐点问学员：「为什么已经发生的损失不能投保？」答：人人等出事才买，保险公司活不下去。「为什么故意的不保？」社会不支持为它付钱。顺便提醒：编号顺序会考，所以要记「转、特、补、意、钱」。
+
+---
+
+## 🏠 情景：Butler 家的房子
+
+十年前花 **$75,000** 买的房子，今天值 **$140,000**，被承保的危险毁掉。 {scene}
+
+<span class="ask">问：补偿多少？</span> {f}
+
+✅ **$140,000** — 按**损失前一刻**的价值；不是买价，不是平均，更不是相加。 {ans f}
+
+Note:
+约 3 分钟。先让学员各报一个数：75,000、107,500、140,000、215,000 都会有人选。揭答案后讲两个理由：多赔让人从损失中获利，少赔补偿不完整，这就是 no more and no less。对应公开题库里的「补偿多少」一类题。延伸问：「如果房子现在只值 60,000 呢？」赔 60,000。
+
+---
+
+## 🔍 risk ≠ peril
+
+<div class="cols">
+<div class="col exam">
+
+### Risk 风险
+- the **chance** of financial loss
+- 亏钱的**可能性**
+- 不是那栋楼
+
+</div>
+<div class="col now">
+
+### Peril 危险
+- the **cause** of loss
+- 起因：火、风、冰雹
+- 保单承保的 peril 可窄可宽
+
+</div>
+</div>
+
+口语里 risk 也指「保险标的」，但**定义里不是**。 {takeaway}
+
+Note:
+约 2 分钟。出题人最爱放的干扰项：把 risk 当成建筑物本身。让学员用一句话区分：risk 是会不会亏，peril 是为什么亏。例：房子着火，火是 peril，房子可能烧毁造成损失的可能性是 risk。
+
+---
+
+## 🎯 课堂快问 ②
+
+As used in the Insurance Act definition, the word **"risk"** means: {quiz-q}
+
+<div class="opts">
+
+- A. The building being insured
+- B. The chance of financial loss to which the object may be exposed
+- C. The cause of a loss, such as a fire or hailstorm
+- D. The premium the insurer charges
+
+</div>
+
+✅ **B** — A 是口语用法；C 是 peril 的定义；D 是保费。 {ans f}
+
+Note:
+约 2 分钟。改自公开题库。先别急着揭答案，让学员说出 C 为什么是错的：因为它描述的是 peril。这是 risk/peril 区分的直接检验。
+
+---
+
+## 🔧 赔多少、怎么赔
+
+```mermaid
+%% h=420
+flowchart LR
+    A["💥 承保的<br/>损失发生"]:::warn --> B{"保险人<br/>怎么处理?"}:::ask
+    B -- "要工要料<br/>屋顶、门窗" --> C["🔨 修复或更换"]:::good
+    B -- "个人物品<br/>CD、乐器" --> D["💵 付现金"]:::good
+```
+
+被保险人**不能**强求现金：选择权在保险人。
+
+Note:
+约 3 分钟。保险公司随时有权选择修、换，或者付钱。屋顶被风刮坏通常选修；CD、乐器、家居个人物品通常付现。问学员：「客户说我就要现金，不要你修，可以吗？」不可以，选择权在保险人。这正是官方练习卷第 2 题的陷阱。
+
+---
+
+## ❌ vs ✅ 定义题的陷阱
+
+<div class="xv">
+
+- ❌ 保险赔付「必须是钱」 {f}
+- ✅ 钱，**或其他等值物**，选择权在保险人 {f}
+- ❌ 已经发生的损失也可以投保 {f}
+- ✅ 只保**意外的、将来的**损失 {f}
+
+</div>
+
+Note:
+约 2 分钟。把「通常给钱」偷换成「法律只许给钱」是定义题最常见的陷阱。让学员读出每个 ❌，由别的学员说为什么错。第二组讲社会与经济理由：故意的浪费社会资源；已发生的会让保险公司活不下去。
+
+---
+
+## 🎯 课堂快问 ③
+
+Which of the following is **NOT** one of the important points in the definition of insurance? {quiz-q}
+
+<div class="opts">
+
+- A. Shifts financial responsibility for a loss to another party
+- B. Payment is limited to the amount required to indemnify
+- C. May be bought to cover a loss that has already occurred
+- D. The indemnity may be money or some other thing of value
+
+</div>
+
+✅ **C** — 已发生的损失不保；A 是第①点，B 是第③点，D 是第⑤点。 {ans f}
+
+Note:
+约 2 分钟。NOT 类题先逐项确认哪三个是真，剩下的就是答案。改自公开题库。让学员练习「排除法」的步骤：A 对、B 对、D 对，所以 C。
+
+---
+
+## 🚗 P&C 三大险种
+
+<div class="cards c3">
+
+- **🚗 汽车险** <br>超过 P&C 保费的 **50%**
+- **🏠 财产险** <br>住宅与商业财产，排第二
+- **⚖️ 责任险** <br>伤到别人要赔，排第三
+
+</div>
+
+**P&C = general insurance** = 除寿险、健康险以外的一切。 {takeaway}
+
+Note:
+约 2 分钟。P&C 又叫一般保险，这就是你要考的牌照名。顺口溜：车、房、责任，一二三。问学员：「为什么汽车险保费这么高？」因为强制、人人有车、出险频率高。
+
+---
+
+## 🏛️ 谁在提供保险
+
+```mermaid
+%% h=400
+flowchart TD
+    A["🇨🇦 加拿大的保险人"]:::step --> B["私营保险人"]:::step
+    A --> C["政府保险人"]:::ask
+    B --> D["股份公司<br/>Stock"]:::good
+    B --> E["相互公司<br/>Mutual"]:::good
+    C --> F["BC · SK<br/>MB · QC<br/>强制车险"]:::warn
+```
+
+大部分业务在**股份公司**。
+
+Note:
+约 2 分钟。先搭骨架再讲细节。私营里最常见的两种是股份和相互；政府办医疗、就业保险、工伤赔偿，BC 考生要记的是四省政府提供强制汽车险。多数私营保险人在各省都有牌照。
+
+---
+
+## ⚖️ 股份公司 vs 相互公司
+
+<div class="cols">
+<div class="col exam">
+
+### Stock 股份公司
+- 股东**拥有**
+- 目的：给股东赚钱
+- 盈余归股东
+- 加拿大**大部分**业务
+
+</div>
+<div class="col good">
+
+### Mutual 相互公司
+- **保单持有人**拥有
+- 目的：低成本保险
+- 盈余以**红利**或**费率调整**返还
+
+</div>
+</div>
+
+Note:
+约 3 分钟。表格式对比，但这一页要让学员说出「谁拥有」「首要目的」「赚了钱去哪」三格。提醒：相互公司的盈余回到保单持有人，不等于某家公司某一年必有返还，这是对组织形式的一般概括（KU-0054）。提问：「买了相互公司的保单，你算什么身份？」所有者之一。
+
+---
+
+## 🏦 政府保险人
+
+<div class="cards">
+
+- **强制车险四省** <br>BC · SK · MB · QC
+- **SK 更广** <br>还与私营竞争财产险等
+- **联邦与省办的** <br>医疗 · 就业保险 · 工伤赔偿
+- **BC 考生关键** <br>ICBC 的基本车险是强制的
+
+</div>
+
+Note:
+约 2 分钟。BC 的强制车险由 ICBC 办。2021-05-01 起改为以无过错给付为主的 Enhanced Care，细节在汽车板块，这一讲只考「四省政府办强制车险」。问：「QC 的强制车险也经经纪行卖吗？」不，考试口径只说 BC、SK、MB 经经纪行分销。
+
+---
+
+## 🛒 保险怎么卖出去
+
+```mermaid
+%% h=400
+flowchart TD
+    A["🏢 保险公司"]:::step --> B["直营<br/>Direct Writing"]:::good
+    A --> C["独立经纪<br/>Brokerage"]:::good
+    A --> D["代理<br/>Agency"]:::good
+    B --> E["👤 客户"]:::ask
+    C --> E
+    D --> E
+```
+
+三种渠道，考的永远是同一组问题。
+
+Note:
+约 2 分钟。先看全局：保险公司把保险送到客户手里有三条路。预告四个考点：卖保险的人是不是雇员、代表几家公司、业务归谁、怎么拿钱。
+
+---
+
+## 🔑 三种分销：四格对照
+
+<div class="cards c3">
+
+- **直营 Direct** <br>公司**雇员**<br>只卖**本公司**<br>业务归**公司**<br>工资、佣金或奖金
+- **独立经纪 Brokerage** <br>**不是**雇员<br>通常**多家**<br>业务归**经纪行**<br>保险公司付**佣金**
+- **代理 Agency** <br>**小业主**<br>**一家**<br>业务簿归**代理人**<br>佣金加奖金
+
+</div>
+
+Note:
+约 4 分钟。这一页是这一讲的核心考点，花时间。先让学员合上笔记，只看这一页，分别回答「是不是雇员」「几家」「业务归谁」「怎么拿钱」。独立经纪 80% 以上，三种里最主流。代理人和直营一样只代表一家，但他是小业主、拥有业务簿。Facility Association 经纪和代理都可以代表。
+
+---
+
+## 🎬 情景：客户问你
+
+客户：「你是不是 ×× 保险公司的员工？」你是**独立经纪行**的经纪人。 {scene}
+
+<span class="ask">问：怎么答才对？</span> {f}
+
+✅ 不是雇员；经纪行是独立业主，**通常代表多家**，业务归经纪行，靠佣金。 {ans f}
+
+Note:
+约 3 分钟。让两位学员扮演客户和经纪人。追问：「如果你是直营的呢？」那就是雇员，只卖本公司产品。再追问：「代理呢？」不是雇员，是小业主，只代表一家。三个答案并排说一遍，加深对比。
+
+---
+
+## 🎯 课堂快问 ④
+
+Under the **direct writing** system, the business written is owned by: {quiz-q}
+
+<div class="opts">
+
+- A. The insurer
+- B. The individual producer
+- C. The brokerage office
+- D. The Facility Association
+
+</div>
+
+✅ **A** — 直营制下销售人员是雇员，业务归保险公司；B 是代理制，C 是独立经纪制。 {ans f}
+
+Note:
+约 2 分钟。改自公开题库。D 是明显的无关选项，让学员解释为什么 FA 与业务归属无关。B、C 是对制度的混淆，带着学员回到四格对照。
+
+---
+
+## ❌ vs ✅ 代理人
+
+<div class="xv">
+
+- ❌ 代理人只代表一家，所以是保险公司雇员 {f}
+- ✅ 代理人是**小业主**，拥有自己的业务簿 {f}
+- ❌ 独立经纪业务归保险公司 {f}
+- ✅ 业务归**经纪行**，保险公司付佣金 {f}
+
+</div>
+
+Note:
+约 2 分钟。「只代表一家」不等于「是雇员」，这是最常见的联想错误。同一家公司在不同资料里可能被放进不同类别，不要拿公司名做判断，要看四格特征。
+
+---
+
+## 🌍 劳合社：不是公司
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🧑‍💼 经纪人带来<br/>特殊风险"]:::step --> B["📄 承保条<br/>slip"]:::step
+    B --> C["承保人各认<br/>一定百分比"]:::ask
+    C --> D{"认满<br/>100%?"}:::ask
+    D -- 否 --> C
+    D -- 是 --> E["🖋️ 签章处<br/>钢印"]:::good
+```
+
+Note:
+约 3 分钟。劳合社是保险市场，不是保险公司，自己不做保险业务。承保人以自己名义认风险，辛迪加由 underwriting agent 管理。slip 要认满 100% 才送签章处，所有劳合社保单必须带该处钢印。举例：商用飞机、卫星、歌剧演员的嗓子、因天气取消的演出。
+
+---
+
+## 🎬 情景：普通公司都拒了
+
+客户要办一场大型户外活动，**取消险**被几家保险公司拒绝。 {scene}
+
+<span class="ask">问：经纪人下一步？</span> {f}
+
+✅ 转向**劳合社市场**找承保人。在 BC 合规地放给非本省持牌保险人，见 Council Rules 与「无牌保险人」专题。 {ans f}
+
+Note:
+约 3 分钟。把劳合社从考点变成工作场景：特殊风险在普通保险公司被拒时，经纪人会转向劳合社。顺势预告 GICF 点名但这一讲没展开的两样：MGA 的委托授权和无牌保险人，学完本讲后接着读那两篇。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Which statement about **Lloyd's of London** is **NOT** correct? {quiz-q}
+
+<div class="opts">
+
+- A. It began in the late 17th century writing marine insurance
+- B. It is an insurance company that issues policies in its own name
+- C. Its underwriting members assume risks for themselves
+- D. Membership is open to anyone meeting its financial requirements
+
+</div>
+
+✅ **B** — 劳合社不是保险公司；承保人以自己名义认风险。 {ans f}
+
+Note:
+约 2 分钟。改自公开题库。关键词 NOT 加「公司」二字，是典型的陷阱。让学员说出 A、C、D 对应的是哪条要点。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 📏 考试口径 vs 2026 现行
+
+<div class="cols">
+<div class="col exam">
+
+### 🧾 考场答（考试口径）
+- 行业规模取 2015–2017 年前后的数
+- 只讲三种分销
+- 定义按 Insurance Act 五要点
+
+</div>
+<div class="col now">
+
+### 💼 工作中用（现行）
+- 2022 数据年：196 家以上私营 P&C 保险人
+- 资产约 $232 billion
+- 另有 **MGA** 与**无牌保险人**
+
+</div>
+</div>
+
+考试题按考试口径答；对客户不要引用旧数。 {takeaway}
+
+Note:
+约 2 分钟。R16 规则：两个口径并列，标明用哪个。保险定义本身，BC Insurance Act s.1 与考试口径实质一致，可放心背。行业规模、经纪渠道的家数和人数这类数字是 2017 年前后的口径，现行数没有核到官方源，不要对客户引用。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧠 一页总结
+
+<div class="cards">
+
+- **功能与定义** <br>主要 = **Spread of Risk**；五要点 转·特·补·意·钱
+- **风险与补偿** <br>risk = 可能性；peril = 起因；赔损失前一刻价值
+- **险种** <br>P&C = 汽车 > 财产 > 责任
+- **保险人** <br>股份（股东）· 相互（保单持有人）
+- **分销** <br>直营 / **独立经纪 80%+** / 代理
+- **劳合社** <br>不是公司；slip 认满 100%
+
+</div>
+
+Note:
+约 3 分钟。收尾：让学员合上笔记，每人说出一个自己最容易错的点。布置作业：做本讲 25 道英文题，其中几道在模考专属池里，练习时不会出现。预告下一讲：保险合同。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 1 讲 · 一般保险导论 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

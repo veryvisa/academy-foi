@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 5 讲 · 财产险保单的共同特征 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 5 讲 · 财产险保单的共同特征</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 5 讲</span>
+
+# 财产险保单的共同特征
+
+所有财产险保单共有的八根骨头
+
+<div class="chips"><span>没有标准保单</span><span>只保直接损失</span><span>条件与保证</span><span>两类除外</span><span>三者取最小</span><span>重置成本</span><span>按揭条款</span></div>
+
+Note:
+开场约 2 分钟。先问：「你家房子的保险，如果半夜着火烧光了，赔你的是买价、现在能卖的价，还是重新盖一栋的钱？」让学员各抒己见，再说这一讲回答的就是「怎么赔」。从这一讲起课程转入产品，这一讲不讲任何一张具体保单，只讲所有财产险保单共有的骨架，下面两讲的住宅险与商业财产险用的都是它。官方练习卷第 27 到 35 题共 9 道落在这一讲，是全卷第二密的一段。第 33 题是全卷公认最难的一道。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 骨架与范围** <br>没有标准保单 · 列明与一切险 · 直接损失
+- **② 条件与保证** <br>差别在「看不看因果」
+- **③ 除外与免赔额** <br>9 项除外财产 · 9 项除外风险
+- **④ 赔款怎么算** <br>成对成套 · 三者取最小 · ACV
+- **⑤ 重置成本与按揭** <br>三条件 · 标准按揭条款
+- **⑥ 考场 vs BC 现行** <br>保证条款可被法院审查
+
+</div>
+
+Note:
+约 1 分钟。六站，预计 105 分钟。最重的是第④站和第⑤站，要算数，今天每个算例都用情景页带学员动笔。
+
+---
+
+## 🦴 财产险的八根骨头
+
+<div class="cards c3">
+
+- **① 没有标准保单** <br>列明风险或一切险
+- **② 列明财产与地点** <br>只保列明的
+- **③ 只保直接损失** <br>间接损失另买
+- **④ 条件与保证** <br>看不看因果
+- **⑤ 除外** <br>9 项财产 + 9 项风险
+- **⑥ 免赔额** <br>先自己扛一段
+- **⑦ 赔款怎么算** <br>三者取最小
+- **⑧ 标准按揭条款** <br>银行的护身符
+
+</div>
+
+Note:
+约 3 分钟。把这张图当全讲目录。前四根决定保什么、保在哪里、保到什么程度，中间两根是保险公司不赔的和你要先自己扛的，最后两根是怎么赔钱、银行怎么保护自己。让学员拍照。
+
+---
+
+## ⚔️ 列明风险 vs 一切险
+
+<div class="cols">
+<div class="col exam">
+
+### 列明风险
+- 把承保的风险**一一列出**
+- 没写到的原因造成的损失：**不保**
+
+</div>
+<div class="col good">
+
+### 一切险
+- 承保**一切直接的实质损失**
+- 没写除外的：**都保**
+- 但它**也有除外**
+
+</div>
+</div>
+
+IBC 开发示范表单，**保险公司可以改**——所以没有标准保单。 {takeaway}
+
+Note:
+约 2 分钟。IBC 是加拿大保险局，代表众多保险公司的行业机构。个人财产险考试分六种：租客、房主、移动房屋、共管公寓单元业主、第二住所、季节性住所；商业财产险是有营业用途的财产。
+
+---
+
+## 🔥 直接损失 vs 间接损失
+
+<div class="cols">
+<div class="col good">
+
+### 直接损失（火为例）
+- 灭火的**水**浇湿
+- 消防**斧**劈坏屋顶
+- 邻库被**烟与高温**熏坏
+
+</div>
+<div class="col bad">
+
+### 间接损失（不保）
+- 雷击电机后柜里的**食物**
+- 大火后的**租金**损失
+- 龙卷风后的**利润**损失
+
+</div>
+</div>
+
+间接损失可加买**营业中断**与**额外费用**表单。 {takeaway}
+
+Note:
+约 2 分钟。官方练习卷第 27 题：消防斧劈坏的屋顶、灭火的水、被高温烤坏的外墙都是直接损失；租客搬走造成的租金损失是间接损失。居住类保单对冰柜食物通常另有保障。
+
+---
+
+## 🎬 情景：断电三天，肉全坏了
+
+杂货店外的电线杆起了小火，十几分钟自灭，但**断了店里的电**。店主放假三天，开门时肉和乳制品全坏了。 {scene}
+
+<span class="ask">问：火的直接损失是什么？存货损失呢？</span> {f}
+
+✅ 直接损失只是**通往店里的电线**；存货坏掉是**间接损失**，商业财产险不保，通常可加费加保。 {ans f}
+
+Note:
+约 2 分钟。让学员区分：火是原因，电线是直接损失，肉坏了是后果。追问：「如果店里买了营业中断和额外费用表单呢？」间接的营业损失可以按表单约定处理。
+
+---
+
+## ⚔️ 条件 vs 保证
+
+<div class="cols">
+<div class="col exam">
+
+### 条件 condition
+- 要求你**做或不做**某事
+- **法定条件**：法律规定
+- **保单条件**：保险公司自定
+- 看不看因果？**看**
+
+</div>
+<div class="col bad">
+
+### 保证 warranty
+- 你**担保事实如此**并**一直如此**
+- 要**严格遵守**
+- 违反 → 可拒赔
+- 看不看因果？**不看**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。法定条件出现在火险财产保单、意外与疾病险、汽车险。保单条件的例子：店里装了喷淋和防盗报警，保单要求发现缺陷要立即通知保险公司。保证的例子：不得喷漆。
+
+---
+
+## 🎯 课堂快问 ①
+
+A welding shop's policy contains a "No Spray Painting Warranty." The owner occasionally spray paints at the back of the shop anyway. A fire then starts while he is welding pipe for a customer. How may the insurer respond? {quiz-q}
+
+<div class="opts">
+
+- A. Pay the claim, because the fire was caused by welding, not spray painting
+- B. Pay the claim less a penalty for the breach of warranty
+- C. Deny coverage, because the warranty was breached whatever the cause of the loss
+- D. Pay only if the spray painting had stopped before the fire
+
+</div>
+
+✅ **C** — 违反保证，不论与损失原因有无关系都可拒赔；火不是喷漆引起的也一样。 {ans f}
+
+Note:
+约 2 分钟。四个选项里 A 最诱人，因为日常直觉是「火不是喷漆起的就该赔」，但保证不看因果。BC 现行法院可审查不合理条款，放到最后一部分。
+
+---
+
+## ❌ vs ✅ 条件与保证
+
+<div class="xv">
+
+- ❌ 违反保证，只有直接导致损失时才可拒赔 {f}
+- ✅ 违反保证，**不论因果**都可拒赔 {f}
+- ❌ 法定条件是保险公司自己制定的 {f}
+- ✅ 法定条件由**成文法**规定；保单条件才是公司自定 {f}
+
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 28 题就考这一对。记一句话：不论因果都可拒赔的，是保证。
+
+---
+
+## 🚫 除外一：除外财产，9 项
+
+<div class="cards c3">
+
+- **📜 债权或产权凭证**
+- **💹 证券**
+- **🚗 汽车**
+- **⛵ 船只**
+- **✈️ 飞机**
+- **💵 现金**
+- **🏍️ 其他机动车**
+- **📒 账簿**
+- **🏚️ 空置财产** <br>**连续超过 30 天**
+
+</div>
+
+Note:
+约 2 分钟。这些东西要么损失可能性高于一般，要么更适合用别的保单承保。最容易错的是空置：30 天，不是 15 天。
+
+---
+
+## 🎯 课堂快问 ②
+
+Personal and commercial property policies usually exclude each of the following types of property EXCEPT: {quiz-q}
+
+<div class="opts">
+
+- A. A building vacant for 20 consecutive days
+- B. Money and securities kept on the premises
+- C. Automobiles, water craft and aircraft
+- D. Books of account of the insured
+
+</div>
+
+✅ **A** — 除外财产是「连续空置超过 30 天」，20 天不触发；其余三项都是通常的除外财产。 {ans f}
+
+Note:
+约 2 分钟。对应官方练习卷第 29 题的 15 天陷阱。让学员说出 B、C、D 各对应九项中的哪几项。
+
+---
+
+## 🚫 除外二：除外风险，9 项
+
+<div class="cards c3">
+
+- **🌍 地震**
+- **🌊 洪水**
+- **🌾 农业熏烟或工业作业的烟**
+- **🧓 磨损或逐渐变质**
+- **🟫 锈蚀、腐蚀**
+- **💣 战争**
+- **☢️ 核事故**
+- **🏛️ 执行建筑法规增加的费用**
+- **🚰 下水道倒灌**
+
+</div>
+
+地震与洪水**很容易加买**。 {takeaway}
+
+Note:
+约 2 分钟。为什么除外：巨灾损失让保险公司担心，战争可能危及偿付能力；锈蚀、腐蚀、磨损是渐进的、可预见的。经纪人要在购买时、交付保单时、每次续保前都和客户过一遍除外，这正是上一讲 E&O 头号原因的反面。
+
+---
+
+## ❌ vs ✅ 雷电与空置
+
+<div class="xv">
+
+- ❌ 「雷电，包括雷击电器」是财产险的除外风险 {f}
+- ✅ **雷电是火险法定必保**；只有雷击电器本身是法定除外 {f}
+- ❌ 已知空置超过 15 天的建筑，通常就除外 {f}
+- ✅ 考试口径是**连续超过 30 天** {f}
+
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 29、30 题的两个陷阱。雷电的来龙去脉在第 3 讲里讲过，此处只要记住它不是通常的除外风险。
+
+---
+
+## 💵 免赔额：先自己扛一段
+
+<div class="cols">
+<div class="col good">
+
+### 个人财产险
+- 从区间里选，如 **$200–$1,000**
+- **一个免赔额管全部**财产
+
+</div>
+<div class="col exam">
+
+### 商业财产险
+- 可按类别分设
+- 建议**统一**一个
+- 最低 **$500** 是标准
+
+</div>
+</div>
+
+免赔额**越高，保费越低**；是一种**部分自留**。 {takeaway}
+
+Note:
+约 2 分钟。设免赔额是为了让保险负担得起。鼓励客户选出险时真付得起的金额。免赔额和共保这类让赔款低于保额的条款，法律要求首页警示，最后一部分再讲。
+
+---
+
+## 🎬 情景：只剩一只耳环
+
+小偷偷走一套首饰里的大部分，只剩一只耳环落在地上。客户觉得它没用，按整对 **$2,000** 报。 {scene}
+
+<span class="ask">问：保险公司怎么赔？</span> {f}
+
+✅ **成对成套**：没丢的那只仍有价值，要从赔款里**扣掉**。 {ans f}
+
+Note:
+约 2 分钟。官方练习卷第 31 题同款：一整套金项链、吊坠和耳环被偷，后来在床底下找到一只耳环，仍按整套报。答案是按报的金额减去那只耳环的价值，不是整套赔，也不是直接当欺诈。顺带讲部件规则：由几个部件组成的财产只坏一部分，赔坏部件的价值加安装费，比如地毯一角被泼了油漆，不赔整块 $3,000 的地毯。
+
+---
+
+## ⚖️ 三者取最小
+
+```mermaid
+%% h=420
+flowchart TD
+    A["① 出险时的 ACV<br/>实际现金价值"]:::step --> M(["取最小"]):::ask
+    B["② 被保险人的权益"]:::step --> M
+    C["③ 声明页上的保额"]:::step --> M
+    M --> P["再扣免赔额<br/>= 赔款"]:::good
+```
+
+买价、感情价值、未来投资价值，**都不是**赔款因素。 {muted}
+
+Note:
+约 3 分钟。这是整讲最该背熟的一组三项。考试口径里个人财产险也是这套做法。官方练习卷第 32 题：财产未来的投资价值不是赔款因素。
+
+---
+
+## 🎯 课堂快问 ③
+
+The Indemnity Agreement limits payment to the least of three amounts. Which set lists them? {quiz-q}
+
+<div class="opts">
+
+- A. Purchase price, market value and amount of insurance
+- B. ACV at the time of loss, the insured's interest and the amount of insurance
+- C. Replacement cost, the insured's interest and the deductible
+- D. ACV, sentimental value and the mortgage balance
+
+</div>
+
+✅ **B** — 三者是出险时的 ACV、被保险人的权益、声明页保额；买价、感情价值、免赔额都不在其中。 {ans f}
+
+Note:
+约 2 分钟。干扰项里的买价、转售价值、感情价值，都是练习卷里出现过的错误因素。
+
+---
+
+## 🧮 ACV＝重置成本 − 折旧
+
+```mermaid
+%% h=300
+flowchart LR
+    R["重置成本<br/>举证在被保险人"]:::step --> M(["−"]):::ask
+    D["折旧<br/>四个因素"]:::warn --> M
+    M --> A["ACV"]:::good
+```
+
+折旧看四个因素：**状况、过时、转售价值、正常寿命**。 {takeaway}
+
+不是买价、不是转售价，也不扣感情价值。 {muted}
+
+Note:
+约 2 分钟。重置成本由被保险人提供供应商或承包商报价。官方练习卷第 34 题：ACV 就是重置成本减折旧。
+
+---
+
+## 🎬 情景：后院小棚着火
+
+小棚重置成本 **$1,800**，折旧 **$600**；所有权 <b>100%</b>；保额 **$1,000**。 {scene}
+
+<span class="ask">问：三者取最小，赔多少（未扣免赔额）？</span> {f}
+
+✅ ACV **$1,200**、权益 **全额**、保额 **$1,000** → 赔 **$1,000**。 {ans f}
+
+Note:
+约 2 分钟。注意权益是全额，这里不起约束作用；真正封顶的是保额 $1,000。让学员自己算一遍，再揭晓。
+
+---
+
+## ⚔️ ACV vs 重置成本：一场冰雹
+
+<div class="cols">
+<div class="col exam">
+
+### ACV 基础
+- 屋顶重置成本 **$6,000**
+- 折旧 **$3,000**（20 年，每年 2.5%）
+- 赔 **$3,000**（减免赔额）
+
+</div>
+<div class="col good">
+
+### 重置成本基础
+- 屋顶重置成本 **$6,000**
+- **不扣折旧**
+- 赔 **$6,000**（减免赔额）
+
+</div>
+</div>
+
+重置成本的好处：**不得扣折旧**。 {takeaway}
+
+Note:
+约 2 分钟。换的意思是同类同质的新财产，保险公司不能用旧物赔，也不能用旧料修。但注意：有重置成本保障，也不是自动按它赔，要满足条件。
+
+---
+
+## 🏗️ 建筑按重置成本赔：三条件缺一不可
+
+```mermaid
+%% h=420
+flowchart TD
+    K(["🏠 建筑重置成本"]):::ask --> A["① 尽职迅速重置<br/>市政审批延误不影响"]:::good
+    K --> B["② 同址或邻址<br/>防止为搬迁故意制造损失"]:::good
+    K --> C["③ 实际重置后<br/>才付 ACV 与重置成本的差额"]:::good
+    A --> X["缺一条：按 ACV 赔"]:::warn
+    B --> X
+    C --> X
+```
+
+Note:
+约 3 分钟。索赔时先按建筑的 ACV 赔，差额要实际重置完成后才付。同址或邻址的目的是降低道德危险，呼应上一讲。个人财物与商业设备存货的重置成本，通常要证明出险时财产还能按原用途使用，已经换了新的但旧的还没扔掉的电器不按重置成本赔。
+
+---
+
+## 🎯 课堂快问 ④
+
+After their store is destroyed by fire, the owners decide to rebuild in Whitehorse, Yukon, instead of at the original site. Their policy has replacement cost coverage. How will the building loss be settled? {quiz-q}
+
+<div class="opts">
+
+- A. On a replacement cost basis, because the store will be rebuilt
+- B. At replacement cost, but only once the new store opens for business
+- C. Nothing is paid, because relocating the business voids the policy
+- D. On an actual cash value basis, since the same-site provision is not met
+
+</div>
+
+✅ **D** — 同址或邻址的条件不满足，按 ACV 基础赔，而不是不赔。 {ans f}
+
+Note:
+约 3 分钟。注意 C 选项「搬迁使保单失效」过头了：只是回到 ACV。反面的例子：因为市政审批图纸延误而开不了工，不影响重置成本保障。
+
+---
+
+## 💎 另外两种：定值保单与 IBC 4005
+
+<div class="cols">
+<div class="col good">
+
+### 定值保单
+- 无法重置：原创艺术、家传首饰、皮草、古董、纪念品
+- 按**约定价值**赔
+- 通常要**合格评估师**估值
+
+</div>
+<div class="col exam">
+
+### IBC 4005 批单
+- 多出：其他保险也须重置成本；不满足就当没批单
+- **不适用于存货**、模具、艺术古董、业务记录
+- 示范措辞，保险公司可改
+
+</div>
+</div>
+
+Note:
+约 2 分钟。IBC 4005 是示范措辞，正文三条件是卷子必答，批单样张多出来的是其他保险也须重置成本基础、任一项不满足就当批单不存在，以及存货除外。以客户保单上印的版次为准。
+
+---
+
+## 🏦 标准按揭条款：银行的护身符
+
+<div class="cards">
+
+- **🧑‍💼 按揭权人** <br>对承保财产有**可保利益**的任何人：银行、信托公司、信用社、个人
+- **1️⃣ 保证一** <br>被保险人违反条件，**按揭权人照样受偿**
+- **2️⃣ 保证二** <br>不做不利于按揭权人的减保；终止要给**同样的通知**
+- **📄 核证副本** <br>交给银行是**被保险人**的责任
+
+</div>
+
+Note:
+约 3 分钟。经纪行常常一拿到核证副本就转寄给银行，帮客户尽这个义务。IBC 3000 条款层的要点：按揭权人知悉连续 30 天空置要立即通知保险公司；保险公司赔了按揭权人后可以代位，但排在按揭权人收回全部权益之后。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+A bookstore owner borrows $60,000 from a bank to buy her store. She adds a donut fryer without telling the insurer, and three days later a fryer fire destroys the building. Her claim is denied for an unreported material change. What happens to the bank's interest? {quiz-q}
+
+<div class="opts">
+
+- A. The bank receives nothing, because the claim was denied
+- B. The bank is paid to the extent of its insurable interest
+- C. The bank is paid only if it knew about the donut fryer
+- D. The bank must sue the owner, since the insurer has no duty
+
+</div>
+
+✅ **B** — 标准按揭条款保证被保险人违约时，按揭权人仍可在其可保利益范围内受偿。 {ans f}
+
+Note:
+约 2 分钟。三天前加了甜甜圈炸锅没报告，被拒赔；银行照样拿钱。C 说银行必须知情才赔，是错的：按揭权人不需要知情。
+
+---
+
+## 🎬 情景：官方练习卷第 33 题
+
+房子全毁：ACV **$400,000**，保额 **$350,000**，按揭余额 **$200,000**。 {scene}
+
+<span class="ask">问：被保险人**本人**能拿多少？</span> {f}
+
+✅ 三者取最小 **$350,000**；按揭权人先拿 **$200,000**；本人拿 **$150,000**。 {ans f}
+
+```mermaid
+%% h=300
+flowchart LR
+    T["三者取最小<br/>$350,000"]:::step --> B["银行先拿<br/>$200,000"]:::warn
+    B --> O["本人拿<br/>$150,000"]:::good
+```
+
+Note:
+约 3 分钟。全卷公认最难的一道。只做第一步会选 $350,000，只看按揭会选 $200,000。要点是两步串联：先三者取最小，再按揭权人先受偿。让学员画个流程：总赔款，先给银行，剩余给自己。
+
+---
+
+## ❌ vs ✅ 按揭条款
+
+<div class="xv">
+
+- ❌ 标准按揭条款是给被保险人还贷的保证 {f}
+- ✅ 它是给**按揭权人**的保证 {f}
+- ❌ 被保险人违反条件，银行也拿不到钱 {f}
+- ✅ 银行**照样受偿**，保险公司可再代位向业主追 {f}
+
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 35 题。代位在 IBC 3000 里的限制：以赔付额为限，且排在按揭权人收回全部按揭权益之后。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 📏 考试口径 vs 实务现行
+
+<div class="cols">
+<div class="col exam">
+
+### 🧾 考场答（考试口径）
+- 违反保证，**不论因果**都可拒赔
+- 免赔额、共保：首页**红墨水**警示
+- 法定条件：火险、意外疾病险、汽车险
+
+</div>
+<div class="col now">
+
+### 💼 工作中用（BC 现行）
+- 《Insurance Act》**s.32**：法院可认定不合理的条款对被保险人**无约束力**
+- **s.31**：警示须用**醒目粗体**
+- **s.28**：按揭权人的终止通知是**法定**的
+- **s.35**：无辜的共同被保险人仍可按比例索赔
+
+</div>
+</div>
+
+保证条款可被法院审查，但**别拿它当后路**。 {takeaway}
+
+Note:
+约 3 分钟。并列并标明用哪个：答卷按考试口径，对客户按 BC 现行。给 BC 客户讲这一讲，三句实务话：一，房子空着超过 30 天要先告诉保险公司；二，重置成本要在原址或邻址、尽快重建、建好了才拿差额；三，保单上那条保证不是摆设，违反了通常整单没保障，BC 法院能审查不合理的条款，但别拿这个当后路。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧠 一页总结
+
+<div class="cards">
+
+- **骨架** <br>没有标准保单；只保**直接损失**；列明财产与地点
+- **条件 vs 保证** <br>保证**不论因果**可拒赔
+- **除外与免赔额** <br>9 项财产（空置 **30 天**）· 9 项风险 · 免赔额越高保费越低
+- **赔款** <br>**三者取最小**：ACV、权益、保额；ACV＝重置成本−折旧
+- **重置成本** <br>尽职迅速 · 同址或邻址 · 实际重置后才付差额
+- **按揭权人** <br>被保险人违约也**照样受偿**
+
+</div>
+
+Note:
+约 3 分钟。收尾：让学员合上笔记，口算两道：设备重置成本 $9,000、折旧 $3,000、保额 $5,000、免赔额 $500，赔多少？答案 $4,500。布置作业：做本讲 32 道英文题。下一讲预告：把这副骨架放到最常见的个人财产保单上，也就是住宅保险。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 5 讲 · 财产险保单的共同特征 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

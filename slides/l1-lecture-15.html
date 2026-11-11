@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 15 讲 · 经纪人监管与职业操守 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 15 讲 · 经纪人监管与职业操守</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 15 讲</span>
+
+# 经纪人监管与职业操守
+
+谁发牌，谁吊牌，什么叫回扣
+
+<div class="chips"><span>Insurance Council</span><span>三级牌照</span><span>吊照六事由</span><span>回扣</span><span>行为准则八条</span><span>BC 现行规则</span></div>
+
+Note:
+开场约 2 分钟。先问学员：你刚拿到牌照，一位老客户说"你给我退两百块我就跟你续"，你怎么办？让几个人说说看。告诉他们：这是最后一讲，官方练习卷最后三题（第 88、89、90 题）都出自这里。题型是"归谁管""哪一句不对""哪一种不会吊照"。这一讲还有一个特点：考试口径与 BC 现行规则差得最多，所以两个口径都要会。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 谁在管中介** <br>省 · Council · Superintendent
+- **② 领牌** <br>保荐 · 品格 · 考试 · 三级牌照
+- **③ 类别 · 期限 · 跨省** <br>每省都要持牌
+- **④ 吊照六事由** <br>回扣 · 信托资金
+- **⑤ 利益冲突三原则** <br>CCIR 2006
+- **⑥ 行为准则八条** <br>诚信到职业操守
+- **⑦ 行业协会** <br>比法律更高
+- **⑧ BC 现行规则** <br>BCFSA · Rule 6 · s.79
+</div>
+
+Note:
+约 1 分钟。八站。前七站是考试口径，最后一站讲 BC 现行规则怎么不一样。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **4 省** <br>设 Insurance Council：BC AB SK MB
+- **1981** <br>安省经纪人法
+- **3 级** <br>BC 牌照；只有 III 能拥有经纪行
+- **6 个** <br>吊照事由
+- **3 条 · 8 条** <br>CCIR 原则 · 行为准则
+- **1 年 / 连续 / 3 年** <br>安省 · BC · 新斯科舍牌照期限
+
+</div>
+
+Note:
+约 2 分钟。BC 的牌照连续有效，但要年度申报。1981 年那一部法是安省经纪人自律的起点，RIBO 就是经纪人自律组织。
+
+---
+
+## 🏛️ 谁在管中介
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🏛️ 中介监管是省的事"]:::good --> B["Superintendent<br/>执行 Insurance Act"]:::step
+    A --> C["📋 Insurance Council<br/>BC · AB · SK · MB"]:::ask
+    A --> D["🔧 安省：RIBO<br/>经纪人自律"]:::step
+    C --> E["牌照 · 投诉 · 纪律<br/>制定规章<br/>决定可上诉到 Superintendent"]:::good
+```
+
+**联邦**管不着经纪人；**IBABC** 是行业协会，不是监管者。 {takeaway}
+
+Note:
+约 3 分钟。BC 的 Superintendent 叫 Superintendent of Financial Institutions，安省叫 Commissioner。四个设 Council 的省把牌照、投诉、纪律这些行政职能委托给独立的 Council，Council 还负责制定规范所有经纪人行为与交易惯例的规章。
+
+---
+
+## ❌ vs ✅ 练习卷第 88 题
+
+<div class="xv">
+
+- ❌ 渥太华的联邦 Superintendent 管 BC 的经纪人牌照 {f}
+- ✅ 中介监管是**省**的事 {f}
+- ❌ BC 的 Superintendent 直接发牌、处理投诉 {f}
+- ✅ 这三项已委托给 **Insurance Council of British Columbia** {f}
+- ❌ IBABC 经纪人协会负责纪律 {f}
+- ✅ IBABC 是**行业协会**，不是监管者 {f}
+
+</div>
+
+Note:
+约 2 分钟。三个干扰项的来历：联邦、BC 的 Superintendent、行业协会，各踩一个混淆。
+
+---
+
+## 🎓 想领牌：要过哪几关
+
+<div class="cards c3">
+
+- **🤝 有人保荐** <br>受雇的由经纪行或保险人；**自雇**的由所代表的保险人
+- **🌟 品格与名声** <br>首次领牌须良好
+- **📝 通过认可考试** <br>课程与及格线各省不同
+
+</div>
+
+有的省一门入门课就能领牌，有的省采用**分级牌照**：每升一级要求的知识更多。 {takeaway}
+
+Note:
+约 2 分钟。Insurance Act 要求所有卖保险的人都持牌。分级牌照的重点是每一级要求的知识更多，不是年资。
+
+---
+
+## 🪜 BC 三级牌照
+
+```mermaid
+%% h=420
+flowchart LR
+    A["Level I<br/>只限经纪行办公室<br/>随时受监督"]:::warn --> B["Level II<br/>内外都可卖<br/>不能当老板"]:::ask
+    B --> C["Level III<br/>可拥有、管理<br/>经纪行"]:::good
+```
+
+三级都能卖**所有一般保险**；区别在**在哪卖**、**能不能当老板**、**受谁监督**。 {takeaway}
+
+Note:
+约 3 分钟。Level I 随时受 II 或 III 监督；Level II 受 III 监督；只有 III 能拥有或管理经纪行。安省也是三级：Level 1 限定在监督下工作，Level 2 又分仅限技术和技术加管理两种。
+
+---
+
+## 🚗 Level I 的唯一例外
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- Level I 只限**经纪行办公室**
+- 唯一例外：经纪行与 ICBC 签了 **Mobile Auto Contract**
+- 这时可以去**车行**办车险
+
+</div>
+<div class="col now">
+
+### 现行规则
+- Council Rules **Rule 6(1)**
+- 不得签署保险合同
+- **修完 Council Rules Course** 才可在场所外执业
+- 年收入至少 **60%** 须为固定薪金
+
+</div>
+</div>
+
+Note:
+约 3 分钟。考场按左边答，工作中按右边做。Rule 6(1) 共四条：不得签署保险合同；不得在所属代理行场所以外执业，除非修完 Council Rules Course；只能在 general insurance agent 监督下执业；年收入至少 60% 须为固定薪金。版本是 2026-10-15 的 Council Rules。
+
+---
+
+## 🎯 课堂快问 ①
+
+A Level I licensee in British Columbia is asked to go to a car dealership to arrange automobile insurance for a customer. Under the exam rules, this is permitted only if: {quiz-q}
+
+<div class="opts">
+
+- A. A Level III licensee goes along to supervise
+- B. The Level I has held the licence for one year
+- C. The customer signs a written consent form first
+- D. The brokerage has an ICBC Mobile Auto Contract
+
+</div>
+
+✅ **D** — Level I 只限办公室；唯一例外是经纪行与 ICBC 签了 Mobile Auto Contract。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。现行 Rule 6(1) 是"修完 Council Rules Course"，但考试按这里的口径答。
+
+---
+
+## 🗂️ 牌照类别、期限、跨省
+
+<div class="cards">
+
+- **📚 类别** <br>通常是"寿险以外全部类别"；其他类别另领牌照（安省旅行险）
+- **📆 期限** <br>安省 1 年 · **BC 连续有效＋年度申报** · 新斯科舍 3 年
+- **🎓 继续教育** <br>有的省要求完成规定小时数才有效或续牌
+- **🗺️ 跨省** <br>在**每个做业务的省**都要持牌
+
+</div>
+
+Note:
+约 2 分钟。考试口径还强调：保险人在某省承保财产，保单须由该省持牌经纪人副署并给他部分佣金，否则违法。这一点在 BC 成文法里没有找到出处，待核实，考试仍按口径答。
+
+---
+
+## 🎯 课堂快问 ②
+
+A broker licensed only in Alberta wants to place property insurance for a client's building located in British Columbia. Under the exam rules, what is required? {quiz-q}
+
+<div class="opts">
+
+- A. Nothing, since one provincial licence is valid across Canada
+- B. Only the client needs to be a resident of Alberta
+- C. The insurer alone needs a BC licence, not the broker
+- D. The broker must also be licensed in British Columbia
+
+</div>
+
+✅ **D** — 经纪人必须在每一个做业务的省份都持牌；保险人承保某省财产，保单须由该省持牌经纪人副署。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。一省牌照不通全国，也不是只要保险人有牌照。
+
+---
+
+## ⚖️ 吊照的六个事由
+
+```mermaid
+%% h=460
+flowchart TD
+    A["🪪 牌照可被吊销"]:::warn --> B["① 虚假陈述 · 欺诈 · 不诚实"]:::step
+    A --> C["② 违法：<b>回扣</b>"]:::step
+    A --> D["③ 逾期不交保费"]:::step
+    A --> E["④ 违规用无牌保险人"]:::step
+    A --> F["⑤ 不称职 · 不可信"]:::step
+    A --> G["⑥ 挪用信托资金"]:::step
+```
+
+最常考：**② 回扣**。 {takeaway}
+
+Note:
+约 3 分钟。交保费的期限看代理协议。挪用信托资金包括三种：财务控制不力、故意虚报信托头寸、侵占资金。无牌保险人：放给本省无牌的保险人必须遵守法规里的相关规定。
+
+---
+
+## 💸 回扣：什么算、什么不算
+
+<div class="cols">
+<div class="col bad">
+
+### 算回扣
+- 返还**保单所列保费**的一部分作诱因
+- **钱以外的有价物**：会籍、礼品，只要足以构成诱因
+
+</div>
+<div class="col good">
+
+### 不算
+- 价值小到不构成诱因的**赠品**（笔、咖啡杯、帽子）
+- 保险人**授权**并体现在保单保费里的折扣
+
+</div>
+</div>
+
+Note:
+约 3 分钟。练习卷第 90 题的思路：四个选项里，受保险人授权的大幅保费折扣是唯一不会吊照的。因为回扣是经纪人把保单所列保费返还给投保人；保险人自己批准的折扣，直接体现在保单保费里。而"只要把全部业务交给我就送一年健身会籍"是钱以外的有价物，照样算回扣。
+
+---
+
+## 🎬 情景：$200 现金
+
+一家小店续保，两家报价分别是 **$2,700** 和 **$2,900**，保障相同。报价高的那家经纪人说："成交我退你 **$200** 现金。"客户接受了。 {scene}
+
+<span class="ask">问：按考试口径，这是什么性质？</span> {f}
+
+✅ 把保费的一部分返还投保人作诱因，是**回扣**，违反多数省的 Insurance Act，是**吊照事由**。 {ans f}
+
+Note:
+约 2 分钟。让学员再换一个形式：不退钱，改送一年的会籍，行不行？（也算，钱以外的有价物。）
+
+---
+
+## 🎯 课堂快问 ③
+
+A broker offers a commercial prospect a free one-year gym membership worth $1,200 if the prospect moves all of his business insurance to her brokerage. Under the exam rules, this is: {quiz-q}
+
+<div class="opts">
+
+- A. Acceptable, because no cash is returned
+- B. A form of rebating that may cost her the licence
+- C. Acceptable, if she records it as a business expense
+- D. Tied selling, not rebating, and so it is allowed
+
+</div>
+
+✅ **B** — 钱以外的有价物，只要足以构成购买诱因，也是回扣，可能丢牌照。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。A 以为不返现金就行；C、D 都是找借口。
+
+---
+
+## ⚠️ 回扣：考场答口径，BC 现行更细
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- 多数省**禁止**回扣
+- 是**吊照事由**
+- 小赠品不算
+
+</div>
+<div class="col now">
+
+### BC 现行
+- **FIA s.79**：禁止，**除非低于规定比例**
+- 《Financial Products Disclosure Regulation》s.2：**低于保费的 25%**
+- 另有豁免：保单约定的分红、持牌人为自己投保、持牌代理之间的转介费
+- 2004-12-31 前 BC 是**全面禁止**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。考场仍然答"回扣违法、是吊照事由"。对客户和同行要按 s.79 的比例规则说。GICF Level 1 也点名了回扣职责（2.2.4）。
+
+---
+
+## 🏦 挪用信托资金
+
+<div class="cards c3">
+
+- **🧮 财务控制不力** <br>账目混乱，客户的保费和自己的钱混在一起
+- **🧾 故意虚报信托头寸** <br>账面和实际不符
+- **🪙 侵占资金** <br>把客户的保费挪作他用
+</div>
+
+保费**以信托方式**持有，直到交给保险人。 {takeaway}
+
+Note:
+约 2 分钟。BC 现行对应：Council Rules Rule 7(2) 要求不设负担、不挪用、如数上缴；Code of Conduct §6。经纪行保费要不要单设信托账户，BC 没有一般性要求，只有经无牌保险人安排的保费须存信托账户。
+
+---
+
+## 🧭 CCIR 三原则
+
+```mermaid
+%% h=360
+flowchart LR
+    A["1️⃣ 客户利益优先"]:::good --> B["2️⃣ 披露实际或<br/>潜在的利益冲突"]:::step
+    B --> C["3️⃣ 产品适合性"]:::ask
+```
+
+2006 年 CCIR 关于管理利益冲突的文件，是行为准则的底层价值。 {takeaway}
+
+Note:
+约 2 分钟。考试口径提到联邦隐私法律，这个法名是旧说法：联邦 Privacy Act 只管联邦政府机构。经纪行在 BC 省内适用 PIPA，跨省跨境适用 PIPEDA。
+
+---
+
+## 📜 行为准则八条
+
+<div class="cards c3">
+
+- **1 诚信** <br>缺了什么都补不了
+- **2 能力** <br>超出能力就转介
+- **3 服务质量** <br>审慎称职经纪人的水平
+- **4 建议客户** <br>激励披露 · 禁搭售
+- **5 保密** <br>结束代理后仍有效
+- **6 收费披露** <br>书面 · 金额＋理由
+- **7 公众尊重** <br>维护信心
+- **8 职业操守** <br>严重违规要报告
+</div>
+
+Note:
+约 2 分钟。这些标准不一定被所有省逐字采用，但给所有经纪人一个衡量伦理行为的基准，高于单纯遵守 Insurance Act。
+
+---
+
+## 🧱 ① 诚信：这些都不达标
+
+<div class="xv">
+
+- ❌ 被判刑事罪，但与保险业务无关，所以无所谓 {f}
+- ✅ **刑事定罪即使与经纪工作无关**，也被认定为缺乏诚信 {f}
+- ❌ 对没有经验的客户多推一点产品，是销售技巧 {f}
+- ✅ 利用客户缺乏经验、教育、年轻或不够老练占便宜，不达标 {f}
+
+</div>
+
+Note:
+约 2 分钟。另外两种：挪用或不诚实地处理客户的钱或信托资金；与保险人、其他经纪人等各方打交道时不够坦白，同时要尊重客户的合法权利与机密。
+
+---
+
+## 🎯 课堂快问 ④
+
+A broker is convicted of a criminal offence that has nothing to do with insurance work. Under the integrity standard, this conviction: {quiz-q}
+
+<div class="opts">
+
+- A. Is irrelevant, because it is unconnected with the broker's work
+- B. Matters only to the broker's professional association
+- C. Matters only if the offence involved a client's money
+- D. Is conduct found not to meet the integrity standard
+
+</div>
+
+✅ **D** — 诚信标准的第一个不达标例子就是被判刑事罪，即使与经纪工作无关。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。A、C 都在找"相关性"，而标准里没有这个限定。
+
+---
+
+## 🛎️ ③ 服务质量与 ④ 建议客户
+
+<div class="cols">
+<div class="col bad">
+
+### 服务不达标
+- 不及时回电话回信
+- 没有**充分提前通知**不续保
+- 没告知保障的变化
+- 造成**不合理的保障缺口**
+
+</div>
+<div class="col good">
+
+### 建议要做到
+- 完整、公开、清楚，写明事实与假设
+- 激励影响推荐、损害客户时要**披露**
+- **搭售**一律不许
+- 保证条款（warranty）是承保条件，**必须告诉客户**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。搭售的典型：以购买家财险为条件才出车险保单。大包大揽说"什么都保"、被保险人终止合作后误导客户转保的真实原因，都是不达标的例子。
+
+---
+
+## 🎬 情景：车险要搭家财险
+
+经纪人对客户说："想买我这里的车险，必须同时买我这里的家财险，否则不出单。" {scene}
+
+<span class="ask">问：这违反了准则里的哪一条？</span> {f}
+
+✅ **建议客户**一条下的**搭售**：以购买另一份保险为条件才出单，不得参与或协助。 {ans f}
+
+Note:
+约 2 分钟。各省对经纪人报酬与潜在利益冲突的披露另有具体要求。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+A broker receives a bonus from an insurer for placing business with it. Under the advising clients standard, the broker must disclose this to clients when: {quiz-q}
+
+<div class="opts">
+
+- A. The bonus exceeds 10% of the commission
+- B. The policy premium is more than $5,000 a year
+- C. The client asks in writing about commissions
+- D. It favours that insurer to client detriment
+
+</div>
+
+✅ **D** — 考试口径：激励或奖金，如果是推荐该保险人而损害客户的因素，就必须披露。 {ans f}
+
+Note:
+约 3 分钟。题库同章题。现行 BC 的 FPDR s.3 要求一律告知是否收佣，但考试按这里的口径答。
+
+---
+
+## 🤐 ⑤⑥⑦⑧ 后四条
+
+<div class="cards c3">
+
+- **🤐 保密** <br>只按当初提供信息的**目的**分享；不对别的客户透露；**结束代理后仍有效**
+- **💵 收费披露** <br>超出保费的费用**事先书面**写明**金额＋理由**；说不出理由＝不合情理
+- **🏅 公众尊重** <br>不削弱公众对经纪人作为**独立专业中介**的信心
+- **📣 职业操守** <br>很可能造成**严重损害**的违规，要向监管机构**报告**
+</div>
+
+Note:
+约 2 分钟。小违规经调查可能暴露更严重的问题。与客户、同行、保险人沟通时，不得使用辱骂、冒犯或与专业身份不符的方式。
+
+---
+
+## 🤝 协会与法律
+
+```mermaid
+%% h=380
+flowchart TD
+    A["⚖️ 法律底线<br/>Insurance Act"]:::warn --> B["📜 Council 的行为准则<br/>高于法律"]:::ask
+    B --> C["🤝 协会的准则<br/>个人承诺，更高"]:::good
+    C --> D["违反协会准则<br/>→ 终止会籍<br/>不是吊销牌照"]:::step
+```
+
+符合政府的准则，**不等于**达到协会的要求。 {takeaway}
+
+Note:
+约 3 分钟。协会会员的标准一般高于法律要求，协会准则多是个人承诺的形式：公平、专业地对待客户、保险人和同行。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考试口径 vs 实务现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- Council 管牌照；决定上诉到 Superintendent
+- Level I 只限办公室；例外 Mobile Auto Contract
+- 回扣违法、是吊照事由
+- 激励损害客户时才披露
+- "联邦 Privacy Act"
+
+</div>
+<div class="col now">
+
+### 2026 年现行（BC）
+- 2019-11 起 **BCFSA**；不服 Council 上诉到 **Financial Services Tribunal**
+- Rule 6(1)：不得签合同；修 Council Rules Course 可外出
+- FIA s.79：回扣低于保费 25% 为例外
+- FPDR s.3：**一律告知**是否收佣
+- **PIPA**（省内）与 **PIPEDA**（跨省跨境）
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列：考场用左边，工作用右边。其他现行信息：2026-10-15 起考试成绩有效期延到 2 年，申请须在通过后 24 个月内，销售员申请人最低 16 岁；2027-01-01 起 BC 另设受限保险代理牌照；FOI 现行仍按 2017 年版口径，旧版 CAIB 最后考试日 2026-12-15。无牌保险人：FIA s.75 禁止，s.76 开口给持牌 agent。续牌：每年确认继续教育与 E&amp;O，到期 60 天后自动注销。
+
+---
+
+## ❌ vs ✅ 易混易错
+
+<div class="xv">
+
+- ❌ 分级牌照是凭工作年限自动升级 {f}
+- ✅ 每升一级要求**更多知识** {f}
+- ❌ 违反协会准则，牌照会被吊销 {f}
+- ✅ 违反协会准则可能**终止会籍**，不是吊照 {f}
+- ❌ 一个省的牌照全国通用 {f}
+- ✅ 在**每个做业务的省**都要持牌 {f}
+
+</div>
+
+Note:
+约 2 分钟。三对都是这一讲的高发干扰项。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **谁管** <br>省管；四省设 Council：牌照、投诉、纪律
+- **牌照** <br>BC 三级，只有 III 能当老板；连续有效＋年度申报；每省都要持牌
+- **吊照** <br>六事由，回扣最常考；小赠品不算
+- **准则** <br>八条高于法律；协会又高于准则
+
+</div>
+
+考场答口径，工作按现行：**BCFSA · Rule 6 · s.79 · PIPA / PIPEDA**。 {takeaway}
+
+Note:
+约 2 分钟。让学员用四句话复述，再回到开场的问题：老客户说"你退我两百我就跟你续"，你怎么回答？回家作业：做公开题库里这一讲的 28 道题，并读一遍相关的公开页《Level 1 牌照的边界与行为准则》。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 15 讲 · 经纪人监管与职业操守 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

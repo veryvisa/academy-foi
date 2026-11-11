@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 13 讲 · Autoplan 基本保障与自车损失 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 13 讲 · Autoplan 基本保障与自车损失</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 13 讲</span>
+
+# Autoplan Basic：保什么
+
+五项强制保障，和修自己车的两条路
+
+<div class="chips"><span>第三方责任</span><span>Enhanced Accident Benefits</span><span>BVD</span><span>UMP</span><span>反向责任</span><span>自车损失三种</span></div>
+
+Note:
+开场约 2 分钟。先抛一个问题：BC 公路上你被人追尾，自己无责，你要不要告对方才能修车？（不用，BVD 直接赔你。）再问：如果你有一部分责任呢？（那部分靠可选的 Collision。）这一讲就是把「谁赔什么」分清。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 谁被保、在哪保** <br>被保险人 · 承保地域
+- **② 五项强制保障** <br>总览
+- **③ 第三方责任** <br>限额与例外
+- **④ 意外给付 EAB** <br>九项给付
+- **⑤ BVD** <br>按比例赔
+- **⑥ UMP 与法定条款** <br>补差额
+- **⑦ 反向责任** <br>省外与对方比例
+- **⑧ 自车损失** <br>三种险
+
+</div>
+
+Note:
+约 1 分钟。计算题集中在 ④ ⑤ ⑦，配对题集中在 ⑧。
+
+---
+
+## 👥 谁是被保险人
+
+<div class="cards">
+
+- **🚗 车主或承租人**
+- **📋 保单上列名的每一位驾驶人**
+- **🔑 持有效驾照、经许可驾驶的人**
+- **🚫 不含** <br>做买卖、修理、保养、存放、泊车生意的人——要另买 **garage policy**
+
+</div>
+
+Note:
+约 2 分钟。题库里有一道：Hannah 把 SUV 留在修车厂，技师试车撞了行人，应由修车厂自己的 garage policy 响应，车主许可也没用。例外：保了 Unlisted Driver Protection 的，未列名但经许可的人（比如借车的表亲）被当作列名者受保。
+
+---
+
+## 🧰 Basic 的五项强制保障
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🛡️ Autoplan Basic"]:::good --> B["⚖️ 第三方责任<br/>TPL"]:::step
+    A --> C["🏥 意外给付<br/>EAB"]:::step
+    A --> D["🚗 基本车损<br/>BVD"]:::step
+    A --> E["📈 保额不足保障<br/>UMP"]:::ask
+    A --> F["🔄 反向责任<br/>Inverse Liability"]:::ask
+```
+
+2021 年改制确保两件事：**人人**不问过错拿照护康复给付；**不负责**的那部分车损也由 Basic 赔。 {takeaway}
+
+Note:
+约 3 分钟。「找不是的」题：自车损失（Collision）不在五项里，是可选的。法定无保险驾驶人条款是另一条，来自 Insurance (Vehicle) Act，独立于五项。
+
+---
+
+## ⚖️ 第三方责任：BC 大多不能告
+
+<div class="cards c3">
+
+- **🚫 原则** <br>BC 境内车祸造成的人伤、死亡、车损诉讼**大多被禁**，居民非居民都一样
+- **✅ 例外 ①** <br>车辆以外的财产（建筑、围栏）
+- **✅ 例外 ②** <br>第三方车内的**物品或货物**
+- **✅ 例外 ③** <br>**营业中断**损失
+- **✅ 例外 ④** <br>必须**清理的环境损害**
+- **✅ 例外 ⑤⑥** <br>允许诉讼的**省外**事故；**非标准车辆的非公路**事故
+
+</div>
+
+Note:
+约 3 分钟。这六条例外里肇事方的 TPL 照样响应。「找不是的」题：问哪一项不在禁令之内。
+
+---
+
+## 🎯 课堂快问 ①
+
+A delivery van stopped at a red light in Burnaby is rear-ended. The van is repaired, but $8,000 of customers' furniture inside it is ruined. Can the van owner pursue the at-fault driver for the furniture? {quiz-q}
+
+<div class="opts">
+
+- A. Yes, because damage to contents or cargo of a third party's vehicle is an exception
+- B. No, because cargo losses are paid by Basic Vehicle Damage instead
+- C. Yes, but only if the furniture belonged to the van owner personally
+- D. No, because all crash-related lawsuits in British Columbia are prohibited
+
+</div>
+
+✅ **A** — 第三方车内的物品或货物损失是诉讼限制的例外，可以向肇事方索赔。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。BVD 本身不赔车内物品、货物与营业中断，所以 B 不对；D 说所有诉讼都被禁，忘了六个例外。
+
+---
+
+## 🪜 TPL 的限额阶梯
+
+```mermaid
+%% h=380
+flowchart LR
+    A["$200,000<br/>一般车辆"]:::step --> B["$1 million<br/>重型商用 · 巴士<br/>出租车 · 豪华轿车"]:::ask --> C["$2 million<br/>运载危险品"]:::warn
+    A -.-> D["Extended TPL<br/>最高 $5 million"]:::good
+```
+
+私家车想要更多，买可选的 Extended TPL（第 14 讲）。 {takeaway}
+
+Note:
+约 3 分钟。营运车指收费运货或载客：总重 5,000 公斤以上的重型商用车、商用挂车、巴士、出租车、豪华轿车。现行法规另列网约车载客时 $1 million，考场按五类答。
+
+---
+
+## 🎬 情景：Nav 在 Canmore 追尾
+
+Nav 从 **Kelowna** 开去 **Calgary**，在 Alberta 的 Canmore 附近分心追尾，Mike 受伤、车损。Nav 买了 **$1 million** 的 Extended TPL。 {scene}
+
+<span class="ask">问：Mike 能告 Nav 吗？谁来赔？</span> {f}
+
+✅ **能告**——Alberta 没有车祸诉讼禁令。Basic 先赔到 **$200,000**，超过的部分 **Extended TPL 接力**。 {ans f}
+
+Note:
+约 2 分钟。题库里有一道类似的省外事故：答案是肇事司机的 Basic TPL 响应，限额按事故地的诉讼规则，需要更多就靠 Extended TPL。
+
+---
+
+## 🚫 TPL 不适用的情形
+
+<div class="cards c3">
+
+- **🚧 诉讼受限地区** <br>不允许起诉的地方
+- **📦 车上载运的财产** <br>你自己车里的东西
+- **🏠 自有或租用的财产** <br>如自己的房子
+- **💼 工伤评估罚款保费** <br>Workers Compensation Act
+- **🚛 拖带未上牌的挂车**
+- **🏗️ 工地附属设备作业** <br>如卡车上的吊臂；及刑事定罪下的判赔
+
+</div>
+
+Note:
+约 2 分钟。题库里有一道：承包商卡车上的吊臂在工地上作业撞到邻居建筑，不在 TPL 之内。还有一道：被保险人同一事故也被刑事定罪时，诉讼判赔不由 TPL 赔。
+
+---
+
+## 🏥 Enhanced Accident Benefits（EAB）
+
+<div class="cards">
+
+- **🌐 对谁** <br>所有 BC 居民和 ICBC 客户；司机、乘客、骑车人、行人
+- **🤝 不问过错** <br>谁的错都给
+- **♾️ 没有总上限** <br>医疗、收入、其他费用
+- **🧳 非居民在 BC 受伤** <br>ICBC 可能按过错程度付；若他另有车险意外给付，**那家是主要来源**
+
+</div>
+
+Note:
+约 3 分钟。EAB 与 MSP 的关系：MSP 管基本医疗，EAB 在其上报销理疗、脊骨、按摩、针灸、ICBC 预先批准的牙科、处方药、眼镜义齿、救护车等，前提是其他保险或医疗计划没覆盖。
+
+---
+
+## 💼 EAB 的九项给付
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🏥 EAB<br/>九项给付"]:::good --> B["给活着的人<br/>医疗与个人费用<br/>收入替代<br/>照护者给付<br/>个人护理<br/>永久伤残（一次性）<br/>康复"]:::step
+    A --> C["给逝者的家人<br/>死亡给付<br/>丧葬费<br/>哀伤辅导"]:::warn
+```
+
+前六项给活着的人；后三项给逝者的家人。 {takeaway}
+
+Note:
+约 3 分钟。永久伤残：按伤害类型与永久损害程度，依 Permanent Impairment Regulation 的附表。康复：重返岗位或转行培训，住宅与车辆改造。死亡给付：给在世配偶、同居伴侣或受养人，无配偶时受养子女分领。哀伤辅导：每位家庭成员，提供者可以是咨询师、精神科医生、神职人员、原住民长老，单程超过 50 公里可预先批准。
+
+---
+
+## 🎬 情景：Karm 的年薪
+
+会计师 Karm 年薪 **$100,000**，税后**净收入 $70,000**，受伤后无法工作。 {scene}
+
+<span class="ask">问：收入替代一年多少？</span> {f}
+
+✅ **$63,000**＝90% × 净收入 $70,000。第 **8 天**起付，**排在**雇主伤残计划、WorkSafeBC、EI **之后**。 {ans f}
+
+Note:
+约 3 分钟。未满 18 岁、学生、65 岁以上但事故时在职，也能领。BC 现行：算法是两条取大——90% 净收入，或平均毛周薪的 75%（每周封顶），考场只答 90% × 净收入。
+
+---
+
+## 👶 照护者给付：为了「请人」
+
+<div class="cards">
+
+- **🎯 给谁** <br>事故时**无薪**照护 **16 岁以下孩子**或无法正常工作者的人
+- **🎯 干什么** <br>**请别人来照护**，不是付给她自己
+- **📊 档次** <br>全职、兼职两档，按照护人数
+- **🛟 个人护理** <br>请人照顾**生活不能自理**的伤者；三档，灾难性是否需 24 小时
+
+</div>
+
+Note:
+约 2 分钟。题库里有一道：Amira 在家无薪带两个孩子，受伤后不能带，照护者给付是用来请人带，答案不是「继续付她」。个人护理（另有一道题考它）是给请人帮伤者自己的生活起居。
+
+---
+
+## 🚗 BVD：赔你「不负责」的那部分
+
+<div class="cards">
+
+- **💵 限额 $200,000** <br>含永久附属设备，加使用损失、拖车、存放
+- **⚖️ 按你不负责的比例赔** <br>不是「无责才赔」
+- **🛡️ 剩下的靠 Collision** <br>投保人负责的部分
+- **📍 只在 BC 公共道路** <br>省外事故按事故地法律，不用 BVD
+- **❌ 不赔** <br>车内物品、货物、营业中断
+
+</div>
+
+Note:
+约 3 分钟。BC 现行：BVD 零免赔，负责 25% 及以下不影响保费。两辆以上 included vehicle 的 BC 公路事故，对车损无诉权，ICBC 只向未上牌、非标准车辆等按比例追偿。
+
+---
+
+## 🧮 先按比例，再算免赔
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🚗 车损 $10,000<br/>Eli 负责 25%"]:::step --> B["BVD 赔 75%<br/>$7,500"]:::good
+    A --> C["剩下 25%<br/>$2,500"]:::ask --> D["有 Collision：<br/>只付 25% 免赔额<br/>没有：自己扛"]:::warn
+```
+
+**免赔额也按你的责任比例付**。 {takeaway}
+
+Note:
+约 3 分钟。让学员复述：BVD 只管无责那部分，有责那部分走 Collision，且免赔额按同一比例。
+
+---
+
+## 🎯 课堂快问 ③
+
+Tyler's car suffers $12,000 of damage in a highway crash in Nanaimo. ICBC finds him 40 percent responsible. He has optional Collision with a $500 deductible. How much does Basic Vehicle Damage pay, and what share of the deductible does Tyler pay? {quiz-q}
+
+<div class="opts">
+
+- A. $7,200, and he pays the full deductible
+- B. $12,000, and he pays no deductible
+- C. $4,800, and he pays 60% of the deductible
+- D. $7,200, and he pays 40% of the deductible
+
+</div>
+
+✅ **D** — BVD 按不负责的 60% 赔：$12,000 × 60% ＝ $7,200；他负责的 40% 走 Collision，免赔额只付 40%。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。A 漏了免赔额的比例；C 把比例两边弄反。
+
+---
+
+## ❌ vs ✅ 非公路事故的 BVD
+
+<div class="xv">
+
+- ❌ 只要没责任，什么路上出事 BVD 都赔 {f}
+- ✅ 非公路事故：要**至少两辆持牌标准车**（或挂车）相撞 {f}
+- ❌ 被高尔夫球车、拖拉机撞了，也走 BVD {f}
+- ✅ **非标准车辆**、行人、骑车人：**BVD 不适用**，走 Collision，ICBC 再追偿 {f}
+
+</div>
+
+Note:
+约 2 分钟。Iram 的例子：非公路行驶时被山地车骑手撞，修车 $1,000，山地车不是标准车辆，BVD 不适用，Iram 用 Collision，ICBC 再向骑手追偿。
+
+---
+
+## 🎯 课堂快问 ④
+
+On a private ranch road, Ellie's licensed SUV is struck by a teenager driving an unlicensed golf cart. Ellie is free of fault. Does Basic Vehicle Damage cover her SUV? {quiz-q}
+
+<div class="opts">
+
+- A. No; off-highway it needs two licensed standard vehicles
+- B. Yes, because she was not responsible for the crash
+- C. Yes, but only up to 50 percent of the damage
+- D. No, because Basic Vehicle Damage never applies off a public highway
+
+</div>
+
+✅ **A** — 非公路事故要至少两辆持牌标准车相撞才适用 BVD；高尔夫球车不是标准车辆。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。D 说「从不适用」太绝对：公共道路上就适用，非公路的两辆持牌车也适用。
+
+---
+
+## 📈 UMP：对方保额不够，补差额
+
+<div class="cols">
+<div class="col good">
+
+### 两个条件同时成立
+- 投保人或**同住家人**受伤
+- **不享有** EAB
+- 肇事司机的 TPL **不足**以付判赔
+
+</div>
+<div class="col exam">
+
+### 补多少
+- 最高 **$1 million 每人**
+- 例：BC 非公路事故被撞的行人、骑车人
+- 在加拿大、美国都有效，省外按**事故地法律**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。禁诉讼的情形 UMP 不适用（题库里有一道：温哥华街上被保额只有 $200,000 的司机撞伤，伤者享有 EAB，UMP 不适用）。BC 现行：BC 居民在加美被车撞伤即享有 EAB，享有 EAB 者不享有 UMP，所以 BC 居民在省外通常用不到 UMP；考场按考试口径答 UMP。
+
+---
+
+## 🎬 情景：被逃逸的人撞坏了围栏
+
+逃逸司机在 BC 公路上撞坏了 Ravi 后院的**围栏**。Ravi **租房**、**没有车**、没有别的保障。 {scene}
+
+<span class="ask">问：他有没有地方索赔？</span> {f}
+
+✅ **有**：法定无保险驾驶人条款，最高 **$200,000**，逃逸情形付 **$750** 免赔额。不需要有车或保单。 {ans f}
+
+Note:
+约 3 分钟。这一条来自 Insurance (Vehicle) Act，自动给全体 BC 居民，赔的是非车辆财产（建筑、围栏、自行车）。别把它记成「Basic 保逃逸车损」：车被逃逸者撞坏，要靠 Collision 或可选的 Hit and Run。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+A hit-and-run driver smashes Ravi's backyard fence on a British Columbia highway. Ravi rents his home, owns no car and has no other coverage for the fence. Which statement is correct? {quiz-q}
+
+<div class="opts">
+
+- A. Up to $200,000 under the statutory provision, less $750
+- B. He can claim under Hit and Run coverage with no deductible
+- C. He can claim under Basic Vehicle Damage for the fence
+- D. He has no recourse, because he does not insure a vehicle with ICBC
+
+</div>
+
+✅ **A** — 法定无保险驾驶人条款：最高 $200,000，逃逸情形免赔 $750，不需要有车或保单。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。B 错在「Hit and Run 无免赔额」混了概念；D 以为必须有 ICBC 保单。
+
+---
+
+## 🔄 反向责任：对方的法域不让告
+
+```mermaid
+%% h=420
+flowchart LR
+    A["📍 事故在不允许索偿的辖区"]:::ask --> C["🔄 Inverse Liability"]:::good
+    B["🏠 肇事者住在这样的辖区"]:::ask --> C
+    C --> D["按<b>对方</b>负责的比例赔你的车<br/>＋替你付那部分免赔额"]:::good
+```
+
+两种触发都算，**不是只有事故发生地**。 {takeaway}
+
+Note:
+约 3 分钟。判断题的老陷阱：反向责任只在事故发生在不允许索偿的辖区才保——错，还有肇事者住在这样的辖区一种。自己负责的部分走 Collision。
+
+---
+
+## 🚘 修自己的车：三条路
+
+```mermaid
+%% h=400
+flowchart TD
+    A["💥 车坏了"]:::warn --> B["我不负责的比例"]:::good --> B1["BVD / 反向责任<br/>Basic 里"]:::good
+    A --> C["我负责的比例"]:::ask --> C1["Collision<br/>可选"]:::ask
+    A --> D["碰撞以外"]:::step --> D1["Comprehensive<br/>可选"]:::step
+```
+
+有长期有责记录的人可能买不到 Collision，或只能买高免赔额。 {takeaway}
+
+Note:
+约 3 分钟。BVD 管不负责的部分，Collision 管负责的部分。Comprehensive 理赔不影响 driver factor。
+
+---
+
+## 🧯 Specified Perils vs Comprehensive
+
+<div class="cols">
+<div class="col exam">
+
+### Specified Perils：列举的
+- 火；**盗窃**（家人或雇员偷的除外）
+- 天气：雷电、风暴、**冰雹**、涨水
+- 运输工具出事；地震；爆炸；暴乱；飞机坠落
+- ❌ **不保**故意破坏、撞动物、**风挡玻璃**
+
+</div>
+<div class="col good">
+
+### Comprehensive：碰撞以外一切
+- 上面这些
+- 加：**故意破坏、恶意毁损**
+- 加：**撞动物**（活的或死的）
+- 加：**风挡玻璃**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。Specified Perils 便宜、窄，适合怕火怕盗、车值不高的旧车。Collision 的范围：与另一车、行人、路面、坑洞、掉在路上的石头树、护栏桥墩等碰撞或翻车，也包括被逃逸司机撞坏。
+
+---
+
+## 🏷️ 自车损失怎么定价
+
+<div class="cols">
+<div class="col exam">
+
+### Rate group
+- 按车型**平均赔案、维修成本、排量、安全配置**分组
+- 组越高保费越高
+- **大多数私家车和轻型商用车**
+
+</div>
+<div class="col now">
+
+### Declared value
+- 按车和附属设备**现行市价**（含税）
+- 申报价越高保费越高
+- 挂车、房车、**摩托车**、雪地车、高尔夫球车、5,000 kg 以上商用车、定制车
+
+</div>
+</div>
+
+Note:
+约 2 分钟。每种自车损失险都要免赔额，金额看所选保障、用途、车型和申报价值。题库里有一道：摩托车最可能按 declared value 定价。
+
+---
+
+## 🚫 Collision 与 Comprehensive 的除外
+
+<div class="cards c3">
+
+- **🛞 轮胎** <br>除非由火、盗、恶意毁损造成
+- **🔧 正常使用造成的损坏** <br>磨损不算
+- **🧳 车内物品** <br>找家财险
+- **👨‍👩‍👧 家人或雇员偷车**
+- **🏭 部分工业车辆**
+
+</div>
+
+Note:
+约 2 分钟。「找不是的」题：问哪一项不在除外里。
+
+---
+
+## 🧩 配对练习：落在哪一种保障
+
+<div class="cards">
+
+- **🔥 房子烧了，车库里的车也烧坏** <br>→ **Comprehensive**
+- **🤕 撞伤行人，被告 $3,000,000** <br>→ **TPL**（超出 Basic 的靠 Extended TPL）
+- **🧥 车窗没关，皮夹克和现金被偷，车没坏** <br>→ **无保障**（车内物品；去找家财险）
+- **🌲 暴风夜树倒在前面，刹车不及撞上** <br>→ **Collision**（撞的是路上的物体）
+
+</div>
+
+Note:
+约 3 分钟。配对练习。第五题（BC 车主在 Seattle 被保额只有 $25,000 的华盛顿司机撞伤、损失远超）：按考试口径答 UMP，BC 现行口径见下一页。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考场答考试口径，客户用现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径（BC 车险）
+- 收入替代：90% × 净收入
+- 收入替代排在雇主计划、WorkSafeBC、EI 之后
+- UMP：投保人在允许诉讼的辖区被撞、对方保额不足，UMP 补
+- BVD：按比例赔
+
+</div>
+<div class="col now">
+
+### 2026 现行（BC）
+- 两条取大：90% 净收入，或平均毛周薪的 75%（每周封顶）
+- 收入替代殿后，但医疗、假肢等 ICBC **先付**
+- BC 居民在加美受伤即享有 **EAB**，所以通常用不到 UMP
+- BC 公路上两辆以上车，**对车损无诉权**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列讲。其他现行信息：年毛收入上限每年 4 月 1 日指数化，2026-04-01 起 $122,500；一场事故索赔达限额时，人伤与死亡优先占前 90%，财产 10%，注意是按 90／10 分配（$200,000 即 $180,000／$20,000）；刑事定罪只削减收入替代、永久伤残、死亡给付三项，医疗康复照赔；EAB 各项金额每年 4 月 1 日更新，不考。
+
+---
+
+## ❌ vs ✅ 易混易错
+
+<div class="xv">
+
+- ❌ Basic 里也有对「自己有责那部分」车损的保障 {f}
+- ✅ **BVD 只赔不负责的比例**，有责部分靠可选 **Collision** {f}
+- ❌ UMP 只管事故发生在省外 {f}
+- ✅ 判据是「有没有 EAB」＋「能不能告」，**不是省内省外** {f}
+- ❌ 法定无保险驾驶人条款赔你的车 {f}
+- ✅ 它赔**非车辆财产**（围栏、房子、自行车）；车损靠 Collision 或 Hit and Run {f}
+
+</div>
+
+Note:
+约 2 分钟。三对都是旧派生件里真实出现过的错，考场高发。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **五项** <br>TPL · EAB · BVD · UMP · 反向责任
+- **TPL** <br>$200,000；营运 $1M；危险品 $2M；BC 大多不能告
+- **EAB** <br>无总上限；收入替代净收入 90%、第 8 天起
+- **修车** <br>BVD 赔不负责的；Collision 赔负责的；Comprehensive 赔碰撞以外
+
+</div>
+
+被撞了：先问责任比例，再问路在哪、车是不是标准车辆。 {takeaway}
+
+Note:
+约 2 分钟。让学员用一句话说出 BVD、Collision、Comprehensive 的分工。课后建议：做本讲 42 道题，每道计算题先写出比例。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 13 讲 · Autoplan 基本保障与自车损失 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 14 讲 · 车险可选保障与保障条件 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 14 讲 · 车险可选保障与保障条件</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 14 讲</span>
+
+# 可选险、专项保障与保障条件
+
+Basic 之外，还能买什么；哪些行为会让保险白买
+
+<div class="chips"><span>UDP</span><span>Extended TPL</span><span>使用损失</span><span>RoadStar</span><span>新车保障</span><span>专项保障</span><span>违反条件</span></div>
+
+Note:
+开场约 2 分钟。先问学员一个生活问题：朋友借了你的车，出了事，你的保险管不管？这一讲把「可选」的东西一件件讲清：什么情况加买什么，以及什么行为会让所有保障失效。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 可选险全景** <br>哪些单独出单
+- **② UDP** <br>未列名驾驶人
+- **③ 责任加高** <br>Extended · Off-Highway
+- **④ 收入与逃逸** <br>Income Top-Up · Hit and Run
+- **⑤ 使用损失** <br>自动 vs 可选
+- **⑥ 套餐** <br>RoadStar · Roadside Plus
+- **⑦ 新车与专项** <br>三种新车保障 · 六种专项
+- **⑧ 保障条件** <br>违反了会怎样
+
+</div>
+
+Note:
+约 1 分钟。⑧ 的情景题最容易错，最后重点练。
+
+---
+
+## 🧰 可选险的全景
+
+<div class="cards c3">
+
+- **📋 清单** <br>UDP · Extended TPL · Off-Highway TPL · Income Top-Up · Own Damage · Hit and Run · Loss of Use · RoadStar · Roadside Plus · New Vehicle Protection · Specialized
+- **📄 大多同一张保单** <br>但**分开列明、分开计价**
+- **📑 单独出单** <br>**Income Top-Up** 与 **Specialized Coverages**
+- **🏢 私营公司** <br>另出一张与 ICBC Basic 不同的保单
+
+</div>
+
+Note:
+约 2 分钟。题库里有一道问：哪些是单独出单的。答案是 Income Top-Up 与专项保障。
+
+---
+
+## 🚪 UDP：偶尔借车的人
+
+<div class="cards">
+
+- **🔑 作用** <br>让没列名的人偶尔开，**一年最多 12 天**
+- **🎁 怎么来** <br>新 Autoplan Basic 保单上**自动附带，不另收费**
+- **💸 出过一次事** <br>续保要**付费**才能继续有
+- **⚠️ 该列名没列名** <br>造成有责事故，车主付 **UDAP**
+
+</div>
+
+Note:
+约 2 分钟。UDAP 的算法在第 12 讲。BC 现行网页写的是每位驾驶人一年最多 12 天，同住范围明确含室友和放假回家的学生，考场仍按一年 12 天。
+
+---
+
+## 🚫 UDP 不保这四种人
+
+```mermaid
+%% h=440
+flowchart TD
+    A["🚗 没列名的人出了有责事故"]:::warn --> B["家庭成员或雇员<br/>主驾、车主、承租人的"]:::warn
+    A --> C["过去 12 个月<br/>开该车超过 12 天"]:::warn
+    A --> D["无照驾驶"]:::warn
+    A --> E["过去 5 年已在<br/>该车上造成过事故"]:::warn
+    B --> F["💸 车主付 UDAP"]:::ask
+    C --> F
+    D --> F
+    E --> F
+```
+
+经常开车的人、同住的人，正确做法是**列名**。 {takeaway}
+
+Note:
+约 3 分钟。第 12 讲的例子：同住的家人没列名、撞了车，UDP 本来就不保他，所以车主照付 UDAP。
+
+---
+
+## 🎬 情景：借了 20 天
+
+过去 12 个月，**Liam** 借朋友 Zoe 的车开了约 **20 天**，他没列名，这次出了事故。Zoe 有 **UDP**。 {scene}
+
+<span class="ask">问：UDP 响不响应？</span> {f}
+
+✅ **不适用**：12 个月里开该车超过 12 天的人被排除。ICBC 仍处理理赔，但 Zoe 可能要付 **UDAP**。 {ans f}
+
+Note:
+约 2 分钟。注意错项 A：「ICBC 拒赔所有」。UDP 不适用不等于保险失效，第三方照赔，车主付的是那笔事故费。
+
+---
+
+## 🎯 课堂快问 ①
+
+Over the past 12 months Liam has borrowed his friend Zoe's car on about 20 days. He is absent from her policy and causes a crash. Zoe has Unlisted Driver Protection. What is the result? {quiz-q}
+
+<div class="opts">
+
+- A. UDP does not apply, so ICBC denies all coverage for the crash
+- B. UDP applies, because Liam had Zoe's permission each time
+- C. UDP applies, because Liam is not a household member
+- D. UDP is excluded, so Zoe may owe the accident premium
+
+</div>
+
+✅ **D** — 过去 12 个月开该车超过 12 天的人，UDP 不适用，车主要付 UDAP。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。同住家人也不在 UDP 之内。
+
+---
+
+## 🔼 把责任限额加高
+
+<div class="cards c3">
+
+- **🚗 私家车、轻型商用** <br>Basic $200,000 → Extended 最高 **$5 million**
+- **🚛 重型商用** <br>Basic $1 million → 最高 **$10 million**
+- **☢️ 运危险品的重型商用** <br>Basic $2 million → 最高 **$10 million**
+- **📜 条款相同** <br>与被加高的 Basic TPL 一致
+- **🪜 怎么接力** <br>Basic 先付到自己的限额，**超出部分 Extended 接**
+- **🚜 Off-Highway TPL** <br>持牌**非标准车辆**在**非公路**使用，限额五档，**无免赔额**
+
+</div>
+
+Note:
+约 3 分钟。BC 现行：Extended TPL 重型商用 $10 million 上限和 Off-Highway 五档，现行公开材料里没找到这些数字，考场按考试口径答。举例：一家自采蓝莓的农场，拖拉机在田里撞伤游客，游客拿不到 EAB 但可以告农场主，有 Off-Highway TPL 就由它响应。
+
+---
+
+## 💼 Income Top-Up 与 Hit and Run
+
+<div class="cols">
+<div class="col exam">
+
+### Income Top-Up
+- 给 EAB 收入替代**加高计算上限**
+- **全体 BC 居民**都能买，**不论有没有 ICBC 保单**
+- 在 BC 上牌投保的**非居民**也能买
+- 最多加 **$100,000**，**10 档**、每档 $10,000
+- 适合**没有**雇主等其他收入保障的高收入者
+
+</div>
+<div class="col now">
+
+### Hit and Run
+- **买了 Collision 就已包含**，不必另买
+- 没买 Collision 又想保 BC 公路逃逸车损才买
+- 限额 **$200,000**，免赔额 **$750**
+- 它是**可选**，不在 Basic 里
+
+</div>
+</div>
+
+Note:
+约 2 分钟。题库里有一道：Farah 住 Richmond、没有车、收入远高于上限，她能买 Income Top-Up，因为不需要有 ICBC 保单。还有一道：Dev 有 Collision，不需要另买 Hit and Run。
+
+---
+
+## 🛻 使用损失：自动 vs 可选
+
+<div class="cols">
+<div class="col good">
+
+### 自动
+- 有 **Comprehensive 或 Specified Perils** 就有
+- 触发：**整车被盗**
+- 报警后 **72 小时**起算
+- 无免赔
+
+</div>
+<div class="col now">
+
+### 可选
+- 有 Collision、Comprehensive 或 Specified Perils 可加买
+- 触发：承保的自车理赔期间
+- **事故后立即**起算
+- 理赔额须**高于自车险免赔额**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。可选使用损失不适用于营运豪华车、出租车、租赁车、多用途车、越野车。结束：修好、ICBC 同意结案或用满限额，以先到者。
+
+---
+
+## 🔎 车被偷了，赔什么
+
+```mermaid
+%% h=400
+flowchart TD
+    A["🕵️ 车被偷"]:::warn --> B["整车被盗"]:::ask --> B1["✅ 自动使用损失<br/>报警后 72 小时起"]:::good
+    A --> C["只偷零件<br/>轮胎 · 发动机"]:::ask --> C1["❌ 无使用损失<br/>零件走 Comprehensive"]:::warn
+```
+
+「整车」与「零件」是考点里最常见的分叉。 {takeaway}
+
+Note:
+约 2 分钟。自动使用损失方式：租车、出租车、公交。起算点是报警后 72 小时，不是被盗当天。
+
+---
+
+## 🎯 课堂快问 ③
+
+Mia has Comprehensive coverage. Thieves steal all four wheels and tires from her car overnight, and she takes taxis for a week. Under the automatic Loss of Use coverage: {quiz-q}
+
+<div class="opts">
+
+- A. Taxi fares are reimbursed from the day of the theft, with no deductible
+- B. Taxi fares are reimbursed only if she also has Collision
+- C. There is no loss-of-use coverage, because only part of the vehicle was stolen
+- D. Taxi fares are reimbursed, starting 72 hours after she reports the theft
+
+</div>
+
+✅ **C** — 自动使用损失只适用于整车被盗；只偷轮胎不触发。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。A 把「起算时间」当成被盗当天，D 把整车被盗与零件弄混。
+
+---
+
+## 🎁 RoadStar：四件套
+
+```mermaid
+%% h=420
+flowchart TD
+    A["⭐ RoadStar"]:::good --> B["加高使用损失"]:::step
+    A --> C["租车保障<br/>连续 30 天"]:::ask
+    A --> D["出行被盗保障<br/>行程 ≤ 30 天"]:::step
+    A --> E["锁具 · 钥匙 · 遥控器"]:::step
+```
+
+**非 BC 居民**不享租车保障与出行被盗保障。 {takeaway}
+
+Note:
+约 3 分钟。租车保障含第三方责任、UMP、使用损失、Collision、Comprehensive 与租车公司的租金损失；有 RoadStar 就不必买租车柜台的车损险。出行被盗保障可报额外生活费、拖车、运车回家、另租车、回家路费。BC 现行：RoadStar 须同时买 Comprehensive，车重 5,000 公斤以下；2024-02-01 起使用损失总额提高，考场不考金额。
+
+---
+
+## 🎬 情景：卡尔加里机场
+
+BC 居民 **Sandeep** 有 **RoadStar**，去 Calgary 玩 **12 天**，在机场租了辆车，柜台推销车损险。 {scene}
+
+<span class="ask">问：经纪人该怎么告诉他？</span> {f}
+
+✅ **不用买**：RoadStar 租车保障覆盖连续 **30 天**内的租车。 {ans f}
+
+Note:
+约 2 分钟。强调是「连续 30 天」且是 BC 居民。别和出行被盗保障的 30 天混：那是被盗时行程不超过 30 天。
+
+---
+
+## 🛣️ Roadside Plus：七件套
+
+<div class="cards c3">
+
+- **📦 前四件** <br>RoadStar 四件，**限额提高**（租车 TPL 到 $2M）
+- **📍 目的地协助** <br>碰撞、盗窃、故意破坏致车不能开：付到**原目的地**的交通；**12 小时内**发生；不含租替代车
+- **🔓 盗窃免赔豁免** <br>有 Comprehensive：**免** Comprehensive 免赔额
+- **⛽ 路边应急报销** <br>送油、搭电、开锁、拖车、换补胎、绞车、打车；**不含零件、汽油、机油、电瓶、轮胎**；每保期最多 **2 次**
+- **✅ 资格** <br>有 **Comprehensive** 的多数轿车、轻商、房车；**车队车辆**一律可买
+
+</div>
+
+Note:
+约 3 分钟。题库里有一道：Lucy 的车被人故意破坏、去面试路上不能开，Roadside Plus 的目的地协助付从现场到原目的地的交通。「找不是的」题：电瓶不在报销之内。
+
+---
+
+## 🆕 三种新车保障
+
+<div class="cols">
+<div class="col exam">
+
+### New Vehicle Replacement Plus
+- 第 **1、2** 个年款
+- 修理估价**超过市值 50%** 即全损
+- **全额重置价**，计通胀
+- 可选同款新车、换车型或拿现金
+- 不全损时可用**原厂新件**修
+
+</div>
+<div class="col now">
+
+### Replacement-Cost
+- 第 **1 到 3** 个年款
+- **无固定百分比**，全损门槛可能高到市值 90
+- 全额重置价，计通胀、**不计折旧**
+- 同样三选一
+
+</div>
+</div>
+
+Note:
+约 3 分钟。第三种：Limited-Depreciation，不超过 3 个年款，全损时限制折旧；若生效当天已是第 3 个年款，火灾、盗窃、故意破坏、恶意毁损造成的全损不保。资格：私家车或总重 5,500 公斤以下的轻型商用车；房车不能买；要先有 Collision 与 Comprehensive。
+
+---
+
+## 📅 新车保障怎么选
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🚗 车的年款"]:::step --> B["第 1、2 年款<br/>Replacement Plus<br/>50% 即全损"]:::good
+    A --> C["第 1 到 3 年款<br/>Replacement-Cost<br/>无固定比例"]:::ask
+    A --> D["不超过 3 年款<br/>Limited-Depreciation<br/>限制折旧"]:::step
+```
+
+默认的自车险只赔**实际现金价值（ACV）**，新车折旧快，才有这三种。 {takeaway}
+
+Note:
+约 3 分钟。私营公司也卖重置成本险。BC 现行：New Vehicle Replacement Plus 的 50% 是「exceeds just half of its current market value」，组合须 Collision 加 Comprehensive 或 Specified Perils。
+
+---
+
+## 🎬 情景：第二个年款的车
+
+**Aiden** 的车在第**二**个年款，买了 **New Vehicle Replacement Plus**。撞车后修理估价是市值的 55%。 {scene}
+
+<span class="ask">问：会怎么处理？</span> {f}
+
+✅ **按全损赔全额重置价**，计通胀：因为超过了市值的 50%。 {ans f}
+
+Note:
+约 2 分钟。如果换成 Replacement-Cost，门槛没有固定百分比；换成 Limited-Depreciation，是限制折旧，不是全额重置价。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Aiden's car is in its second model year and carries New Vehicle Replacement Plus. After a crash, repairs are estimated at 55 percent of its market value. What happens? {quiz-q}
+
+<div class="opts">
+
+- A. ICBC treats it as a total loss only if damage reaches 90 percent
+- B. ICBC repairs it with aftermarket parts, because it is not a write-off
+- C. ICBC pays the actual cash value less depreciation
+- D. ICBC treats it as a total loss and pays full replacement value
+
+</div>
+
+✅ **D** — Replacement Plus 修理超过市值 50% 即全损，赔全额重置价并计通胀。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。A 把门槛说成 90%（那是 Replacement-Cost 的可能上限）；C 退回到 ACV。
+
+---
+
+## 🧳 六种专项保障
+
+<div class="cards c3">
+
+- **💎 高价值车** <br>MSRP 超 $150,000（近 7 年款）或 $400,000（近 14 年款）
+- **📦 Storage Policy** <br>车**不在使用中**，不上路、不停公路上
+- **🧾 临时保险 APV38** <br>在**省外新买**的车，**1 到 31 天**
+- **🚜 农用拖拉机证书** <br>不上牌的农机上**公路**，哪怕只是横穿；**随车带**
+- **🏆 收藏车** <br>**25 年**以上；或 **15 年**的限量／停产车型；只作休闲
+- **🎩 古董车** <br>**30 年**以上；挂 **vintage plates**；用途限定
+
+</div>
+
+Note:
+约 3 分钟。Lee 家房车冬天停在车道上被树枝砸，Storage Policy 赔。Debbie 的田被公路一分为二，拖拉机哪怕横穿公路也要有证书。APV38 保车在省外行驶，不一定允许在别的辖区公路上开，可能要当地许可。
+
+---
+
+## 🏆 收藏车 vs 🎩 古董车
+
+<div class="cols">
+<div class="col exam">
+
+### 收藏车 Collector
+- 三条件**全**满足：
+- 25 年以上且 ICBC 认可，或 15 年限量／停产
+- 保养良好或复原到原厂规格
+- **只作休闲**
+- 进低保费费率类别
+
+</div>
+<div class="col now">
+
+### 古董车 Vintage
+- **至少 30 年**，尽量原样
+- 是收藏品，机械状况良好
+- 挂 **vintage plates**
+- **只在**：检验点、修理点、游行展览、车会、婚礼毕业典礼、公共仪式
+- 不合规灯光的**只能白天开**
+
+</div>
+</div>
+
+Note:
+约 2 分钟。「找不是的」题：收藏车要求里哪一项不是。另一道：Ray 的 1965 敞篷车，去车会可以，日常通勤不行。
+
+---
+
+## ❌ vs ✅ 套餐与新车的误会
+
+<div class="xv">
+
+- ❌ RoadStar 的租车保障，租多久都管 {f}
+- ✅ 只管**连续 30 天**内；**非 BC 居民**不享 {f}
+- ❌ 新车保障只要有 Collision 就能买 {f}
+- ✅ 要 **Collision 加 Comprehensive**；**房车不能买** {f}
+
+</div>
+
+Note:
+约 2 分钟。出行被盗保障的 30 天是行程长度，租车保障的 30 天是连续租期，别混。
+
+---
+
+## ⚖️ 违反保障条件：赔谁，不赔谁
+
+```mermaid
+%% h=400
+flowchart LR
+    A["⚠️ 违反条件<br/>如驾照过期"]:::warn --> B["✅ 赔受害第三方<br/>人伤与车损"]:::good
+    A --> C["❌ 不赔违约者<br/>自己的车"]:::warn
+    A --> D["↩️ 向违约者追回<br/>付给第三方的钱"]:::ask
+```
+
+先赔第三方、再向违约者追——**只对违反条件成立**。 {takeaway}
+
+Note:
+约 3 分钟。Andrew 的例子：送家具时撞伤 Bert，两车损失共 $20,000，Andrew 驾照三个月前过期没续。结果：ICBC 赔 Bert，Andrew 自己的车不赔，他还要向 ICBC 偿还。不能推广到普通车损。
+
+---
+
+## 🚫 违反条件的情形
+
+<div class="cards c3">
+
+- **⚖️ 违法用途** <br>违反 MVA 或其他法律
+- **📏 超出保单用途** <br>或在别辖区超过法定期限
+- **🪪 没有有效驾照**
+- **🏁 比赛或测速** <br>犯罪中驾驶、逃避警察
+- **🚛 拖带无保险挂车** <br>用车故意施暴（路怒）
+- **🍺 酒后或药后驾驶** <br>拒绝酒测或路边测试
+
+</div>
+
+Note:
+约 2 分钟。完整清单不在考试范围，在 Insurance (Vehicle) Regulation Part 5 s.55 与 ICBC 附录的 Prescribed Conditions。BC 现行：仅违反驾照上的限制或条件（N、L 阶段）本身不构成违反保险条件，2026-10-19 起豁免条款清单还扩大了。
+
+---
+
+## 🎬 情景：驾照过期的外卖员
+
+送货中，**Pat** 造成事故，撞伤另一位司机。Pat 的**驾照四个月前过期**了。 {scene}
+
+<span class="ask">问：ICBC 赔谁、不赔谁？</span> {f}
+
+✅ ICBC **赔对方**；**不赔 Pat 自己的车**；Pat 还要把付给对方的钱**还给 ICBC**。 {ans f}
+
+Note:
+约 2 分钟。现行法对「驾照过期」的读法：Reg s.55(3) 原文是「not authorized and not qualified」两样都没有才违反。公开资料里没有查到判例分析，不下结论，考场按考试口径：过期＝违反。
+
+---
+
+## 🎯 课堂快问 ⑥
+
+While making a delivery, Pat causes a crash that injures another driver. Pat's licence expired four months earlier. Under the exam view of ICBC coverage conditions, what happens? {quiz-q}
+
+<div class="opts">
+
+- A. ICBC pays the other driver, but Pat's own vehicle damage is unpaid and Pat must repay ICBC
+- B. ICBC refuses to pay anyone, including the injured driver
+- C. ICBC pays everything, because an expired licence is only a paperwork issue
+- D. ICBC pays Pat's vehicle damage and the injured driver's claim, then cancels the policy
+
+</div>
+
+✅ **A** — 违反条件后：ICBC 照赔受害第三方，不赔违约者自己的车，并向他追回。 {ans f}
+
+Note:
+约 3 分钟。取自本讲题库。B 太重：受害人不会因司机违约而拿不到钱；C、D 都没有追偿这一步。
+
+---
+
+## 🍷 情景：不需要被起诉
+
+**Nora** 在聚会上喝得很多，开车翻了车。警察看出她喝了酒，但**没有起诉**。ICBC 拒赔她自己的车。 {scene}
+
+<span class="ask">问：这个拒赔合理吗？</span> {f}
+
+✅ **合理**：她醉到**无法正常控制车辆**，不需要警方起诉。被定罪或拒绝酒测同样拒赔。 {ans f}
+
+Note:
+约 2 分钟。典型情景：生日聚会喝了几杯，Porsche 翻滚撞护栏，警察没起诉，ICBC 照样拒赔。注意考试口径里有两种判据：清单写酒测超过 0.05，Ida 案例是「无法正常控制」。清单题按清单答，情景题按「无法正常控制」。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考场答考试口径，客户用现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径（BC 车险）
+- 清单：酒测超过 0.05
+- 「没有有效驾照」即违反
+- UDP：一年 12 天
+- RoadStar 使用损失总额 $500／$750（不考）
+
+</div>
+<div class="col now">
+
+### 2026 现行（BC）
+- Reg s.55：**无法正常控制**车辆；0.05 是行政禁驾，另一条轨道
+- 仅违反驾照**限制或条件**不构成违反（s.55(3.1)）
+- 网页写「每位驾驶人」一年 12 天，含室友、放假回家的学生
+- 2024-02-01 起生效的保单：$900／$1,200
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列讲。其他：农用拖拉机证书现行编号 APV49，代耕农户也可用；Income Top-Up 门槛随收入替代上限指数化，2026-04-01 起 $122,500；收藏车限量＝同款不超过 1,500 辆，或厂商停产至少 5 年，不得通勤上学。给家长的两句话：孩子 N 牌载人出事，违反驾照限制本身不构成违反保险条件，交通处罚另算；同住孩子偶尔开车不列名不行，要列名。
+
+---
+
+## ❌ vs ✅ 易混易错
+
+<div class="xv">
+
+- ❌ UDP 保同住的家人偶尔开车 {f}
+- ✅ UDP **不保**家庭成员、雇员；经常开的人要**列名** {f}
+- ❌ 只偷了轮胎，也能报使用损失 {f}
+- ✅ 自动使用损失只给**整车被盗**，报警后 **72 小时**起算 {f}
+- ❌ 违反条件，ICBC 一概不赔 {f}
+- ✅ **赔第三方**，不赔违约者自己的车，再**追偿** {f}
+
+</div>
+
+Note:
+约 2 分钟。三对都是干扰项高发区。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **加高与补缺** <br>UDP 12 天；Extended TPL 加到 $5M；Off-Highway；Income Top-Up；Hit and Run
+- **用车保障** <br>使用损失（整车 · 72 小时）；RoadStar 四件；Roadside Plus 七件
+- **新车与专项** <br>50%／重置成本／限折旧；收藏 25 年、古董 30 年
+- **保障条件** <br>违反：赔第三方、不赔自己、追偿；酒驾不需起诉
+
+</div>
+
+先问：这是哪个产品的细节题？再找藏在里面的那一个小细节。 {takeaway}
+
+Note:
+约 2 分钟。让学员用一句话说清：整车被盗 vs 零件，12 天 vs 家人，违反条件赔谁。课后建议：做本讲 34 道题。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 14 讲 · 车险可选保障与保障条件 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

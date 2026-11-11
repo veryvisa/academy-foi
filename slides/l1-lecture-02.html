@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 2 讲 · 保险合同 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 2 讲 · 保险合同</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 2 讲</span>
+
+# 保险合同
+
+3 类风险 · 4 种处理 · 8 个要素
+
+<div class="chips"><span>风险与处理</span><span>合同五要素</span><span>保险三要素</span><span>无效与可撤销</span><span>临时保单</span><span>批单与浮动保单</span></div>
+
+Note:
+开场约 2 分钟。先问：「你签过哪些合同？口头答应朋友的事算不算合同？」让学员发表意见，再说明：这一讲结构最规整，是一棵数字树：3、4、2、5、3、8，考的就是这棵树。官方公开练习卷第 4 到 10 题全部出自这一讲，是全卷最密的一段。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 风险怎么处理** <br>三类 · 四招 · 两种性质
+- **② 合同五要素** <br>合意 · 对价 · 合法 · 能力 · 真意
+- **③ 保险独有三要素** <br>可保利益 · 最大诚信 · 补偿
+- **④ 缺了会怎样** <br>Void 与 Voidable
+- **⑤ 临时保单** <br>binder 与承保权限
+- **⑥ 合同怎么改** <br>批单 · 浮动保单 · 另立保单
+
+</div>
+
+Note:
+约 1 分钟。六站，每站配课堂快问或情景。预计 90 分钟，其中第②站最长，因为五个要素各有细节。提醒学员这一讲有两处考试口径与 BC 现行法不同：成年年龄与未成年人合同，最后一站并列讲清。
+
+---
+
+## 🌳 这一讲只有一棵树
+
+```mermaid
+%% h=500
+mindmap
+  root((保险合同<br/>一棵树))
+    3 类风险
+      人身
+      财产
+      责任
+    4 种处理
+      回避
+      控制
+      自留
+      转移
+    5 个合同要素
+    3 个保险要素
+    缺一
+      Void
+      Voidable
+```
+
+Note:
+约 3 分钟。把这张图当成这一讲的目录：三类风险、四种处理、五个合同要素、三个保险要素，加起来八个要素，缺一个合同就可能无效或可撤销。让学员拍照或抄下来。后面每一站都回到这棵树的某一枝。
+
+---
+
+## 🧭 风险的三类
+
+<div class="cards c3">
+
+- **🧍 人身风险** <br>Personal：人是最大的资产
+- **🏠 财产风险** <br>Property：自有财产灭失或损坏
+- **⚖️ 责任风险** <br>Liability：伤到别人，要在财务上负责
+
+</div>
+
+一个开小店的家庭：店面、房子、车、船。 {muted}
+
+Note:
+约 2 分钟。设想一个开家具店的家庭，有店面、房子、车和船，存款赔不起其中任何一样。逐个问学员：「店主腿摔断不能工作是哪类风险？」人身。「仓库着火？」财产。「顾客在店里滑倒受伤？」责任，下一页就是这个情景。
+
+---
+
+## 🎬 情景：湿滑的地板
+
+顾客在一家家具店**湿滑的地板**上摔伤，店主可能要负财务责任。 {scene}
+
+<span class="ask">问：哪一类风险？</span> {f}
+
+✅ **Liability 责任风险** — 自己的行为伤到别人，法律让你在财务上负责。人身风险是**自己**受伤。 {ans f}
+
+Note:
+约 2 分钟。改自公开题库。四个选项：personal、property、liability、speculative。干扰项 personal 的错因是受伤的是顾客不是店主本人；speculative 是另一条分类轴（可赚可亏）。提醒学员：风险有两条分类轴，三类是按「损失落在谁身上」分，纯与投机是按「有没有获利可能」分。
+
+---
+
+## 🛠️ 处理风险的四招
+
+```mermaid
+%% h=420
+flowchart TD
+    R(["⚠️ 面对风险"]):::ask --> A["回避 Avoidance<br/>卖掉店、不开车"]:::warn
+    R --> C["控制 Controlling<br/>防盗、防火警报"]:::step
+    R --> T["自留 Retention<br/>自保、免赔额"]:::step
+    R --> X["转移 Transfer<br/>买保险"]:::good
+```
+
+**回避最不实用，转移最常用最实用。**
+
+Note:
+约 3 分钟。逐招讲。回避：彻底消灭亏钱的可能，但不开车就没法正常生活，所以回避通常不现实。控制：降低频率与严重度，但风、冰雹、闪电这类危险根本控制不了。自留：自保或免赔额，大型企业和各级政府常常自保。转移：最常用、最实用，加拿大汽车保险是强制的，因为驾驶潜在财务损失太大。
+
+---
+
+## ❌ vs ✅ 四种处理
+
+<div class="xv">
+
+- ❌ 免赔额是把风险**转移**给保险公司 {f}
+- ✅ 免赔额是**自留**：免赔额越高，自己留的越多 {f}
+- ❌ 控制可以把风险完全消灭 {f}
+- ✅ 控制只降**频率与严重度**，风、雹、雷控不住 {f}
+
+</div>
+
+Note:
+约 2 分钟。第一组最容易混：买保险是转移，但免赔额那一部分是你自己留下的。问学员：「把免赔额从 $500 提到 $1,000，保费通常怎么变？」降低，因为你自留更多。第二组提醒：控制不是完整方案。
+
+---
+
+## ⚔️ 纯风险 vs 投机风险
+
+<div class="cols">
+<div class="col good">
+
+### Pure 纯风险
+- 只可能**亏**，不可能赚
+- 火灾、盗窃、车祸
+- ✅ **可保**
+
+</div>
+<div class="col bad">
+
+### Speculative 投机风险
+- 可能亏，也可能**赚**
+- 打牌下注、开店创业、新产品
+- ❌ **不可保**
+
+</div>
+</div>
+
+社会不容许人从自己的失败中获利。 {takeaway}
+
+Note:
+约 2 分钟。原则是只有纯风险可保。投机风险不可保的理由是社会不容许人从自己的失败中获利。让学员举例判断：房子被水淹？纯。炒股亏钱？投机。生意破产？投机。练习卷第 5 题的主干扰项就是把投机风险的定义当成纯风险的定义。
+
+---
+
+## 🎯 课堂快问 ①
+
+Which of the following situations involves a risk that insurers will cover? {quiz-q}
+
+<div class="opts">
+
+- A. A neighbour may lose money betting on a hockey game
+- B. A restaurant may go out of business
+- C. A fire may damage a shop's inventory
+- D. A new product line may not sell well
+
+</div>
+
+✅ **C** — 火灾只会让人亏，是纯风险；A、B、D 都可赚可亏，是投机风险。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。带学员用「有没有获利可能」逐项检验。答完追问：「如果有人买了一种险种叫破产险，保险公司会卖吗？」不会，破产属于经营的投机风险，不可保。
+
+---
+
+## 📜 合同的定义与五要素
+
+```mermaid
+%% h=420
+flowchart TD
+    K(["📄 合同<br/>法律可执行的协议"]):::step --> A["① Agreement<br/>合意"]:::good
+    K --> B["② Consideration<br/>对价"]:::good
+    K --> C["③ Legality<br/>标的合法"]:::good
+    K --> D["④ Capacity<br/>缔约能力"]:::good
+    K --> E["⑤ Intention<br/>真实意思"]:::good
+```
+
+**口头协议与书面同样有约束力。**
+
+Note:
+约 3 分钟。合同是两方或多方之间、法律上可执行的协议。五个要素缺一不可，才算法律上可执行。强调最后一句，口头协议与书面同样有约束力，这一点在合意和 binder 两处都会考。口诀：合、价、法、能、真。
+
+---
+
+## 🤝 ① 合意：要约加承诺
+
+```mermaid
+%% h=420
+flowchart LR
+    A["📝 投保单<br/>＝要约"]:::step --> B{"保险公司按要约<br/>内容签发保单?"}:::ask
+    B -- 是 --> C["✅ 承诺<br/>合意成立"]:::good
+    B -- "否：条款不同" --> D["❌ 无合意"]:::warn
+```
+
+必须是**无条件**承诺；还在谈判，就没有合意。
+
+Note:
+约 3 分钟。意思一致（meeting of the minds）。保险里：填好的投保单是向保险公司发出的要约，保险公司按要约内容签发保单就是承诺。如果客户要 $100 免赔额，保险公司签发的却是 $500，就没有按要约签发，无合意。
+
+---
+
+## 🎬 情景：$100 还是 $500？
+
+客户说：「报价我接受，**但免赔额从 $500 降到 $100**。」谈判期间发生了一起损失。 {scene}
+
+<span class="ask">问：合同成立吗？</span> {f}
+
+✅ **不成立** — 附条件的回应只是新的要约，还在谈；没有无条件承诺，就没有合意。 {ans f}
+
+Note:
+约 3 分钟。把「附条件接受」说透：附条件等于拒绝原要约并提出新要约，所以保险公司没有同意之前，没有合同。出险发生在谈判期间，保险公司不用赔。反问：「如果经纪人当时口头同意了呢？」那要看经纪人是否有承保权限，这是后面 binder 一节的内容。
+
+---
+
+## 💰 ② 对价 与 ⚖️ ③ 标的合法
+
+<div class="cols">
+<div class="col exam">
+
+### Consideration 对价
+- 双方交换**有价值**的东西
+- 白送汽车不是合同
+- 保险里：**保费**，或日后付保费的承诺
+
+</div>
+<div class="col bad">
+
+### Legality of Object 标的合法
+- 违背公共利益的合同不可执行
+- **赃物**投保：出险不可执行
+- 欺诈性索赔：法院判被保险人败诉
+
+</div>
+</div>
+
+Note:
+约 3 分钟。对价让双方有意受约束，也是证据。保险里投保人给的对价是保费，或者承诺日后付保费，注意不是填好的投保单（那是要约）。标的合法：给偷来的财产投保，出险时合同不可执行。偷来的，对应 Legality of Object，而不是 Insurable Interest。
+
+---
+
+## 🎯 课堂快问 ②
+
+What does the insured provide as **consideration** for an insurance contract? {quiz-q}
+
+<div class="opts">
+
+- A. The completed application form
+- B. The insured's agreement to act in good faith
+- C. Payment of the premium or a promise to pay it later
+- D. The insurer's promise to pay claims fairly
+
+</div>
+
+✅ **C** — 投保单是要约；诚信是另一个要素；D 是保险人那一方的承诺。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。选项 B、D 是同一类干扰：把别的要素或另一方的承诺说成对价。让学员说出 A、B、D 各自对应哪个概念。
+
+---
+
+## 🧑‍⚖️ ④ 缔约能力：谁不行
+
+<div class="cards">
+
+- **👶 未成年人** <br>必需品有效；其他合同可在合理期限内撤销
+- **🧠 精神无行为能力** <br>无知或智力偏弱**不够**
+- **🍺 酒精或药物** <br>要**完全不能理解**，或被故意灌醉
+- **🏢 法律实体** <br>独资、合伙、公司与自然人**同等**
+
+</div>
+
+Note:
+约 3 分钟。考试口径是普通法 21 岁成年、多数省已降到 19 或更低，BC 现行写法不同，最后一站再讲。设想一个十一岁的孩子花几百加元买了一幅画，画不是生活必需品，卖家要退钱。醉酒门槛很高，防止有人拿「我当时喝多了」赖账。经纪人没有资格评估客户精神能力，有争议交给法院和专业人士。公司（Ltd、Inc）是独立于股东的法律实体。
+
+---
+
+## 🎬 情景：只有商号的保单
+
+保单被保险人只写了一个店名：**「Maple Corner Furniture」**。 {scene}
+
+<span class="ask">问：这份保单能执行吗？怎么改？</span> {f}
+
+✅ **不能**（商号没有缔约能力）。加上业主法定名字：业主法定姓名 **t/a**（或 **d/b/a**、**o/a**）Maple Corner Furniture。 {ans f}
+
+Note:
+约 3 分钟。t/a 是 trading as，d/b/a 是 doing business as，o/a 是 operating as，三种写法都可以。练习卷第 8 题：四个名字里只有带 Ltd. 的公司有缔约能力。补充：如果把生意注册成有限公司，公司失败时业主个人不对公司订约的承诺负责。
+
+---
+
+## 🎭 ⑤ 真实意思：四种破坏者
+
+<div class="cards">
+
+- **🎭 Fraud 欺诈** <br>故意用虚假暗示或诡计骗人
+- **🔨 Duress 胁迫** <br>用暴力或非法拘禁迫使人
+- **🤐 Concealment 隐瞒** <br>不披露相关事实；通常是**投保人**干的
+- **✍️ Mistake 错误** <br>因错误签署法律文件
+
+</div>
+
+Note:
+约 2 分钟。要证明双方真的想订合同，必须证明合意没有受这四种情形影响。隐瞒在保险里最常见，通常是投保人所为，足以撤销合同。问学员：「投保人故意不告诉保险公司以前被拒保过，是哪一个？」隐瞒，同时违反下一站要讲的最大诚信。
+
+---
+
+## 🏅 保险合同独有的三要素
+
+<div class="cards c3">
+
+- **🔗 Insurable Interest** <br>可保利益：损失会让你**财务受损**
+- **🤝 Utmost Good Faith** <br>最大诚信：双方完全诚实
+- **⚖️ Indemnity** <br>补偿：不多不少
+
+</div>
+
+只有这三个是保险合同**独有**的。 {takeaway}
+
+Note:
+约 2 分钟。官方练习卷第 6 题问的是只有保险合同才有的要素，答案落在补偿这一类。让学员区分：Genuine Intention、Legality、Consideration 是一切合同都有的。补偿与第 1 讲定义的第三点是同一条原则：no more and no less。最大诚信的两面：投保人如实告知，保险人条款清楚、理赔及时公正。
+
+---
+
+## 🏘️ 谁有可保利益
+
+<div class="cols">
+<div class="col good">
+
+### ✅ 有
+- 财产所有人及其合伙人
+- **抵押权人** mortgagee
+- **受托保管人** bailee：干洗店、修车行
+- 可能对第三方负责任的人
+
+</div>
+<div class="col bad">
+
+### ❌ 没有
+- **邻居**的房子
+- 期待继承的**家传银器**
+- 损失后你的财务状况与损失前没有区别
+
+</div>
+</div>
+
+Note:
+约 3 分钟。判断标准只有一个：损失发生后，你在财务上会不会受损。邻居的房子烧了，你不会少钱；外婆答应留给你的银器被烧，你的财务状况与损失前并无不同，因为继承还没发生。没有可保利益，合同不可执行，法律的用意是不让人从自己没有财务利害的损失中获益。
+
+---
+
+## 🎬 情景：三件「别人的东西」
+
+① 偷来的车　② 邻居的房子　③ 外婆答应留给你的银器 {scene}
+
+<span class="ask">问：各缺哪个要素？</span> {f}
+
+✅ ① **Legality of Object**（标的不合法）　② ③ **Insurable Interest**（无可保利益） {ans f}
+
+Note:
+约 2 分钟。这是配对题里「偷来的」一类的变体。口诀：偷来的东西，标的不合法；别人的东西，无可保利益；期待继承的东西，无可保利益。让学员互相出题，用自己熟悉的例子。
+
+---
+
+## 🎯 课堂快问 ③
+
+Which of the following does **NOT** have an insurable interest in the property described? {quiz-q}
+
+<div class="opts">
+
+- A. A bank that holds a mortgage on a house
+- B. A dry cleaner holding customers' clothing
+- C. A granddaughter expecting to inherit silverware
+- D. A business partner in the building owner's firm
+
+</div>
+
+✅ **C** — 期待继承的财产没有可保利益；抵押权人、受托保管人、合伙人都有。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。NOT 题：先把有的三个排除。B 是 bailee 的典型例子，干洗店对客户衣物依法负一定责任，所以有可保利益。
+
+---
+
+## 🧩 缺了要素：Void 还是 Voidable
+
+```mermaid
+%% h=420
+flowchart TD
+    A(["8 个要素缺一个<br/>或被违反"]):::ask --> B["Void 无效<br/>视为从未存在"]:::warn
+    A --> C["Voidable 可撤销<br/>对过错方无效<br/>受害方可选"]:::ask
+```
+
+**void**＝法律上根本不能实现合同本来的目的（自始无效）。
+
+Note:
+约 3 分钟。两个词的区别是考点。Void：视为从未存在，对双方都是。Voidable：对过错方无效，对受害方不无效，除非受害方选择把它当作无效。典型例子：投保人故意隐瞒以前的理赔，保险公司可以选择撤销合同；是否撤销由保险公司（受害方）决定。
+
+---
+
+## 🎯 课堂快问 ④
+
+A **voidable** contract is one that is: {quiz-q}
+
+<div class="opts">
+
+- A. Considered in law never to have existed, for either party
+- B. Void as to the wrongdoer but not the wronged party, unless it so elects
+- C. Enforceable by either party only if it was made in writing
+- D. Automatically void as to both parties once 30 days pass
+
+</div>
+
+✅ **B** — A 是 void 的定义；C、D 是编出来的规则。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。让学员用自己的话解释 B 的「除非它选择」是什么意思，确认受害方才有选择权。
+
+---
+
+## 📎 临时保单：先把保障绑上
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🗣️ 经纪人承诺<br/>口头或书面"]:::step --> B["📎 Binder / Cover Note<br/>临时保单＝合同"]:::good
+    B --> C["📑 保险公司出<br/>正式保单"]:::good
+    A -. "口头 binder" .-> W["⚠️ 要立刻<br/>书面确认"]:::warn
+```
+
+Note:
+约 3 分钟。bind 的意思是经纪人已经承诺保险公司就所谈的标的提供一份保险合同。临时保单就是保险合同，适用同样的条款与条件。口头 binder 与书面同样有约束力，但只给口头承保、不书面确认是危险的做法：出险后会吵，到底绑的是哪一家，客户要的是 $200,000 还是 $300,000。
+
+---
+
+## 🔑 承保权限：从哪来
+
+<div class="cards">
+
+- **📜 代理协议** <br>Agency Agreement
+- **📘 费率手册** <br>rate manual：调整权限不必逐一重谈
+- **📏 举例** <br>限额内直接承保，超出转报
+- **💥 超权限出险** <br>**经纪行**担 E&O，不是保险公司
+
+</div>
+
+Note:
+约 3 分钟。承保权限常写在费率手册里，是因为市场变化或出大额赔案后保险公司想调整权限时，不必逐一重谈每份代理协议。权限的写法例如：住宅限额内可直接承保，超出的商业楼宇转报保险公司，某些高危业务一律不接。超权限又出险，经纪行可能面对错误与遗漏索赔。
+
+---
+
+## 🎬 情景：超了权限的楼
+
+经纪人 bind 了一栋商业楼，金额**超过**保险公司授予的权限；保险公司复核前发生了损失。 {scene}
+
+<span class="ask">问：谁可能要负责？</span> {f}
+
+✅ **经纪行**，通过 errors and omissions 索赔；不是保险公司，也不是被保险人。 {ans f}
+
+Note:
+约 3 分钟。这类情形里担责任的是经纪行，不是保险公司。这就是为什么经纪人要清楚自己的权限。追问：「客户会不会被牵连？」客户原本以为有保障，经纪行要负责，这也是 E&O 保险存在的原因。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Why is a broker's binding authority often stated in the insurer's **rate manual** rather than in the Agency Agreement? {quiz-q}
+
+<div class="opts">
+
+- A. Rate manuals are filed with and approved by the regulator
+- B. Agency Agreements are not legally allowed to contain any limits
+- C. Brokers are not permitted to read the Agency Agreement
+- D. Authority can then change without renegotiating each agreement
+
+</div>
+
+✅ **D** — 方便保险公司随市场调整权限；A、B、C 都是没有依据的说法。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。三个干扰项都是「编出来的规则」：先问学员「哪里说过 A？」这类题的诀窍是识别无依据的陈述。
+
+---
+
+## 📝 合同怎么改：三种文件
+
+<div class="cards c3">
+
+- **📄 Endorsement／Rider 批单** <br>确认条款变更：加保玻璃、删地震除外
+- **🔧 Floater 浮动保单** <br>保**流动性高**的财产：承包商设备、乐器
+- **📑 Separate Policy 另立保单** <br>原合同不变；不必同一家出
+
+</div>
+
+**一切变更必须书面；扩大保障通常加保费。** {takeaway}
+
+Note:
+约 3 分钟。保险合同通常一年期，期间常有变更，双方都要同意。批单例子：树木赔偿限额调高。浮动保单：承包商设备、杂项工具、珠宝皮草。另立保单：会计师的办公楼财产保单不保他的职业过失，须另买一份职业责任险。
+
+---
+
+## 🧭 选哪种文件
+
+```mermaid
+%% h=420
+flowchart TD
+    Q(["客户想怎么改?"]):::ask --> A["改条款或限额<br/>→ Endorsement"]:::good
+    Q --> B["保流动性财产<br/>→ Floater"]:::good
+    Q --> C["原合同保不了<br/>→ Separate Policy"]:::good
+```
+
+Note:
+约 3 分钟。决策树，让学员对着三个情景各选一个：树木限额提高选批单；承包商工具选浮动保单；会计师的职业错误选另立保单。练习卷第 10 题：双方同意改条款，发的是 endorsement；rider 一词在不同语境里用法宽窄不一，答题按三种文件的框架走。
+
+---
+
+## 🎯 课堂快问 ⑥
+
+A contractor wants coverage for equipment moved from job site to job site. Which document is designed for **property with a high degree of mobility**? {quiz-q}
+
+<div class="opts">
+
+- A. An endorsement deleting an exclusion
+- B. A binder issued by the broker
+- C. A floater
+- D. A separate policy from another insurer
+
+</div>
+
+✅ **C** — 浮动保单专为流动性高的财产设计；批单改条款，binder 是临时合同。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。让学员说出 A、B、D 分别解决什么问题。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 📏 考试口径 vs BC 现行
+
+<div class="cols">
+<div class="col exam">
+
+### 🧾 考场答（考试口径）
+- 普通法 **21 岁**成年，多数省降到 19 或更低
+- 未成年人：必需品有效，其他可在**合理期限**内撤销
+
+</div>
+<div class="col now">
+
+### 💼 工作中用（BC）
+- 成年年龄 **19**（Age of Majority Act）
+- Infants Act：成年后**一年**内的明确窗口；16 岁起寿险、意外疾病险有缔约能力
+
+</div>
+</div>
+
+给 16–18 岁客户投保，实务上常由父母或监护人作投保人。 {takeaway}
+
+Note:
+约 2 分钟。R16 规则：两个口径并列并标明该用哪个。这一讲考场按考试口径答。BC 现行法：Infants Act s.19 说未成年人订的合同对未成年人不可执行，除非成年后追认、一年内履行或一年内未否认；s.19 的例外里没有「生活必需品」。寿险与意外健康险 16 岁起有缔约能力，一般保险没有这条。这是实务提示，不是考点。口头 binder 在 BC 法上成立，考试口径与现行一致。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧠 一页总结
+
+<div class="cards">
+
+- **风险** <br>3 类；4 招：回避最不实用，**转移**最常用
+- **可保** <br>只有**纯风险**；免赔额是**自留**
+- **合同 5 要素** <br>合意 · 对价 · 合法 · 能力 · 真意
+- **保险 3 要素** <br>可保利益 · 最大诚信 · 补偿
+- **缺一** <br>Void＝从未存在；Voidable＝过错方无效
+- **Binder 与改动** <br>口头也有效；E&O 在经纪行；批单 / 浮动 / 另立
+
+</div>
+
+Note:
+约 3 分钟。收尾：让学员合上笔记，用 30 秒复述八个要素。布置作业：做这一讲 25 道英文题，其中几道在模考专属池里。下一讲预告：政府与监管。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 2 讲 · 保险合同 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

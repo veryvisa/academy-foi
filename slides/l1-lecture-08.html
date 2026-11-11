@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 8 讲 · 法律责任原理 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 8 讲 · 法律责任原理</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 8 讲</span>
+
+# 法律责任原理
+
+什么时候，你在法律上要赔别人钱
+
+<div class="chips"><span>刑法与民法</span><span>侵权三要素</span><span>过失与可预见</span><span>严格责任</span><span>九类关系</span></div>
+
+Note:
+开场约 2 分钟。先讲一个冰面的故事：商铺门口积水结冰，快递员滑倒摔断了腿，谁该赔？让学员投票。然后告诉他们：这一讲回答「什么时候人在法律上要赔别人」，第 9 讲讲责任保单怎么接住这笔钱，第 10 讲讲具体保障与除外。这一讲是地基，后两讲的每一条除外都能在这里找到道理。官方公开练习卷有 8 题（第 66 到 73 题）出自这个主题，题型几乎都是「哪一句不对」，错项往往只改了一个词。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 两套法律** <br>刑法 · 民法 · 普通法 · 成文法
+- **② 侵权三要素** <br>义务 · 违反 · 直接损害
+- **③ 过失** <br>合理人 · 可预见
+- **④ 三类侵权** <br>故意 · 非故意 · 严格责任
+- **⑤ 占用人与房东** <br>侵入者 · 访客 · 儿童
+- **⑥ 雇主与承包商** <br>替代责任 · 三例外
+- **⑦ 连带 · 动物 · 儿童** <br>各负全额 · 父母四例外
+- **⑧ 考试口径 vs BC 现行** <br>成文法更宽
+
+</div>
+
+Note:
+约 1 分钟。八站。第 ⑤ 到 ⑦ 站是九类责任关系，考的就是每条结论的限定词。
+
+---
+
+## 📌 这一讲考什么
+
+<div class="cards">
+
+- **哪一句不对** <br>三句是通行结论，一句改了一个词
+- **盯限定词** <br>legal 变 moral、ordinary 变 highest、generally 变 always
+- **九类关系** <br>每类一句结论加例外
+- **为后两讲铺路** <br>责任险只接「法律上」的责任
+
+</div>
+
+Note:
+约 2 分钟。强调应试方法：别只懂大意，要记得每条规则的限定词。让学员圈出三个词：legal、ordinary、generally。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **2 套法律** <br>刑法定罪 · 民法判赔
+- **2 个来源** <br>普通法靠先例 · 成文法优先
+- **2 个分支** <br>合同 · 侵权
+- **3 要素** <br>义务 · 违反 · 直接损害
+- **3 类侵权** <br>故意 · 非故意 · 严格责任
+- **9 类关系** <br>占用人到儿童
+
+</div>
+
+Note:
+约 2 分钟。全讲骨架，让学员抄下来。逐个提问：「刑法的救济是什么？」处罚。「民法呢？」赔偿。
+
+---
+
+## ⚖️ 刑法与民法
+
+<div class="cols">
+<div class="col bad">
+
+### 刑法 Criminal
+- 对**社会**的错行
+- 《刑法典》，全国统一
+- 罚款、缓刑、监禁
+- 关心**定罪**
+- 保险**不保**其财务后果
+
+</div>
+<div class="col good">
+
+### 民法 Civil
+- 私人之间的纠纷（私法）
+- 谈不拢上民事法庭
+- 目标：**赔偿**经济损失
+- 分**合同法**与**侵权法**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。例子：邻居吵架后一方故意放火烧了对方的车库。同一件事两套法律同时启动：他既可能被刑事起诉，也会被民事索赔，而他的责任险两边都不管，因为保险不承保被保险人犯罪行为的财务后果。
+
+---
+
+## 🌳 法律的树
+
+```mermaid
+%% h=440
+flowchart TD
+    A["⚖️ 法律"]:::step --> B["刑法<br/>惩罚"]:::warn
+    A --> C["民法<br/>赔偿"]:::good
+    C --> D["合同法<br/>自己定的义务"]:::ask
+    C --> E["侵权法<br/>法律加给每个人"]:::ask
+```
+
+合同可以让人承担法律本来没加给他的责任；保险不愿意接。 {takeaway}
+
+Note:
+约 2 分钟。这一句是第 10 讲「合同承担的责任」除外的来历：保险公司愿意接法律加给你的责任，不愿意接你自己签字揽下来的责任。让学员用一句话区分合同和侵权。
+
+---
+
+## 📜 普通法 vs 成文法
+
+<div class="cols">
+<div class="col exam">
+
+### 普通法 Common law
+- 基于**先例**（precedent）
+- 魁北克以外各省
+- 先例可被推翻
+- 例：普通法下 21 岁才成年
+
+</div>
+<div class="col now">
+
+### 成文法 Statute law
+- 议会通过的**书面法**
+- **优先于**同一事项的先例
+- 可在没有先例处立规
+- 例：多数省降到 18 或 19 岁
+
+</div>
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 70 题：「成文法基于先例」是错的，那是普通法的特征。两个词对调就是一道题。
+
+---
+
+## 🎯 课堂快问 ①
+
+A long-standing common law precedent treats anyone under 21 as a minor. A province then passes a statute setting the age of majority at 19. In that province, which rule applies? {quiz-q}
+
+<div class="opts">
+
+- A. The precedent, because common law is the main legal system outside Quebec
+- B. The precedent, until a court overturns it in a later case
+- C. Whichever rule is more favourable to the minor in the particular case
+- D. The statute, because statute law takes priority over common law precedent
+
+</div>
+
+✅ **D** — 成文法一经通过就优先于同一事项的先例。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。A 是最诱人的错项：它说的是真话，但不是这一题的答案。
+
+---
+
+## 🔗 侵权三要素
+
+```mermaid
+%% h=400
+flowchart LR
+    A["① 负有义务<br/>法律义务"]:::step --> B["② 违反义务"]:::step --> C["③ 直接后果<br/>造成损害"]:::step --> D["✅ 侵权成立"]:::good
+```
+
+缺一个就不成立；义务必须是**法律上**的，不是道德上的。 {takeaway}
+
+Note:
+约 3 分钟。官方练习卷第 69 题：四个选项里三个是三要素原文，一个把 legal duty 换成了 moral duty。道德上觉得该管而法律上没有义务的，不构成侵权。第 9 讲还会再用：被保险人觉得有道义责任，保单也只在他法律上有责任时才赔。补充：别处会看到过失四要件，内容是同一件事，考试口径把因果和损害合并了。
+
+---
+
+## 🚑 近因：只管直接后果
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🧊 门前结冰<br/>快递员摔断腿"]:::warn --> B["🚑 救护车赶来<br/>路上被闯红灯撞"]:::ask --> C["🤕 脑震荡<br/>面部撕裂"]:::step
+```
+
+断腿：**物业**负责。脑震荡与面伤：闯红灯的司机，不是物业。 {takeaway}
+
+Note:
+约 3 分钟。从最初的行为到最终结果，事件要不间断地展开，中间不能插入另一个主因。让学员判断：如果救护车是被物业自己的人开车撞的呢？那就不是第三方了。
+
+---
+
+## ❌ vs ✅ 要素里的陷阱
+
+<div class="xv">
+
+- ❌ 侵权要素包括被告**故意**造成伤害 {f}
+- ✅ 三要素：义务、违反、直接损害；不要求故意 {f}
+- ❌ 违反**道德**义务也构成侵权 {f}
+- ✅ 必须是**法律**义务 {f}
+
+</div>
+
+Note:
+约 2 分钟。第一组对应公开题库的一道「找例外」题：不属于三要素的是「意图造成伤害」。过失就是非故意的侵权，不需要故意。
+
+---
+
+## 🏌️ 过失：合理人与可预见
+
+<div class="cards">
+
+- **📖 定义** <br>合理人会做的没做，或合理谨慎的人不会做的做了
+- **🧾 另加一：须被证明** <br>举证在**原告**
+- **🔮 另加二：须可预见** <br>知道或应当知道有不合理风险
+- **⛳ 高尔夫** <br>100 码内可预见；400 码外**不可预见**
+
+</div>
+
+Note:
+约 3 分钟。两半定义：该做的没做（门前结冰不铲不撒盐），和不该做的做了（明知自家的狗见到穿制服的就扑，还让送货员直接进院）。标准是合理人在相同情形下会怎么做。
+
+---
+
+## 🎯 课堂快问 ②
+
+A golfer tees off and the ball strikes a person standing 400 yards down the fairway. Applying the foreseeability test, the golfer would most likely: {quiz-q}
+
+<div class="opts">
+
+- A. Be negligent, because golfers are strictly liable for any ball they hit
+- B. Be negligent, because an injury actually occurred
+- C. Not be negligent, because the injured person was a trespasser
+- D. Not be negligent, because the injury could not reasonably be foreseen
+
+</div>
+
+✅ **D** — 400 码外的后果不可预见；打高尔夫不是严格责任活动，仍要看有没有过失。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。B 把「有损害」当成了「有过失」，是典型错误：过失要被证明，后果要可预见。
+
+---
+
+## 🔥 三类侵权：责任险怎么对待
+
+<div class="cols">
+<div class="col bad">
+
+### 故意 Intentional
+- 明知不法而为
+- 责任险**不赔**
+
+</div>
+<div class="col good">
+
+### 非故意 Unintentional
+- 出于疏忽
+- 责任险的**主要对象**
+- 最重要的是过失
+
+</div>
+<div class="col exam">
+
+### 严格责任
+- 不问过错
+- 除非另有除外，**赔**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。严格责任不等于故意，它只是不要求证明过错，所以仍在责任险设计范围内。三种严格责任活动：合理活动放在不合理的地点（人口稠密区大量储存易燃物）；本身危险的活动（炸药）；让故意点燃的火蔓延。出处是 Rylands v. Fletcher，注意拼写。
+
+---
+
+## 🪜 占用人的义务：由轻到重
+
+```mermaid
+%% h=420
+flowchart LR
+    A["🥷 侵入者<br/>不设陷阱<br/>不故意伤害"]:::warn --> B["🙋 访客<br/>一切合理注意<br/>让场所合理安全"]:::step --> C["🧒 儿童<br/>免于任何危险<br/>attractive nuisance"]:::good
+```
+
+访客＝侵入者以外的任何进入者（BC、AB、ON、NS）。 {takeaway}
+
+Note:
+约 3 分钟。普通法的三档是 trespasser、licensee（已知隐藏危险）、invitee（已知加应当发现的危险）。BC 等四省的占用人责任法把 licensee 和 invitee 归到 visitors 名下。官方练习卷第 71 题考 invitee：答案是保护其免受已知或应当知道的危险；免于任何危险是儿童那一档。
+
+---
+
+## 🎬 情景：小屋里的机关
+
+小屋主人厌倦了闯空门，装了一个**暗藏的装置**，想伤到撞开门的人。一个小偷被严重打伤。 {scene}
+
+<span class="ask">问：房主要负责吗？</span> {f}
+
+✅ **可能要负责**——对侵入者的义务最低，但不是零：**不得设陷阱、不得故意伤害**。 {ans f}
+
+Note:
+约 3 分钟。再举一例：房主用球棒去打已经被制伏的小偷。让学员说出为什么「他在犯罪所以不赔」是错的：义务降到最低，不等于没有。
+
+---
+
+## 🏠 房东、租客、保管人
+
+<div class="cards c3">
+
+- **🏢 房东** <br>默认不保证适合用途
+- **✅ 房东负责** <br>明示保证 · 隐瞒 · 带家具 · 约定维修且合理通知后不修 · 多租户楼公共区域
+- **🧳 租客对房东** <br>侵权，或租约合同
+- **🧥 有偿保管人** <br>**ordinary care**：同行会尽的注意
+- **✖ 不是** <br>highest 注意，也不是对一切损失负责
+- **🧼 例子** <br>皮草店、干洗店、修车行
+
+</div>
+
+Note:
+约 3 分钟。例子：租约写明房东负责一切修理，租客六周里三次打电话说屋顶瓦片要修，一块松动的瓦片砸在顾客头上，房东负责；砸到路人同样负责。租客对房东的责任就是第 10 讲「租客法律责任」保障要接的风险。
+
+---
+
+## 🎯 课堂快问 ③
+
+A dry cleaner uses the same locks and alarm system as other dry cleaners in the city. Thieves defeat the system and steal a customer's coat. In tort law, is the dry cleaner liable? {quiz-q}
+
+<div class="opts">
+
+- A. Yes, because a bailee for hire must protect property from all sources of loss
+- B. Yes, because a bailee for hire owes the highest duty of care
+- C. No, because bailees are liable only where a written contract says so
+- D. No, because it exercised the ordinary care used by others in the same business
+
+</div>
+
+✅ **D** — 保管人的标准是同行的通常注意；不是最高，也不是对一切损失负责。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。官方练习卷第 72 题同类。让学员各自划掉 A、B 里的限定词：all、highest。
+
+---
+
+## 👷 雇主：替代责任
+
+```mermaid
+%% h=440
+flowchart TD
+    A["👷 雇员出事了"]:::step --> B["🛠️ 在替雇主干活<br/>（职务过程中）<br/>雇主负责"]:::good
+    A --> C["🙅 转托他人<br/>办私事<br/>私用雇主财产<br/>雇主不负责"]:::warn
+```
+
+关键只有一问：出事那一刻，他是在**替雇主干活**，还是在干自己的事？ {takeaway}
+
+Note:
+约 3 分钟。三个例子：下午不想干了，街上随手找人接手，这个人伤了人，雇主不负责；午休时私下接外活弄坏了客户的墙，不负责；晚上私用公司叉车帮朋友搬家撞坏了东西，不负责。判断方法只有一个问题。
+
+---
+
+## 🎬 情景：午休的私活
+
+家具店店员午休时，私下以 **$25** 替一对老夫妇拆餐桌，把墙、地板、天花板都弄坏了。 {scene}
+
+<span class="ask">问：店主要赔吗？</span> {f}
+
+✅ **不赔**——他在办**自己的私事**（frolic of their own），不是在职务过程中。 {ans f}
+
+Note:
+约 2 分钟。追问：「如果他是在送货途中不小心撞坏了客户的门呢？」那是替雇主干活，哪怕干得很糟，雇主也负责。穿着工服、开着公司的车，办私事也不算。
+
+---
+
+## 🩹 雇员受伤：工伤保险换起诉权
+
+<div class="cols">
+<div class="col good">
+
+### 在保险范围内
+- 领**无过错**给付
+- 不能告雇主，哪怕雇主有过失
+- 例：雇主给的梯子有缺陷，雇员摔断腿，只能领给付
+
+</div>
+<div class="col now">
+
+### 不在范围内的行业
+- 雇主可能要负责
+- 买 **Employer's Liability Rider**
+- 或让雇员加入工伤保险计划
+
+</div>
+</div>
+
+Note:
+约 2 分钟。常见判断题：「雇员对自己履行职务时的侵权个人负责」判错，职务中的侵权由雇主负责。BC 现行与考试口径在这里一致（Workers Compensation Act s.127）。
+
+---
+
+## 🎬 情景：有缺陷的梯子
+
+一名受省工伤保险保障的雇员，被雇主提供的**有缺陷梯子**摔成重伤。 {scene}
+
+<span class="ask">问：他怎么救济？</span> {f}
+
+✅ 直接向工伤保险计划领**无过错给付**——不能就工伤起诉雇主，哪怕雇主有过错。 {ans f}
+
+Note:
+约 2 分钟。三个常见错项：起诉雇主、先证明雇主有过错才领、既领又告。让学员说出为什么都错：这是一个换来的权利，无过错给付换掉了起诉权。
+
+---
+
+## 🤝 独立承包商：控制是分界线
+
+<div class="cards">
+
+- **默认** <br>承包商对自己的侵权负责：选任尽了合理注意，且该工作本应进行
+- **共担一** <br>工作本身**危险**（炸药清树桩）
+- **共担二** <br>伤害来自占用人提供的**有缺陷设备**
+- **共担三** <br>占用人**控制**了施工方式
+
+</div>
+
+Note:
+约 3 分钟。把雇员和独立承包商放一起看，分界线是控制：雇主指挥雇员怎么干，所以替他负责；业主只告诉承包商要什么结果，所以不负责；业主一旦插手指挥怎么干，就退回到要负责的位置。两家邻居请人建围栏，只交图纸就是独立运作。
+
+---
+
+## ❌ vs ✅ 承包商与连带的陷阱
+
+<div class="xv">
+
+- ❌ 雇了承包商，一切责任都在承包商 {f}
+- ✅ 危险工作、你给的坏设备、你控制施工三种共担 {f}
+- ❌ 两个侵权人有争议时各负一半 {f}
+- ✅ 各自对**全额**负责；各付一半只是实践做法 {f}
+
+</div>
+
+Note:
+约 2 分钟。连带责任的例子：两个邻居一起锯一棵枯云杉，树倒下压断电线、砸毁三辆车，法院判赔 $125,000，两人都说对方责任更大。法律不等他们吵完，各自对全部负责；这不是让原告拿两份。
+
+---
+
+## 🐕 动物与儿童
+
+<div class="cards c3">
+
+- **🐕 家养动物** <br>没有「第一口免费」，第一口就负责
+- **🐆 野生动物** <br>主人负**严格责任**（如私养的猎豹）
+- **🧒 儿童自己** <br>自己负责，除非不懂后果
+- **👪 父母** <br>一般**不**负责……
+- **① ②** <br>监管失职 · 把危险物或动物交给孩子
+- **③ ④** <br>按父母指示行事 · 在父母的生意里干活
+
+</div>
+
+Note:
+约 3 分钟。狗：这条规则出自安大略省的 Dog Owner's Liability Act；BC 没有同类专法，见考试口径 vs 现行那页。儿童：八岁的孩子玩火柴烧到邻居的草坪，他自己负责，除非证明他不完全理解后果。四种父母例外：叫孩子刷围栏，漆喷到邻居外墙；十几岁的儿子在父亲的园艺公司开装载机毁了树。
+
+---
+
+## 🎯 课堂快问 ④
+
+Under common law precedent, parents are financially responsible for damage caused by their child in all of the following situations **EXCEPT**: {quiz-q}
+
+<div class="opts">
+
+- A. The parents gave the child an air rifle, which the child fired at a neighbour's car
+- B. The child, told by a parent to paint the fence, sprayed paint on a neighbour's house
+- C. The child damaged a customer's property while working in the parents' business
+- D. The properly supervised child carelessly rode a bicycle into a parked car
+
+</div>
+
+✅ **D** — 监管得当的孩子自己的疏忽，父母不负责；A、B、C 分别落在四种例外里。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。官方练习卷第 73 题：Parents are always held liable 是错项。四种情形说到底都是父母自己有过错，或自己就是雇主。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+Certain elements must be present in every tort action. Which of the following is **NOT** one of them? {quiz-q}
+
+<div class="opts">
+
+- A. A duty was owed to the person who was harmed
+- B. The defendant intended to cause the injury or damage
+- C. The duty owed to the plaintiff was breached
+- D. Damages were suffered as a proximate result of the defendant's actions
+
+</div>
+
+✅ **B** — 侵权三要素不要求故意；A、C、D 就是三要素。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题，回扣开头的三要素。让学员闭卷默念三个要素。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考场答考试口径，BC 客户用现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- 访客取代 licensee 和 invitee
+- 房东：合理通知后不修才负责
+- 承包商：选任尽到合理注意
+- 狗：第一口就负责（安大略）
+
+</div>
+<div class="col now">
+
+### 2026 现行（BC）
+- 《Occupiers Liability Act》s.3：合理注意及于任何人
+- s.6：租约让房东负责维修，房东就负同样义务，不需先通知
+- s.5：选任**加监督**
+- BC 没有同类狗咬人专法
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列。三处 BC 条文都比考试口径宽：以为小偷摔伤告不了我、以为请了靠谱的承包商就没我的事、以为房客不打招呼我就不用管，给客户讲时按右边说。另有三点本课没核到一手源：狗咬人在 BC 的赔偿依据、Rylands 在今天的适用范围、合理人标准的最初表述，所以对客户不要下断言。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **三要素** <br>法律义务 · 违反 · 直接损害；过失另加举证与可预见
+- **三类侵权** <br>故意不赔 · 非故意主要 · 严格责任照赔
+- **九类关系** <br>占用人 · 房东 · 租客 · 保管人 · 雇主 · 承包商 · 连带 · 动物 · 儿童
+- **限定词** <br>legal · ordinary · generally 别被改掉
+
+</div>
+
+先问：他有没有法律上的义务？ {takeaway}
+
+Note:
+约 2 分钟。让学员用三句话复述。课后做本讲 25 道题，每道错项找出被改动的那个词。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 8 讲 · 法律责任原理 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

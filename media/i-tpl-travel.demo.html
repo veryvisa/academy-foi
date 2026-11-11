@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第三方责任出省演示</title>
+<meta name="description" content="开车去美国或外省，BC 基本险的第三方责任够不够：选目的地与事故类型，看它什么时候出场。">
+<style>
+:root{--bg:#ffffff;--ink:#1b2430;--muted:#5d6b7b;--line:#e3e8ef;--raised:#f6f8fb;--acc:#0b5fff;--ok:#1a7f4b;--okbg:#e9f7ef;--warn:#b54708;--warnbg:#fff3e6;--bad:#b42318;--badbg:#fdecea}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1419;--ink:#e6ebf2;--muted:#9aa7b5;--line:#2a3340;--raised:#171d25;--acc:#6ea8ff;--ok:#5fd39a;--okbg:#122a1d;--warn:#ffb86b;--warnbg:#2d1f0f;--bad:#ff8a80;--badbg:#2d1414}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.45rem;line-height:1.35;margin:0 0 6px}
+h2{font-size:1.1rem;margin:28px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 16px}
+.answer{background:var(--raised);border-left:4px solid var(--acc);padding:12px 14px;border-radius:8px;margin:14px 0}
+.answer b{display:block;margin-bottom:4px}
+label.f{display:block;margin:10px 0}
+label.f span{display:block;font-weight:600}
+label.f small{display:block;color:var(--muted)}
+input[type=number],input[type=date],select{font:inherit;width:220px;max-width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+fieldset{border:1px solid var(--line);border-radius:10px;margin:12px 0;padding:8px 14px}
+legend{font-weight:600;padding:0 6px}
+label.c{display:block;margin:6px 0}
+.result{border-radius:10px;padding:12px 14px;margin:14px 0;border:1px solid var(--line);background:var(--raised)}
+.result.warn{background:var(--warnbg);border-color:var(--warn)}
+.result.ok{background:var(--okbg);border-color:var(--ok)}
+.result.bad{background:var(--badbg);border-color:var(--bad)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th{background:var(--raised)}
+.wrap{overflow-x:auto}
+.pit{margin:0;padding-left:1.2em}
+.pit li{margin:6px 0}
+.foot{margin-top:28px;padding-top:12px;border-top:1px dashed var(--line);font-size:.86rem;color:var(--muted)}
+.foot a{color:var(--acc);overflow-wrap:anywhere}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<main>
+<h1>开车去美国或外省旅行，BC 基本险里的第三方责任够不够？</h1>
+<p class="sub">第三方责任出省 · 选目的地看它什么时候出场 · ICBC 现行页口径</p>
+<div class="answer"><b>省内多数事故用不上，出省才是它的主场。</b>基本险含 $200,000 第三方责任。在外省或美国，当地法律可能允许对方起诉你，赔偿可能远超这个额度；扩展第三方责任是可选险，最高 $500 万。基本险只在加拿大和美国有效。</div>
+
+<h2>没有脚本时：对照表</h2>
+<div class="wrap"><table>
+<thead><tr><th>在哪出事</th><th>撞伤人</th><th>撞坏别人的车</th><th>撞坏围栏、电线杆、店面</th></tr></thead>
+<tbody>
+<tr><td>BC 省内</td><td>走 Enhanced Care，多数情况不能就人伤起诉；第三方责任通常不出场</td><td>公路上 BC 在保车辆之间不能就车损起诉，对方车由对方的保险修</td><td>第三方责任出场</td></tr>
+<tr><td>加拿大其他省与地区</td><td colspan="3">当地法律允许起诉时，第三方责任替你应诉和赔偿，超出额度的部分自己承担</td></tr>
+<tr><td>美国</td><td colspan="3">同上；赔偿金额可能远超 $200,000</td></tr>
+<tr><td>墨西哥及其他国家</td><td colspan="3">基本险不保</td></tr>
+</tbody>
+</table></div>
+
+<form id="f" novalidate>
+<h2>选一选</h2>
+<label class="f"><span>在哪出事</span><select id="where"><option value="bc">BC 省内</option><option value="canada">加拿大其他省与地区</option><option value="us">美国</option><option value="other">墨西哥或其他国家</option></select></label>
+<label class="f"><span>出了什么事（你负责任的一方）</span><select id="what"><option value="injury">撞伤了人</option><option value="vehicle">撞坏了别人的车</option><option value="property">撞坏了围栏、电线杆、店面等非车辆财产</option></select></label>
+<div id="out" class="result" aria-live="polite"><p>启用脚本后这里显示结果；未启用时请看上面的表。</p></div>
+</form>
+
+<h2>出发前核对</h2>
+<ol class="pit">
+<li>保单上的第三方责任额度：基本险是 $200,000。</li>
+<li>要去外省或美国：考虑加扩展第三方责任（可选险，最高 $500 万），加多少找 Autoplan 经纪按出行地和自己的资产定。</li>
+<li>目的地不在加拿大和美国：基本险不保，另行安排。</li>
+</ol>
+
+<h2>本页不判的事</h2>
+<ul class="pit">
+<li>要加到多少：本页不估诉讼金额，也不推荐具体额度。</li>
+<li>你自己受伤的给付与旅行医疗：另看。</li>
+<li>BC 省内被判定构成规定刑事罪名的驾驶者仍可被起诉（Insurance (Vehicle) Act s.116(2)(f)），这时通常同时违反保障条件，见「违反保障条件还赔吗」。</li>
+</ul>
+
+<div class="foot">
+<p>来源：<a href="https://www.icbc.com/insurance/products-coverage/basic-insurance">ICBC Basic insurance and Enhanced Care</a>；<a href="https://www.icbc.com/insurance/products-coverage/extended-liability">ICBC Extended Third Party Liability</a>（2026-11-03 回读）；<a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96231_01">Insurance (Vehicle) Act s.115、s.116、s.172</a>（current to 2026-10-27）。</p>
+</div>
+</main>
+<script>
+function calc(i){
+  var w=i.where,k=i.what;
+  if(['bc','canada','us','other'].indexOf(w)<0||['injury','vehicle','property'].indexOf(k)<0)return{state:'invalid',head:'请选地点和事故类型。',rows:[],notes:[]};
+  if(w==='other')return{state:'bad',tpl:'none',head:'基本险不保：Basic Autoplan 只在加拿大和美国有效。',rows:[],notes:['出行前另行安排当地保险。']};
+  if(w==='bc'){
+    if(k==='injury')return{state:'ok',tpl:'rare',head:'第三方责任通常不出场：BC 省内人伤走 Enhanced Care。',rows:[['受伤的人','从 Enhanced Care 拿给付，不论谁的责任'],['能不能起诉你','多数情况不能（Act s.115）；你因此被判定构成规定刑事罪名时例外（s.116(2)(f)）']],notes:['刑事定罪那种情形通常同时违反保障条件，见「违反保障条件还赔吗」。']};
+    if(k==='vehicle')return{state:'ok',tpl:'rare',head:'第三方责任通常不出场：对方的车由对方的保险修。',rows:[['依据','公路上至少两辆 BC 在保车辆的事故，不能就车损起诉（Act s.172(1)）'],['例外','对方车辆不是 BC 在保车辆时，诉权仍在（s.172(2)）']],notes:[]};
+    return{state:'warn',tpl:'yes',head:'第三方责任出场：非车辆财产的损失由它赔，基本额度 $200,000。',rows:[['基本额度','$200,000'],['可扩展到','最高 $500 万（可选险）']],notes:['电线杆、店面这类损失可能不小，超出额度的部分要自己承担。']};
+  }
+  var rows=[['基本额度','$200,000'],['可扩展到','最高 $500 万（扩展第三方责任，可选险）'],['超出额度','你自己承担']];
+  var notes=['出发前看一眼保单上的额度，要不要加、加多少找 Autoplan 经纪。'];
+  if(w==='us')notes.unshift('美国的赔偿金额可能远超 $200,000。');
+  return{state:'warn',tpl:'yes',head:'第三方责任出场：当地法律允许对方起诉时，由它替你应诉和赔偿。',rows:rows,notes:notes};
+}
+
+(function(){
+  var out=document.getElementById('out'),ids=["where", "what"];
+  function $(k){return document.getElementById(k)}
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function upd(){
+    var v={};ids.forEach(function(k){var e=$(k);v[k]=e.type==='checkbox'?e.checked:e.value});
+    if(!v.today){var t=new Date();v.today=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0')}
+    var r=calc(v);
+    out.className='result '+({date:'ok',ok:'ok',allowed:'ok',banned:'bad',bad:'bad',unclear:'warn',invalid:'warn',outside:'warn'}[r.state]||'');
+    var h='<p><b>'+esc(r.head)+'</b></p>';
+    if(r.rows&&r.rows.length){h+='<div class="wrap"><table><tbody>'+r.rows.map(function(x){return '<tr><td>'+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>'}).join('')+'</tbody></table></div>'}
+    if(r.notes&&r.notes.length){h+='<ul class="pit">'+r.notes.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'}
+    out.innerHTML=h;
+  }
+  ids.forEach(function(k){var e=$(k);if(e){e.addEventListener('input',upd);e.addEventListener('change',upd)}});
+  upd();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

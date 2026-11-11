@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 9 讲 · 责任险导论 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 9 讲 · 责任险导论</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 9 讲</span>
+
+# 责任险导论
+
+所有责任保单共用的一副骨架
+
+<div class="chips"><span>承保协议五要点</span><span>事故发生制</span><span>三种限额</span><span>出险后五项义务</span><span>附加给付</span></div>
+
+Note:
+开场约 2 分钟。先问一句：「你开车撞了别人，家里的责任险和车险的责任部分，赔的是同一种东西吗？」让学员说。然后告诉他们：车险的第三者责任、家庭保单的个人责任、企业的商业责任险，全都长在这副骨架上。这一讲篇幅短，但官方练习卷 74 到 77 题四道全是「下面哪一句不适用」，各盯一个地方；另外限额算例是少有的计算题来源，请准备纸笔。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 承保协议** <br>五要点 · BI 与 PD
+- **② 只保第三方** <br>法律上有责任
+- **③ 事故发生制** <br>occurrence vs claims-made
+- **④ 三种限额** <br>每次 · 累计 · 分项
+- **⑤ 补偿性赔偿** <br>惩罚性自付
+- **⑥ 五项义务** <br>报告 · 配合 · 不自付
+- **⑦ 附加给付** <br>限额之外
+- **⑧ 现行口径** <br>时效 · 直接起诉保险人
+
+</div>
+
+Note:
+约 1 分钟。八站。③ 和 ④ 要拿笔算，⑥ 有三个情景。
+
+---
+
+## 📌 这一讲考什么
+
+<div class="cards">
+
+- **四道「不适用」** <br>承保协议 · 事故发生制与限额 · 义务 · 附加给付
+- **限额算例** <br>每次事故、累计、分项各算一遍
+- **实务里常听到的** <br>claims-made 只当背景，考卷只考 occurrence
+- **道义≠法律** <br>呼应第 8 讲
+
+</div>
+
+Note:
+约 2 分钟。强调第 8 讲的联结：被保险人觉得有道义责任，保单也只在他法律上有责任时才赔。
+
+---
+
+## 🔢 一页数字
+
+<div class="cards c3">
+
+- **5 要点** <br>BI 与 PD · 第三方 · 法律责任 · 事故发生制 · 补偿性
+- **2 种 occurrence** <br>突发的 · 长期持续的
+- **3 种限额** <br>每次 · 累计 · 分项
+- **$2M ／ $4M** <br>算例：每次事故 · 累计
+- **5 项义务** <br>急救是唯一例外
+- **4 项附加给付** <br>限额之外
+
+</div>
+
+Note:
+约 2 分钟。全讲骨架，抄在笔记本第一页。
+
+---
+
+## 🧩 承保协议：四个条件同时成立
+
+```mermaid
+%% h=400
+flowchart LR
+    A["💥 occurrence<br/>造成 BI 或 PD"]:::step --> B["📅 保单期内<br/>🌍 承保地域内"]:::step --> C["⚖️ 法律上<br/>对第三方有责任"]:::ask --> D["💰 赔<br/>补偿性赔偿"]:::good
+```
+
+读任何一张责任保单，都先过这几关。 {takeaway}
+
+Note:
+约 3 分钟。可以把主承保协议拆成五点：保 BI 与 PD、只保第三方、法律上有责任才赔、按事故发生制、只赔补偿性赔偿。让学员对着图说出每一关。
+
+---
+
+## 🩹 BI 与 PD：定义比你想的宽
+
+<div class="cols">
+<div class="col bad">
+
+### Bodily injury 人身伤害
+- 身体受到的实际伤害
+- 含**疾病**
+- 含日后由此导致的**死亡**
+- 例：被松动地毯绊倒、从坏楼梯摔下
+
+</div>
+<div class="col good">
+
+### Property damage 财产损害
+- 有形财产的**物理损坏**
+- 加由此产生的**使用损失**
+- 连没受损财产的**使用损失**也算
+- 例：邻居的孩子烧了你家，你租房、寄养宠物的开支
+
+</div>
+</div>
+
+Note:
+约 3 分钟。例子：邻居的孩子玩火烧毁了你的房子。除了房屋本身，你还要租临时住处、多花交通费、寄养宠物，这些由邻居的责任保单按财产损害赔。「财产损害只指修复或更换的费用」是错项。
+
+---
+
+## ❌ vs ✅ BI／PD 的陷阱
+
+<div class="xv">
+
+- ❌ 人身伤害只指身体外伤 {f}
+- ✅ 也包括疾病，以及日后由此导致的死亡 {f}
+- ❌ 财产损害只指修复或更换的费用 {f}
+- ✅ 使用损失也算，没受损财产的使用损失同样 {f}
+
+</div>
+
+Note:
+约 2 分钟。第一组对应「包括下列各项，除了」这类找例外题，错项是把别的东西塞进去。产品责任诉讼里主张的关节痛、免疫疾病等，是疾病的例子。
+
+---
+
+## 🎬 情景：自家台阶上摔倒
+
+被保险人在**自己家门口台阶**摔断了手腕，问责任险赔不赔。 {scene}
+
+<span class="ask">问：责任险赔吗？</span> {f}
+
+✅ **不赔**——责任险只保**第三方**；自己受伤是第一方保障（意外险等）的事。 {ans f}
+
+Note:
+约 2 分钟。第三方＝保单上没有列名的任何人或实体。第 10 讲「被保险人自己及同住家人的人身伤害除外」和「自有财产除外」就是这一点落在条款上。
+
+---
+
+## ⚖️ 只有法院能说你有责任
+
+<div class="cards">
+
+- **💭 道义责任** <br>觉得对不起，**不触发**保单
+- **⚖️ 法律责任** <br>过失成立才触发；由**法院**认定
+- **🤝 现实** <br>证据明显时，多数案子庭外和解
+- **🗣️ 对客户怎么说** <br>先过「你法律上有没有责任」这一关，不是你或经纪人能下结论
+
+</div>
+
+Note:
+约 3 分钟。一位业主开坐式割草机失控，伤了在人行道上玩的两个孩子。他也许相信自己有责任，但可能根本没有法律责任，或只对一部分损害有责任。真正说了算的是法院。
+
+---
+
+## 🕰️ 事故发生制：看事故发生在哪年
+
+```mermaid
+%% h=420
+flowchart LR
+    A["💥 2023<br/>顾客在店里受伤"]:::warn --> B["📅 保单到期<br/>店也关了"]:::step --> C["📬 2026<br/>顾客起诉"]:::ask --> D["✅ 2023 年那张保单<br/>仍然响应"]:::good
+```
+
+只看损害**发生在保单期内**，不看什么时候被索赔。 {takeaway}
+
+Note:
+约 3 分钟。常见情形。保单到期多年以后有人就当年的事起诉，当年那张保单仍然响应。实务三句话之一：旧的责任保单不要扔，事故发生制下多年前的事要找当年的保单。BC 现行：时效基本 2 年自发现起算，终极 15 年，这就是责任险的长尾。
+
+---
+
+## 🔄 考卷不考的：索赔提出制
+
+```mermaid
+%% h=420
+flowchart LR
+    A["📅 保单期内<br/>做了工作"]:::step --> B["🛑 退休或不再续保<br/>没买延长报告期"]:::warn --> C["📬 日后<br/>被索赔"]:::ask --> D["❌ 没有保单接"]:::warn
+```
+
+Claims-made：看索赔是否在保单期内**首次提出**；带**追溯日**与**延长报告期**。**考卷只考 occurrence。** {takeaway}
+
+Note:
+约 3 分钟。这一框是考试之外的内容，来源见现行口径页。两者的差别在换保险公司、停业、退休时最要命：occurrence 保单停了，过去的事故仍有保障；claims-made 保单停了又没买延长报告期，过去的工作日后被索赔就没有保单接。经纪人自己的错漏责任险恰恰是 claims-made 的。
+
+---
+
+## 🎬 情景：邻居的壁炉
+
+邻居的壁炉排烟不当，**五个月里**把你家外墙慢慢熏变了色。找不到哪一天算「出事那天」。 {scene}
+
+<span class="ask">问：邻居的事故发生制责任保单响应吗？</span> {f}
+
+✅ **响应**——持续或反复暴露于大体相同的有害条件，同样是 **occurrence**。 {ans f}
+
+Note:
+约 3 分钟。取自公开题库同讲题。引出 occurrence 与 accident 的关系：accident 是突发、时间确定的事件；occurrence 比它宽，还包括长期暴露。练习卷里有一道题问两者关系，答案是 accident 是 occurrence 的一种。
+
+---
+
+## 🎯 课堂快问 ①
+
+Which statement correctly describes the relationship between an "accident" and an "occurrence"? {quiz-q}
+
+<div class="opts">
+
+- A. An occurrence is one kind of accident and is the narrower of the two terms
+- B. The two terms have the same meaning and are used interchangeably
+- C. An accident happens over a long period, while an occurrence is sudden
+- D. An accident is sudden and fixed in time, while an occurrence also covers long-term exposure
+
+</div>
+
+✅ **D** — accident 是 occurrence 的一种，occurrence 更宽。A 把方向说反了。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。让学员用一句话说清：窄的是 accident，宽的是 occurrence。
+
+---
+
+## 🧮 每次事故限额：每次重新可用
+
+<div class="cols">
+<div class="col good">
+
+### 限额 $2,000,000 每次事故
+- 第 1 次 $1,500,000 → 赔 $1,500,000
+- 第 2 次 $2,500,000 → 赔 $2,000,000，自付 $500,000
+- 第 3 次 $1,200,000 → 赔 $1,200,000
+- 三次合计赔 $4,700,000
+
+</div>
+<div class="col bad">
+
+### 常见错项
+- 「保单期内所有事故合计的最高赔付额」
+- 那是**累计限额**，不是每次事故限额
+
+</div>
+</div>
+
+Note:
+约 3 分钟。例子：一家制造厂的产品一年里引起三次责任事故。每一行前面都有个前提：被保险人对那次损失在法律上有责任。三次合计赔了 $4,700,000，超过保单上写的 $2,000,000，这正是每次事故限额的意思。官方练习卷第 75 题。
+
+---
+
+## 🧱 加上累计限额：天花板
+
+```mermaid
+%% h=420
+flowchart LR
+    A["第 1 次<br/>赔 $1,500,000"]:::good --> B["第 2 次<br/>赔 $2,000,000<br/>累计 $3,500,000"]:::step --> C["第 3 次<br/>索赔 $1,200,000<br/>只剩 $500,000"]:::warn
+```
+
+先用**每次事故**限额压一遍，再看**累计**限额还剩多少。 {takeaway}
+
+Note:
+约 3 分钟。每次事故 $2,000,000、累计 $4,000,000。第 3 次在每次事故限额内，但累计限额只剩 $500,000，所以只赔 $500,000。累计限额是保单期内全部有效索赔的最高总赔付。
+
+---
+
+## 🎯 课堂快问 ②
+
+A policy has $1,000,000 per occurrence and a $2,000,000 aggregate. The insured is legally liable for three losses in order: $900,000, $800,000 and $700,000. How much does the policy pay for the **third**? {quiz-q}
+
+<div class="opts">
+
+- A. $700,000
+- B. Nothing
+- C. $300,000
+- D. $400,000
+
+</div>
+
+✅ **C** — 前两次共赔 $900,000 ＋ $800,000 ＝ $1,700,000，累计限额只剩 $300,000。 {ans f}
+
+Note:
+约 3 分钟。取自公开题库同讲题。让学员先算再揭晓，D 是常见错误：$2,000,000 − $1,600,000 之类算错了前两次。
+
+---
+
+## 🔀 分项限额：先压每人，再看合计
+
+```mermaid
+%% h=420
+flowchart LR
+    A["三位伤者<br/>$60,000 · $45,000 · $20,000"]:::warn --> B["每人 $50,000<br/>$50,000 · $45,000 · $20,000"]:::step --> C["合计 $100,000<br/>赔 50 + 45 + 5 ＝ $100,000"]:::good
+```
+
+$50,000／$100,000／$25,000＝每人 BI／每次 BI 合计／每次 PD（示例）。 {takeaway}
+
+Note:
+约 3 分钟。示例限额 $50,000／$100,000／$25,000：伤者 a 损害 $60,000 赔 $50,000（每人限额）；b $45,000 全赔；c $20,000，合计 $100,000 已用掉 $95,000，只剩 $5,000，其余不保。分项限额常见于美国车险的最低限额。按顺序两步：先把每个人压到每人限额以内，再看合计有没有超过第二个数。
+
+---
+
+## 🎯 课堂快问 ③
+
+Split limits are $100,000/$200,000/$50,000. The insured is legally liable for $180,000 of bodily injury to one person and $65,000 of damage to that person's vehicle. What does the policy pay? {quiz-q}
+
+<div class="opts">
+
+- A. $150,000
+- B. $245,000
+- C. $230,000
+- D. $200,000
+
+</div>
+
+✅ **A** — 人身伤害受每人限额约束：$100,000；财产损害受 $50,000 约束；合计 $150,000。 {ans f}
+
+Note:
+约 3 分钟。取自公开题库同讲题。B 是全额相加。让学员把两个限额各自压一遍再加。
+
+---
+
+## 🚫 补偿性 vs 惩罚性
+
+<div class="cols">
+<div class="col good">
+
+### 补偿性 Compensatory
+- 补偿原告所受的伤害或损害
+- 责任保单**赔**
+
+</div>
+<div class="col bad">
+
+### 惩罚性 Punitive／Exemplary
+- 惩罚被告、威慑他人
+- 由被保险人**自付**
+
+</div>
+</div>
+
+罚也能转嫁给保险公司，惩罚就落空了。 {takeaway}
+
+Note:
+约 2 分钟。道理和第 8 讲不保犯罪、不保故意一脉相承。官方练习卷第 74 题：「赔补偿性、惩戒性、惩罚性和名义性赔偿」是错项。拼写提醒：punitive 常被拼错成 punative，答题写正确拼法。
+
+---
+
+## 📣 出险后的五项义务
+
+<div class="cards c3">
+
+- **① 及时报告** <br>可能引起索赔的**事故**，不是等索赔
+- **② 立即转交** <br>收到的法律文件副本
+- **③ 授权取记录** <br>警察、消防的报告
+- **④ 协助** <br>调查、和解、抗辩
+- **⑤ 不自行付款** <br>承诺或费用都不行
+- **⛑️ 唯一例外** <br>急救费用
+
+</div>
+
+Note:
+约 3 分钟。第一条的对象是 occurrence，不是 claim。第四条的三处困难：调查时不配合、觉得自己没责任而抵制和解、保险人要他作证他拒绝。第五条：调查、抗辩、和解索赔的权利专属于保险人。
+
+---
+
+## 🎬 情景：「他说没事」
+
+顾客在餐馆湿地板上滑倒，说没事就走了，老板没告诉保险人。**12 天后**顾客的律师来信：髋部骨折，要起诉。 {scene}
+
+<span class="ask">问：老板哪项义务没做到？</span> {f}
+
+✅ **及时报告**——对象是可能引起索赔的**事故**，不是等索赔；应在事发后就报。 {ans f}
+
+Note:
+约 3 分钟。及时报告是保障的一项条件。太多被保险人因为相信「不会有人来索赔」而不报。BC 现行：迟报给保险人一个抗辩，不是自动终局（Insurance Act s.13）。
+
+---
+
+## 🎯 课堂快问 ④
+
+A customer cuts her arm on a broken display case. Without contacting his insurer, the store owner pays $80 for first aid supplies and then gives the customer $500 "to forget the whole thing." Which amount, if any, can the owner recover from the insurer? {quiz-q}
+
+<div class="opts">
+
+- A. Both amounts, because they were paid in good faith to reduce the claim
+- B. Only the $500, because it settled the customer's claim in full
+- C. Neither amount, because no payment may be made without consent
+- D. Only the $80, because first aid is the one expense allowed without consent
+
+</div>
+
+✅ **D** — 急救是唯一例外；善意不是标准，自愿付的 $500 还可能被看成承认责任。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。再如餐馆给每位吃坏肚子的客人 $1,000 了事，保险人也不会偿还。
+
+---
+
+## ❌ vs ✅ 义务的陷阱
+
+<div class="xv">
+
+- ❌ 被保险人必须用一切办法阻止对方索赔 {f}
+- ✅ 没有这一条，而且正撞上「不得自行付款」 {f}
+- ❌ 等对方正式索赔了再报告 {f}
+- ✅ 出了可能引起索赔的事就要报 {f}
+
+</div>
+
+Note:
+约 2 分钟。第一组是官方练习卷第 76 题的错项。其余三句（及时报告、充分配合、除急救外未经许可不付任何费用）都是义务原文。
+
+---
+
+## ➕ 附加给付：限额之外的钱
+
+```mermaid
+%% h=440
+flowchart TD
+    A["⚖️ 判赔 $1,500,000<br/>限额 $1,000,000"]:::warn --> B["限额内 $1,000,000<br/>赔款"]:::good
+    A --> C["限额外另付<br/>抗辩费 · 合理费用<br/>诉讼费 · 限额内部分的利息"]:::step
+    A --> D["超出的 $500,000<br/>被保险人自付"]:::warn
+```
+
+附加给付管**费用和利息**，不管超额的判赔本金。 {takeaway}
+
+Note:
+约 3 分钟。四项：抗辩费用；应保险人要求而发生的合理费用；判由被保险人承担的诉讼费；自判决日起的利息，只算限额以内的部分。例子：判赔 $1,500,000，限额 $1,000,000，保险人花三个月决定不上诉才付，利息只按 $1,000,000 算。对很多被保险人来说，光是保险人承担抗辩费这一条，就值回了买责任险的钱。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+The Supplementary Payments agreement provides for all of the following **EXCEPT**: {quiz-q}
+
+<div class="opts">
+
+- A. The costs of defending the action against the insured
+- B. Court costs assessed against the insured
+- C. Compensatory damages awarded to the injured third party
+- D. Reasonable expenses the insured incurs at the insurer's request
+
+</div>
+
+✅ **C** — 赔款本身在限额之内；附加给付管的是费用和利息，在限额之外。 {ans f}
+
+Note:
+约 2 分钟。取自公开题库同讲题。官方练习卷第 77 题：「判赔超出保单限额的部分由附加给付赔」是错项。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 🧭 考场答考试口径，BC 客户用现行
+
+<div class="cols">
+<div class="col exam">
+
+### 考试口径
+- 只讲 occurrence basis
+- 判决后利息：判决日起、限额内部分，没给利率
+- 及时报告是保障的条件
+- 保单当事人是被保险人
+
+</div>
+<div class="col now">
+
+### 2026 现行（BC）
+- 时效基本 **2 年**（自发现起），终极 **15 年**
+- 判决后利率＝最优惠利率，按半年取值
+- 迟报是抗辩，法院可免除（s.13）
+- 判决债权人可**直接起诉保险人**（s.25）
+
+</div>
+</div>
+
+Note:
+约 3 分钟。两个口径并列。这一讲考试口径与现行法没有正面冲突，问题在于考试没涉及的几件事。三句可以直接对客户说的话：出了可能有人受伤的事，当天告诉我们；不要自己掏钱、不要说「是我的错」，急救该做就做；旧的责任保单不要扔。惩罚性赔偿在 BC 能不能投保、各家保单怎么写，本课没核到一手源，对客户不要引用。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧾 一页总结
+
+<div class="cards">
+
+- **五要点** <br>BI 与 PD · 第三方 · 法律责任 · occurrence · 补偿性
+- **三种限额** <br>每次重新可用 · 累计封顶 · 分项先每人再合计
+- **五项义务** <br>报告 · 转交 · 授权 · 协助 · 不自付（急救除外）
+- **附加给付** <br>限额之外：抗辩 · 合理费用 · 诉讼费 · 利息
+
+</div>
+
+先问：这件事发生在保单期内吗？他法律上有责任吗？限额还剩多少？ {takeaway}
+
+Note:
+约 2 分钟。让学员用四句话复述。课后做本讲 25 道题，其中 4 道限额计算题拿纸笔算。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 9 讲 · 责任险导论 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

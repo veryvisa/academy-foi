@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 3 讲 · 政府与监管 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 3 讲 · 政府与监管</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 3 讲</span>
+
+# 政府与监管
+
+谁管保险公司 · 谁管保单 · 15 条谁也改不了的法定条件
+
+<div class="chips"><span>联邦与省</span><span>PACICC</span><span>受托责任</span><span>保单七件事</span><span>火险必保与除外</span><span>15 条法定条件</span></div>
+
+Note:
+开场约 2 分钟。先问：「你家保险公司倒闭了，你的理赔款去哪儿？」让学员猜，再说这一讲回答两个问题：政府怎么管保险公司，《Insurance Act》怎么管保单。这是全卷考点密度最高的一讲，官方公开练习卷第 11 到 22 题共 12 道全部出自这里，其中 5 道是找例外。提醒：这一讲数字多、谁对谁有义务的题多，今天用卡片和决策图把 15 条法定条件分组吃下去。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 谁管保险公司** <br>联邦 · 省 · 偿付能力
+- **② 公司倒了 + 钱谁管** <br>PACICC · 受托责任
+- **③ 保单管七件事** <br>必载六项 · 搬移 · 弃权 · 交付
+- **④ 火险三必保四除外** <br>友好火与敌意火
+- **⑤ 15 条法定条件** <br>分三组，一组一张图
+- **⑥ 考场 vs BC 现行** <br>14 条、2 年、粗体警示
+
+</div>
+
+Note:
+约 1 分钟。六站，预计 120 分钟。第⑤站最长，也是考分最密的地方，我们把 15 条分成「合同存续 1 到 5」「出险后 6 到 13」「诉讼与通知 14、15」三组。最后一站并列讲清考试口径与 BC 现行法的差别。
+
+---
+
+## 🏛️ 两层监管，各管一摊
+
+```mermaid
+%% h=460
+flowchart TD
+    G(["🏛️ 监管保险公司"]):::ask --> F["联邦 OSFI<br/>联邦注册公司的财务"]:::step
+    G --> P["省 Superintendent<br/>执行本省 Insurance Act"]:::step
+    P --> P1["① 审批合同条款"]:::good
+    P --> P2["② 给公司发牌"]:::good
+    P --> P3["③ 盯省注册公司偿付能力"]:::good
+```
+
+**省不定价。**
+
+Note:
+约 3 分钟。联邦这一支：很多保险公司联邦注册，牌照只发给达到 OSFI 严格财务标准的公司。省这一支三件事：合同条款要经省批准；每个省营业都要该省牌照，哪怕已有联邦牌照；省注册的公司由省盯财务，联邦注册的归 OSFI。注意最后一句，练习卷第 11 题专考这个：省级职能里没有给保险合同定保费水平。
+
+---
+
+## ⚔️ 联邦 vs 省
+
+<div class="cols">
+<div class="col good">
+
+### 联邦 OSFI
+- 牌照只发给达标的公司
+- **持续**监控财务稳定
+- 管**联邦注册**的公司
+
+</div>
+<div class="col exam">
+
+### 省 Superintendent
+- 批准合同条款与条件
+- **每个省**都要领牌
+- 管**省章程**成立的公司
+
+</div>
+</div>
+
+联邦牌照不能代替省牌照。 {takeaway}
+
+Note:
+约 2 分钟。让学员当场回答：「一家持联邦牌照的公司想在 BC 卖财产险，还要不要 BC 的牌？」要。下一页的快问就是这个知识点的变体。
+
+---
+
+## ❌ vs ✅ 省的职能
+
+<div class="xv">
+
+- ❌ 省监理官为保险合同**定保费水平** {f}
+- ✅ 省监理官**批准合同条款**、**发牌**、盯省注册公司的**偿付能力** {f}
+- ❌ 有联邦牌照就能在全国各省卖 {f}
+- ✅ 在哪个省做业务，就要在哪个省领牌 {f}
+
+</div>
+
+Note:
+约 2 分钟。两个陷阱：一是把定价算进省的职能，二是以为联邦牌照通行全国。逐条问学员对错，再揭示。
+
+---
+
+## 🎯 课堂快问 ①
+
+Which of these is NOT a job of a provincial insurance regulator? {quiz-q}
+
+<div class="opts">
+
+- A. Overseeing the wording of contracts that private insurers sell
+- B. Fixing the financial standards required for a federal licence
+- C. Licensing insurers that write business in the province
+- D. Watching the solvency of insurers incorporated under provincial law
+
+</div>
+
+✅ **B** — 联邦牌照的财务标准由 OSFI 定，不是省监理官的活；A、C、D 都是省的三件事。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。找例外题：先把省的三件事默写出来，剩下的就是答案。追问：「如果选项换成『为保险合同定保费水平』呢？」同样是例外，这是练习卷第 11 题。
+
+---
+
+## 🛡️ 偿付能力：最重要的监管领域
+
+```mermaid
+%% h=300
+flowchart LR
+    A["发牌后<br/>报财务报表"]:::step --> B["持续审计"]:::step
+    B --> C["资产不足以<br/>付将来的赔款"]:::warn
+    C --> D["暂停营业<br/>直到补足"]:::warn
+    D --> E["极严重：<br/>接管资产"]:::warn
+```
+
+**Solvent＝有能力付清所有承保损失。** {takeaway}
+
+Note:
+约 2 分钟。偿付能力是政府监管里最重要的一块。官方练习卷第 12 题问的就是定义：solvency 是保险人付清全部承保损失的能力。流程从轻到重：先停业补足，极严重时监理官接管资产。
+
+---
+
+## 🧯 公司倒了：PACICC 先赔，同业摊
+
+```mermaid
+%% h=300
+flowchart LR
+    A["💥 保险公司破产"]:::warn --> B["PACICC<br/>先付有效索赔"]:::good
+    B --> C["按直接承保保费<br/>向同业摊派"]:::step
+```
+
+**钱来自行业自筹，不是政府出。** {takeaway}
+
+考试口径数字：单一事故全部索赔 **$250,000**；未赚保费退 <b>70%</b>，每单最多 <b>$700</b>。 {muted}
+
+Note:
+约 3 分钟。1992 年起所有联邦注册保险公司要对同业破产给消费者造成的损失负责，各省随后立法，成立 PACICC。每家摊多少，按它的直接承保保费总额算。这三个数字是考场答案，BC 现行数字全换了，放到最后一页对照。
+
+---
+
+## 🤝 受托：谁在替客户代管钱
+
+<div class="cols">
+<div class="col good">
+
+### 保险人
+- 保费要到**期满**才完全赚到
+- **未赚保费**＝信托持有
+- 提前取消，要退给被保险人
+
+</div>
+<div class="col exam">
+
+### 经纪人
+- 佣金同样到期满才赚完
+- 可先扣佣金，但**只能用已赚的**
+- **未赚佣金**＝信托持有
+
+</div>
+</div>
+
+Fiduciary：经手别人钱的人。 {takeaway}
+
+Note:
+约 3 分钟。受托人就是替别人保管钱的人。官方练习卷第 13 题的陷阱：干扰项说「全额佣金要信托持有到期满」，错在「全额」，已赚的部分经纪人可以用。
+
+---
+
+## 🎬 情景：一个月后赚了多少？
+
+客户向保险公司一次付清 **12 个月**的保费，过了**一个月**。 {scene}
+
+<span class="ask">问：保险公司已经赚到多少？剩下的算什么钱？</span> {f}
+
+✅ 赚到 **1/12**；其余 **11/12 是未赚保费**，视为信托持有，提前取消要退。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。保险公司的工资、运营和赔款都从已赚的部分里出，没赚到的不是它的钱。追问：「那客户在第二个月取消呢？」退还未赚的部分，具体怎么退看法定条件 5，后面会讲。
+
+---
+
+## 🍁 安大略是例外
+
+<div class="cards c3">
+
+- **🕒 多数省** <br>代理协议给经纪行 **30–60 天**把保费汇给保险公司，**不要求**单设信托账户
+- **🏦 安大略** <br>保费须存入**独立信托账户**，收到后最迟 **3 个银行工作日**
+- **📒 账簿** <br>要保存详细账簿；收到要求后 **30 天内**交经审计的财务报表
+
+</div>
+
+「哪个省不一样」＝安大略。 {takeaway}
+
+Note:
+约 2 分钟。依据是安大略的经纪人立法。数字三个：3 个银行工作日、30 天审计报表、以及多数省的 30 到 60 天汇款期。公开题库里有对应的找例外题。
+
+---
+
+## 📚 《Insurance Act》管合同的七件事
+
+<div class="cards c3">
+
+- **① 必载内容** <br>六项，下一页
+- **② 搬移保障** <br>抢出火场的财产
+- **③ 限额条款警示** <br>首页红墨水
+- **④ 代位求偿** <br>赔后站进你的鞋里
+- **⑤ 弃权** <br>书面 + 授权人签字
+- **⑥ 交付的效力** <br>没付保费也要赔
+- **⑦ 火险三件套** <br>必保 · 除外 · **15 条法定条件**
+
+</div>
+
+Note:
+约 3 分钟。承保火的财产保单，各省标准基本一致，都写进本省的《Insurance Act》，考试口径列这七项。第⑦项最大，下半场整整一半时间花在它下面的第三个小项，法定条件。让学员拍照这张图当目录。
+
+---
+
+## 📋 保单必载六项
+
+<div class="cards c3">
+
+- **👥 当事人** <br>被保险人第一方、保险人第二方；第三方**不是**当事人
+- **⏰ 保期** <br>起止日期，起保 **12:01 a.m.**
+- **🏦 受款人** <br>如按揭银行的可保利益
+- **🧾 险别与金额** <br>每项保障各是多少
+- **💲 费率与保费** <br>保费金额**和**确定它的方法
+- **📍 标的** <br>保了什么、在哪里；汇总在**声明页**
+
+</div>
+
+Note:
+约 3 分钟。受款人例子：你向银行贷款买房，法律要求把银行的可保利益写在保单上。声明页 Declarations Page 就是把这些信息汇总的一页。
+
+---
+
+## ❌ vs ✅ 起保时刻
+
+<div class="xv">
+
+- ❌ 12:01 <b>p.m.</b>，或写风险所在地的时区 {f}
+- ✅ 12:01 a.m. 标准时间，按**被保险人（Named Insured）地址** {f}
+- ❌ 经纪人有承保权限，也要等保险公司次日确认 {f}
+- ✅ 经纪人有承保权限，**自绑定那一刻**起保 {f}
+
+</div>
+
+Note:
+约 2 分钟。练习卷第 14 题：两个变量都要对，am 不能换成 pm，地点不能换成风险所在地或保险公司地址。有些保单写当地时间，比如安大略车险，答题仍按 12:01 a.m. 标准时间。
+
+---
+
+## 🚒 搬移条款：抢出来的东西还保吗
+
+```mermaid
+%% h=340
+flowchart LR
+    A["🔥 财产受<br/>承保危险威胁"]:::warn --> B["为防损失<br/>必须搬走"]:::step
+    B --> C["搬到未列明地点"]:::step
+    C --> D["仍受保<br/>7 天或剩余期，取短"]:::good
+```
+
+只是家里放不下、寄存别处——**不保**。 {muted}
+
+Note:
+约 3 分钟。理由是把财产从火场抢出来能减少损失，符合公共利益。三个条件：一，必须是为防止损失而必须搬离；二，可用保额要扣掉原地点已赔的部分；三，只保 7 天或保单剩余期，取短者。练习卷第 15 题：躲山火搬进储物仓保；搬新家没通知、放不下放储物柜、夏天放度假屋都不是。
+
+---
+
+## 🎬 情景：搬出去的东西还剩多少保额？
+
+原地点保额 **$100,000**，原地点已发生损失 **$85,000**，抢出的财产搬进了邻居的仓库。 {scene}
+
+<span class="ask">问：搬出去的财产最多还有多少保额可用？</span> {f}
+
+✅ **$15,000** — $100,000 减 $85,000；可用保额先扣掉原地点已赔的部分。 {ans f}
+
+Note:
+约 2 分钟。按考试口径算例。快问就是同一个套路，只是数字换了。强调：条文原意是超出已发生损失赔偿责任的那部分保额，多个地点时按财产价值比例分摊，考场只要会做减法。
+
+---
+
+## 🎯 课堂快问 ②
+
+A building and contents are insured for $200,000. A fire at the named location causes $140,000 of loss; saved contents ($80,000) are moved to an unnamed location, where a second fire destroys them two days later. Most the insurer must pay for the second loss? {quiz-q}
+
+<div class="opts">
+
+- A. $60,000
+- B. $80,000
+- C. $200,000
+- D. $140,000
+
+</div>
+
+✅ **A** — 保额 $200,000 减原地点已发生损失 $140,000，只剩 $60,000 可用；财产价值 $80,000 比它大，取小的。 {ans f}
+
+Note:
+约 3 分钟。题型同公开题库。分三步：保额减原地点损失得 $60,000；搬出财产的价值 $80,000；赔付不超过可用保额，所以 $60,000。7 天内着的火才属于搬移条款，题目里是两天后。
+
+---
+
+## ✍️ 四件事，一页看完
+
+<div class="cards">
+
+- **🔴 限额条款警示** <br>免赔额、共保须在首页**红墨水**警示；没印＝对被保险人**无约束力**
+- **👣 代位求偿** <br>赔完后站进被保险人的鞋里，以**被保险人名义**起诉责任方
+- **📝 弃权** <br>**书面** + 保险人**授权的人**签字；经纪人自己**不能**弃权
+- **📦 交付** <br>保单交付了就约束保险人，**没付保费也要赔**
+
+</div>
+
+Note:
+约 3 分钟。两个经典情景：经纪人如何放弃保单条款——答案是经纪人本身不能；客户一个月前收到保单还没付钱，昨天失火——保险公司照赔。代位练习卷第 16 题答 Subrogation，干扰项是仲裁、调解、返还。
+
+---
+
+## 🔥 火险：三必保，四除外
+
+<div class="cols">
+<div class="col good">
+
+### ✅ 法定必保 3 项
+- **Fire** 火
+- **Lightning** 雷电
+- **Explosion** 天然气、煤气或人造气的爆炸
+
+</div>
+<div class="col bad">
+
+### ❌ 法定除外 4 项
+- 直接**加热**
+- **雷击电器**本身
+- 其他**人造电流**
+- **放射性**污染
+
+</div>
+</div>
+
+除外只除**那件东西**；引发的火照赔。 {takeaway}
+
+Note:
+约 3 分钟。必保是最低要求，保险公司可以给得更宽。练习卷第 17 题的三个干扰项：风暴不是法定必保；雷电包括电器损坏正好说反；一切爆炸只限燃气爆炸。答题时 lightning 拼法别错。
+
+---
+
+## 🔥 友好之火 vs 敌意之火
+
+<div class="cols">
+<div class="col exam">
+
+### Friendly fire
+- 待在它该在的**容器**里
+- 壁炉里的柴、烤焦的牛排
+- 故意放进去的财产**不保**
+
+</div>
+<div class="col bad">
+
+### Hostile fire
+- **逃出**容器，或本来就没容器
+- 壁炉溅出火星烧坏地毯
+- ✅ 保单**只保**这一种
+
+</div>
+</div>
+
+Note:
+约 2 分钟。「火」法律没有定义，但要有实际的点燃或燃烧。让学员判断：烤肉时牛排烤焦了，赔不赔？不赔，友好之火。烤架倒了点着草地，赔不赔？赔，已逃出容器。
+
+---
+
+## 🎯 课堂快问 ③
+
+While ironing, the insured leaves a hot iron on a shirt. The shirt catches fire, and the fire spreads to the curtains and the walls of the house. How do the standard legislated exclusions apply? {quiz-q}
+
+<div class="opts">
+
+- A. Nothing is covered, because the fire began with the application of heat
+- B. The shirt is excluded; the fire damage to the curtains and house is covered
+- C. Everything is covered, including the shirt, because a hostile fire occurred
+- D. Only the house is covered; the curtains are excluded as household contents
+
+</div>
+
+✅ **B** — 衣服是被熨斗直接加热烧坏的，除外；引燃窗帘和房子的火照赔，除外只除那件东西。 {ans f}
+
+Note:
+约 3 分钟。题型同公开题库。关键词 directly：直接加热烧到的那一件除外，其余引发的火灾损失全赔。同样的逻辑适用于雷击电器：电视被雷打坏不赔，雷引起的火照赔。
+
+---
+
+## 🧩 15 条法定条件，一图分三组
+
+```mermaid
+%% h=300
+flowchart LR
+    A["条件 1–5<br/>合同存续期<br/>投保·权益·变更·终止"]:::step --> B["条件 6–13<br/>出险之后<br/>报案·理赔·付款"]:::warn
+    B --> C["条件 14–15<br/>诉讼与通知"]:::good
+```
+
+印在**每张**火险保单上；改、删、加都**对被保险人无效**。 {takeaway}
+
+Note:
+约 3 分钟。考试口径里，每一张承保火的保单都含 15 条法定条件。保险人即使被保险人同意也不能改，立法用意是确保双方都被公平对待。按出险前后分三组最省力，后面三个部分各用一页卡片加一张图。
+
+---
+
+## 🧾 第一组：条件 1–5
+
+<div class="cards c3">
+
+- **① 不实陈述** <br>Misrepresentation
+- **② 他人财产** <br>Property of Others
+- **③ 权益变更** <br>Change of Interest
+- **④ 重大变更** <br>Material Change
+- **⑤ 终止** <br>Termination
+- **🔒 谁也不能改** <br>被保险人同意也不行
+
+</div>
+
+Note:
+约 1 分钟。先给五个名字，接下来逐个讲，其中不实陈述、重大变更、终止是考试重点。
+
+---
+
+## 🙈 条件 1：不实陈述的三种形态
+
+```mermaid
+%% h=400
+flowchart TD
+    M(["条件 1<br/>不实陈述"]):::ask --> A["虚假描述财产<br/>把风险说得比实际好"]:::step
+    M --> B["重要事实不实陈述<br/>保险人知道就拒保或加费"]:::step
+    M --> C["欺诈性遗漏<br/>明知故意不披露"]:::warn
+```
+
+**举证责任在保险人**，要证明与损失直接相关。 {takeaway}
+
+Note:
+约 3 分钟。重要事实的例子：以往理赔、以往被解约或拒保、现有防护系统。练习卷第 18 题：让保险人相信风险比实际更好的陈述才算不实陈述；任何一处描述不准都算太宽；隐瞒以往解约拒保正是重要事实。
+
+---
+
+## 🎬 情景：车库变修车厂
+
+屋主**没告诉保险公司**，把私人车库改成了对外营业的**汽车修理厂**，半年后车间起火。 {scene}
+
+<span class="ask">问：保险公司能怎么办？</span> {f}
+
+✅ 这是**重大变更**，没告知——保险人可就**受影响的部分**使合同无效。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。注意答案是受影响部分，不是整张保单自动无效，也不是追溯取消到起保日。告知了会怎样？保险人要么退未赚保费并取消，要么书面通知加保费，被保险人 15 天内不付就可取消。
+
+---
+
+## 🔍 条件 4：算不算「重大变更」
+
+```mermaid
+%% h=360
+flowchart LR
+    S(["变更发生"]):::ask --> A["增加损失机会、保单签发后、<br/>在被保险人控制与知情内?"]:::step
+    A --> B["既实质<br/>又持续?"]:::step
+    B -- 是 --> Y["✅ 重大变更<br/>须书面告知"]:::warn
+    B -- 否 --> N["❌ 不是<br/>不能据此拒赔"]:::good
+```
+
+Note:
+约 3 分钟。答题顺序先问是否实质且持续，再问有没有告知。例子：私人车库改成修理厂、住宅用来做生意是；一天的活动不是。下一页的快问就是清仓烧烤会的情景。
+
+---
+
+## 🎯 课堂快问 ④
+
+A furniture store holds a one-day free barbecue during a clearance sale. A barbecue stand collapses and the resulting fire damages the store. The insurer wants to deny the claim as an unreported material change. What is the best response? {quiz-q}
+
+<div class="opts">
+
+- A. The denial stands, because the barbecue clearly increased the chance of loss
+- B. It is not a material change, because a change must be substantial and continuing
+- C. The denial stands, because the change was not notified in writing
+- D. It is not a material change, because the cause was an equipment failure
+
+</div>
+
+✅ **B** — 一天的烧烤既不「实质」也不「持续」，保险人不能以重大变更拒赔。 {ans f}
+
+Note:
+约 3 分钟。题型同公开题库。别被「增加了损失机会」带偏：判重大变更要同时满足实质和持续。选项 C 说没有书面通知，但不构成重大变更就谈不上通知义务。
+
+---
+
+## ✂️ 条件 5：谁终止，怎么通知，怎么退
+
+<div class="cols">
+<div class="col exam">
+
+### 保险人终止
+- **挂号信 15 天**，或**当面送达 5 天**
+- 按**比例**退（pro rata）
+- 退款随通知一起寄出
+
+</div>
+<div class="col now">
+
+### 被保险人终止
+- **随时**请求即可
+- 按**短期费率**退（short rate）
+- 两种退费都有**最低保留保费**
+
+</div>
+</div>
+
+Note:
+约 3 分钟。比例退是已付保费减去已过期间的比例保费；短期费率退得更少，因为保险公司前期成本高。挂号信 15 天从到达收件邮局的次日起算。
+
+---
+
+## ❌ vs ✅ 终止的混淆
+
+<div class="xv">
+
+- ❌ 被保险人主动终止，**无权**获得退费 {f}
+- ✅ 被保险人终止，按**短期费率**退费 {f}
+- ❌ 重大变更补保费的 15 天＝终止通知的 15 天 {f}
+- ✅ 两个 15 天是**两件事**：一个是补保费期限，一个是挂号信通知期 {f}
+
+</div>
+
+Note:
+约 2 分钟。练习卷第 20 题：被保险人终止没有退费是错的。行业标准保单样式的终止条款有另一套：因欠费挂号信 15 天，其他原因 30 天；卷子问法定条件时按正文的 15 和 5 答。
+
+---
+
+## 🚨 第二组：条件 6–9 出险后第一轮
+
+<div class="cards">
+
+- **⑥ 出险后要求** <br>**立即**书面通知；**尽快**交损失证明，用法定声明核实
+- **⑦ 欺诈** <br>为谋利故意欺骗；证明了可拒赔**整个**索赔
+- **⑧ 谁可以通知** <br>被保险人不在或不能：**代理人**；被保险人拒绝：**受款人**
+- **⑨ 施救** <br>采取一切合理措施防止进一步损失；费用保险人**按比例**分担
+
+</div>
+
+Note:
+约 3 分钟。条件 6 的损失证明七项内容：损毁财产清单、何时如何发生、损失不是故意行为疏忽或纵容、其他保险、权益负担、保单签发后的变化、出险时财产在哪。公开题库的找例外题就是从这七项里抽。条件 9 不要求冒生命危险，人比财产重要。
+
+---
+
+## 🧭 出险后的时间线
+
+```mermaid
+%% h=380
+flowchart LR
+    A["💥 出险<br/>立即书面通知"]:::warn --> B["尽快交<br/>损失证明"]:::step
+    B --> C["60 天内付款"]:::good
+    B --> D["30 天内通知<br/>选择修复"]:::step
+    D --> E["45 天内开工"]:::step
+```
+
+**前三个时限从「损失证明」算起；起诉从「损失发生」算起。** {takeaway}
+
+Note:
+约 3 分钟。60 天、30 天、45 天都是从收到或完成损失证明起算，合同可约定更短的付款期。修复是保险人的选择：可以不付钱，改为修复、重建或更换，但要在时限内行动。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+An insured files a $20,000 proof of loss that deliberately includes $3,000 of items she never owned. The insurer proves this. Under Statutory Condition 7, what happens? {quiz-q}
+
+<div class="opts">
+
+- A. The insurer pays $17,000 for the items she did own
+- B. The insurer pays $20,000 and then sues to recover $3,000
+- C. The insurer may deny the entire claim
+- D. The insurer pays the claim less a fraud penalty
+
+</div>
+
+✅ **C** — 故意虚报就是欺诈，条件 7 让整个索赔作废，不只扣掉虚报的 $3,000。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库，也是练习卷第 21 题的变体。诚实的错误不是欺诈；但保险人证明了故意欺骗，整个索赔都可拒。追问：「如果她只是记错了一件东西的价钱呢？」那是诚实错误，不是欺诈。
+
+---
+
+## 🚪 第三组：条件 10–15
+
+<div class="cards c3">
+
+- **⑩ 进入·控制·委付** <br>保险人可**进入**查勘；**无权**控制占有；委付须**同意**
+- **⑪ 评估** <br>只定**价值**，不定保不保；书面提出、证明交付后
+- **⑫ 付款** <br>损失证明完成后 **60 天**内
+- **⑬ 修复** <br>**30 天**通知、**45 天**开工
+- **⑭ 诉讼** <br>损失发生起 **1 年**（MB、SK 为 2 年）
+- **⑮ 通知** <br>送到保险人**本省总代理处或总部**
+
+</div>
+
+Note:
+约 3 分钟。委付是需要保险人同意，不是被禁止。评估只定价值，它与保障成不成立毫无关系。通知给被保险人则是当面送达或挂号信寄到他最后告知的地址。
+
+---
+
+## ⏱️ 时限别算错起点
+
+<div class="xv">
+
+- ❌ 起诉期限从损失证明交完算起 {f}
+- ✅ 起诉 **1 年**从**损失发生**算起（MB、SK 2 年） {f}
+- ❌ 60 天付款从出险那天起算 {f}
+- ✅ 60 天从**损失证明完成**起算 {f}
+
+</div>
+
+Note:
+约 2 分钟。五个数字，两个起点。让学员默写：60、30、45 从哪儿起算？1 年从哪儿起算？练习卷第 22 题的陷阱在条件 9：被保险人有合理机会保护财产却什么都没做，通常不影响理赔——这是假的。
+
+---
+
+## 🎯 课堂快问 ⑥
+
+Using the 15 Statutory Conditions of the standard fire policy, all of the following time limits are correct EXCEPT: {quiz-q}
+
+<div class="opts">
+
+- A. An action must be started within two years after the loss in every province
+- B. The loss is payable within 60 days after completion of the proof of loss
+- C. Notice of intent to repair is due within 30 days after receipt of proof of loss
+- D. Repair work must begin within 45 days after receipt of the proof of loss
+
+</div>
+
+✅ **A** — 考试口径是 1 年（MB、SK 为 2 年），不是「各省都是 2 年」；其余三个时限都对。 {ans f}
+
+Note:
+约 2 分钟。题型同公开题库。找例外：B、C、D 都是考试口径里的数字。选项 A 把 BC 现行的 2 年套进了考场口径，下一页马上讲这两套口径。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 📏 考试口径 vs BC 现行
+
+<div class="cols">
+<div class="col exam">
+
+### 🧾 考场答（考试口径）
+- 法定条件 **15 条**，起诉 **1 年**
+- 限额警示 **红墨水**
+- PACICC：<b>$250,000／70%／$700</b>
+- 监管者：Superintendent of Insurance
+
+</div>
+<div class="col now">
+
+### 💼 工作中用（BC）
+- 法定条件 **14 条**，起诉 **2 年**，自知道起算
+- 警示 **醒目粗体**
+- PACICC 个人财产 **$545,000**、汽车 **$435,000**、商业 **$400,000**
+- 监管者 **BCFSA**
+
+</div>
+</div>
+
+ICBC 强制 Basic **不在** PACICC 保护内。 {takeaway}
+
+Note:
+约 3 分钟。R16：两个口径并列并标明用哪个，这一讲考场一律按考试口径。BC 现行：Action 一条被删，时效移到 s.23，改为自知道或应当知道起 2 年，交损失证明后 60 天内不得起诉；Notice 变成第 14 条。BCFSA 取代 FICOM 是 2019 年。给 BC 客户的三句：拒赔后要告它是 2 年；谈不拢可书面要求争议解决程序，但先把损失证明交了；公司倒闭 PACICC 兜底，但 ICBC Basic 不在其内。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧠 一页总结
+
+<div class="cards">
+
+- **监管** <br>联邦 OSFI 盯财务；省批条款、发牌、盯偿付；**不定价**
+- **兜底与受托** <br>PACICC 先赔同业摊；未赚保费与佣金信托持有
+- **保单七件事** <br>六项必载 · 搬移 7 天 · 警示 · 代位 · 弃权 · 交付
+- **火险** <br>三必保四除外；只保**敌意之火**
+- **15 条** <br>1–5 存续 · 6–13 出险后 · 14 诉讼 · 15 通知
+- **数字** <br>15／5 · 60 · 30／45 · 1 年
+
+</div>
+
+Note:
+约 3 分钟。收尾：让学员合上笔记，用 30 秒说出 15 条法定条件分成哪三组。布置作业：做这一讲 36 道英文题，其中几道在模考专属池里。下一讲预告：保险流程，从投保到理赔。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 3 讲 · 政府与监管 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>

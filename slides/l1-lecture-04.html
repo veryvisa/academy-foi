@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>第 4 讲 · 保险流程：从投保到理赔 · 讲师幻灯</title>
+<link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+<link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+<style>
+:root{--blue:#0082CA;--blue-ink:#00679E;--green:#40D9C3;--green-ink:#0A7A68;--deep:#0B3C5D;--amber:#E39A20;--amber-ink:#8A5307;
+--red:#B32424;--ink:#231F20;--muted:#5B6570;--paper:#F7FAFC;--card:#FFFFFF;--line:#D5E3EE}
+html,body{background:var(--paper)}
+.reveal{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;font-size:33px;color:var(--ink)}
+.reveal .slides section{text-align:left;line-height:1.38}
+.reveal h1,.reveal h2,.reveal h3{font-family:inherit;text-transform:none;color:var(--deep);letter-spacing:0;margin:0 0 .45em;line-height:1.2}
+.reveal h1{font-size:2.1em}
+.reveal h2{font-size:1.6em;font-weight:800;padding-bottom:.18em;border-bottom:5px solid var(--green);display:inline-block}
+.reveal h3{font-size:1.05em;color:var(--blue-ink)}
+.reveal p{margin:.35em 0}
+.reveal ul,.reveal ol{display:block;margin:.3em 0 .3em 1.1em}
+.reveal li{margin:.28em 0}
+.reveal strong{color:var(--blue-ink);font-weight:800}
+.reveal code{font-size:.85em;background:#E8F1F8;padding:.05em .3em;border-radius:6px;color:var(--deep)}
+.reveal .tag{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);padding:.12em .7em;border-radius:99px;margin-bottom:.5em}
+.reveal .muted{color:var(--muted);font-size:.8em}
+.reveal .takeaway{margin-top:.7em;padding:.5em .9em;border-left:8px solid var(--green);background:#E9FAF7;border-radius:0 12px 12px 0;font-weight:700;color:var(--deep)}
+/* 深色页 */
+.reveal section.cover,.reveal section.dark{color:#fff}
+.reveal section.cover h1,.reveal section.cover h2,.reveal section.dark h2,.reveal section.dark h3{color:#fff;border-color:var(--green)}
+.reveal section.cover strong,.reveal section.dark strong{color:var(--green)}
+.reveal section.dark .cards>ul>li{color:var(--ink)}
+.reveal section.dark .cards>ul>li strong{color:var(--blue-ink)}
+.reveal section.dark .cards>ul>li>strong:first-child{color:var(--deep)}
+.reveal section.cover h1{font-size:2.5em;line-height:1.15}
+.reveal section.cover p{font-size:1.05em;color:#CFE6F3}
+.reveal section.cover .tag{background:var(--green);color:var(--deep)}
+.reveal section.cover .chips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1em}
+.reveal section.cover .chips span{border:2px solid rgba(255,255,255,.45);border-radius:99px;padding:.15em .8em;font-size:.72em;color:#fff}
+/* 卡片：列表即卡片 */
+.reveal .cards>ul{list-style:none;margin:.2em 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6em .7em}
+.reveal .cards.c3>ul{grid-template-columns:repeat(3,1fr)}
+.reveal .cards.c1>ul{grid-template-columns:1fr}
+.reveal .cards>ul>li{margin:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;padding:.5em .8em;font-size:.9em;line-height:1.3;box-shadow:0 4px 14px rgba(11,60,93,.08)}
+.reveal .cards>ul>li:nth-child(4n+2){border-top-color:var(--green)}
+.reveal .cards>ul>li:nth-child(4n+3){border-top-color:var(--amber)}
+.reveal .cards>ul>li:nth-child(4n){border-top-color:var(--deep)}
+.reveal .cards>ul>li>strong:first-child+br{display:none}
+.reveal .cards>ul>li>strong:first-child{display:block;font-size:1.08em;color:var(--deep);margin-bottom:.1em}
+/* 两栏 */
+.reveal .cols{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:stretch}
+.reveal .cols.r3{grid-template-columns:1fr 1.6fr}
+.reveal .col{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5em .9em;font-size:.92em}
+.reveal .col h3{margin-top:.1em}
+.reveal .col ul{margin-left:1em}
+.reveal .col.bad{background:#FDF0F0;border-color:#E9B4B4}.reveal .col.bad h3{color:var(--red)}
+.reveal .col.good{background:#E9FAF3;border-color:#9FD9C4}.reveal .col.good h3{color:var(--green-ink)}
+.reveal .col.exam{background:#EAF4FB;border-color:#9CC9E6}.reveal .col.now{background:#FFF3DC;border-color:#EBC37A}
+.reveal .col.exam h3{color:var(--blue-ink)}.reveal .col.now h3{color:var(--amber-ink)}
+/* 对错 */
+.reveal .xv>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .xv>ul>li{margin:.35em 0;padding:.4em .8em;border-radius:14px;font-size:.92em}
+.reveal .xv>ul>li:nth-child(odd){background:#FDF0F0;border:2px solid #E9B4B4}
+.reveal .xv>ul>li:nth-child(even){background:#E9FAF3;border:2px solid #9FD9C4}
+/* 情景案例与快问 */
+.reveal .scene{background:#FFF6E5;border:2px solid #EBC37A;border-radius:16px;padding:.5em .9em;font-size:.95em}
+.reveal .quiz-q{font-weight:700;font-size:.98em;color:var(--deep);margin:.1em 0 .3em;font-family:Georgia,"Times New Roman",serif}
+.reveal .opts>ul{list-style:none;margin:.2em 0;padding:0}
+.reveal .opts>ul>li{margin:.22em 0;padding:.3em .8em;background:#fff;border:2px solid var(--line);border-radius:12px;font-family:Georgia,"Times New Roman",serif;font-size:.9em}
+.reveal .ans{margin-top:.5em;padding:.5em .9em;background:#E9FAF3;border:3px solid var(--green);border-radius:14px;font-size:.92em}
+.reveal .ask{display:inline-block;background:var(--amber);color:#2b1a00;border-radius:12px;padding:.1em .7em;font-weight:800;font-size:.85em}
+.reveal .big{font-size:3.2em;font-weight:900;color:var(--blue);line-height:1}
+/* 图 */
+.reveal .mermaid{display:flex;justify-content:center;align-items:center;margin:.2em auto;min-height:60px}
+.reveal .mermaid svg{max-width:none!important;height:auto;overflow:visible}
+.reveal .mermaid.err{color:var(--red);font-size:.6em;white-space:pre-wrap;text-align:left}
+.reveal section.dark .mermaid,.reveal section.cover .mermaid{background:#fff;border-radius:16px;padding:.3em}
+.reveal .progress{color:var(--green)}
+.reveal .controls{color:var(--blue)}
+.reveal .slide-number{font-size:18px;background:transparent;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal .footer-tag{position:fixed;left:18px;bottom:10px;font-size:16px;color:var(--muted);z-index:30}
+</style>
+<link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<h1 class="sr-only">第 4 讲 · 保险流程：从投保到理赔</h1>
+<div class="reveal"><div class="slides">
+<section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-separator-notes="^Note:">
+<script type="text/template">
+<!-- .slide: class="cover" data-background-color="#0B3C5D" -->
+<span class="tag">BC 一般保险 Level 1 · 第 4 讲</span>
+
+# 保险流程：从投保到理赔
+
+经纪人 · 核保人 · 理赔人，各对谁负什么义务
+
+<div class="chips"><span>不是普通商品</span><span>经纪人的两份义务</span><span>E&amp;O</span><span>核保四个信息源</span><span>两类危险</span><span>理赔两步</span></div>
+
+Note:
+开场约 2 分钟。先问：「你上一次买保险，是谁帮你填的表？出了事你会先打给谁？」让学员说，再引出这一讲：保险这条链上三个岗位，经纪人、核保人、理赔人，各干什么、对谁负什么义务、做错了会怎样。官方练习卷第 23 到 26 题落在这一讲，题型偏「谁的义务」和「哪一类危险」的辨析，选项爱把对客户的义务和对保险公司的义务对调。
+
+---
+
+<!-- .slide: class="road" data-background-color="#EAF4FB" -->
+## 🗺️ 今天的路线
+
+<div class="cards c3">
+
+- **① 保险为什么不是商品** <br>要申请 · 价格因人而异
+- **② 经纪人对客户** <br>合理的技能、谨慎与勤勉 · E&O
+- **③ 经纪人对保险公司** <br>说真话 · 不隐瞒 · 首线核保人
+- **④ 核保人** <br>选风险 · 看危险 · 做决定
+- **⑤ 理赔人** <br>两步报案 · 两种理赔人
+- **⑥ 考场 vs BC 现行** <br>E&O $1M／$2M · Level 1 限制
+
+</div>
+
+Note:
+约 1 分钟。六站，预计 75 分钟。第③站和第④站最容易丢分：前一个是义务对调，后一个是物质危险与道德危险混淆。
+
+---
+
+## 🔗 一张保险链，三个岗位
+
+```mermaid
+%% h=420
+flowchart TD
+    C(["🙋 客户"]):::ask --> B["经纪人<br/>中介：投保单、建议"]:::step
+    B --> U["核保人<br/>公司雇员：选风险、定价"]:::good
+    C -. 出险 .-> B
+    B -. 报案 .-> A["理赔人<br/>公司或独立：理算"]:::warn
+```
+
+**合同当事人只有两个：被保险人和保险公司。** {takeaway}
+
+Note:
+约 3 分钟。实线是投保：客户通过经纪人投保，由核保人决定接不接。虚线是出险：客户报经纪行，经纪行报保险公司，由理赔人理算。强调最后一句：经纪人和代理人都不是合同当事人，合同上只有被保险人和保险公司。
+
+---
+
+## 🛒 保险为什么不是普通商品
+
+<div class="cards">
+
+- **📝 要申请** <br>不是谁都能买；风险不合标准，通常被**拒**
+- **💲 价格因人而异** <br>保费随被保风险的各种因素变化
+- **🛒 普通商品** <br>杂货、汽油、汽车：想买就能买，价格人人差不多
+
+</div>
+
+Note:
+约 2 分钟。两点不同，都是练习题常考的点。问学员：「你买咖啡要先填申请表吗？」引出：保险要有人审，所以后面才有核保人这个岗位。
+
+---
+
+## ⚔️ Agent vs Broker
+
+<div class="cols">
+<div class="col exam">
+
+### Agent 代理人
+- 首要义务：对**保险公司**
+- 通常代表**一家**公司
+
+</div>
+<div class="col good">
+
+### Broker 经纪人
+- 首要义务：对**客户**
+- 多数情况替客户在**多家**公司间比较
+
+</div>
+</div>
+
+后面的内容里，凡说「经纪人」，就是做销售的人。 {takeaway}
+
+Note:
+约 2 分钟。两点区别：义务对象不同，代表公司数不同。行业有把销售人员都叫 broker 的习惯，但法律上仍有两点区别。注意：BC 法律本身只定义 insurance agent 和 insurance salesperson，broker 是行业用语，最后一部分再讲。
+
+---
+
+## ❌ vs ✅ 别对调
+
+<div class="xv">
+
+- ❌ Agent 首要义务对客户，Broker 对保险公司 {f}
+- ✅ Agent→**保险公司**，Broker→**客户** {f}
+- ❌ 经纪人是保险合同的当事人 {f}
+- ✅ 当事人只有**被保险人与保险公司** {f}
+
+</div>
+
+Note:
+约 2 分钟。练习卷里这类干扰项最爱对调。口诀：Agent 跟着 Agency（公司），Broker 跟着客户。让学员连续答两遍。
+
+---
+
+## ⚖️ 对客户：合理的技能、谨慎与勤勉
+
+<div class="cards">
+
+- **📏 法律标准** <br>reasonable **skill, care and diligence**
+- **🎯 首要义务** <br>确保客户得到**对的建议和保障**
+- **💥 做不到** <br>客户可对**经纪人和经纪行**提出 E&O 索赔
+- **🛡️ E&O 保险** <br>覆盖经纪行**全体**人员，个人不必另买（考试口径）
+
+</div>
+
+Note:
+约 2 分钟。E&O 是 errors and omissions，错误与遗漏。注意标准不是「最低保费」也不是「最大利益」，是合理的技能、谨慎与勤勉。考试口径里，有些省立法要求经纪行买 E&O 保险，保证经纪人失职时消费者不会白亏。BC 现行规则更严，最后一部分对照。
+
+---
+
+## 🥇 E&O 头号原因：保障不足
+
+```mermaid
+%% h=420
+flowchart TD
+    I(["💥 保障不足<br/>近 50% 的 E&O 索赔"]):::warn --> A["没告诉客户<br/>有哪些除外"]:::step
+    I --> B["没安排保障<br/>或安排太晚"]:::step
+    I --> C["给错了保障"]:::step
+    I --> D["对能不能买到<br/>给了错误建议"]:::step
+```
+
+Note:
+约 3 分钟。四种成因，逐个念：没讲除外、没安排或太晚、给错保障、对能否买到给错建议。官方练习卷第 24 题：主因是没有正确识别客户的损失风险并提供所需保障，就是保障不足的另一种说法。干扰项「违反经纪协议」是其他来源之一，不是主因。
+
+---
+
+## 🧩 其他 E&O 来源，五种
+
+<div class="cards c3">
+
+- **🗣️ 不实陈述** <br>对被保风险的描述错误
+- **🔄 取消与续保** <br>出错
+- **✏️ 保单变更** <br>出错
+- **⏳ 处理延误** <br>拖过了
+- **📃 违反经纪协议** <br>brokerage agreement
+- **🔑 记忆口诀** <br>保障不足是**头号**，这五个是**其他**
+
+</div>
+
+Note:
+约 2 分钟。把头号原因和其他来源分清，是这一块最常考的点。让学员合上笔记，说出头号原因和任意两个其他来源。
+
+---
+
+## 🎬 情景：没说地下室水灾不赔
+
+经纪人卖了一份房主险，**没告诉客户**下水道倒灌是除外。后来地下室被淹。 {scene}
+
+<span class="ask">问：这是哪一类 E&O？</span> {f}
+
+✅ **保障不足**——没讲除外，客户以为保了；索赔针对经纪人和经纪行。 {ans f}
+
+Note:
+约 2 分钟。这也是下一讲的伏笔：尽责的经纪人会在购买时、交付保单时、每次续保前都和客户过一遍除外。追问：「如果客户拒绝加买呢？」留书面记录，这是实务建议。
+
+---
+
+## 🎯 课堂快问 ①
+
+Which failure leads to the largest share of broker E&O claims? {quiz-q}
+
+<div class="opts">
+
+- A. Inadequate coverage
+- B. Brokerage Agreement violations
+- C. Processing delays
+- D. Cancellation and renewal errors
+
+</div>
+
+✅ **A** — 保障不足占全部 E&O 索赔近 50%，是头号原因；其余三个是其他来源。 {ans f}
+
+Note:
+约 2 分钟。三个干扰项都是「其他来源」，难点在于它们听起来都像常见错误。认准头号原因是保障不足。
+
+---
+
+## 🕵️ 对保险公司：说真话，不隐瞒
+
+<div class="cols">
+<div class="col good">
+
+### 保险公司有权期待
+- 对提交的风险**说真话**
+- **不扣下、不隐瞒**重要信息
+- 所以经纪人是**首线核保人**
+
+</div>
+<div class="col bad">
+
+### 常见的诱惑
+- 怕客户**丢给竞争对手**
+- 把负面信息悄悄略过
+- 任何理由都**站不住**
+
+</div>
+</div>
+
+Note:
+约 2 分钟。first line underwriters：经纪人是第一个有机会评估客户风险、判断是否符合承保条件的人。对保险公司不诚实，结果是保险公司在风险质量上被蒙在鼓里，考试对这件事的态度很明确：没有任何理由能正当化。
+
+---
+
+## 🎬 情景：压下两次火灾记录
+
+为了留住大客户，经纪人把客户**两次以往火灾赔款**从投保单上**略去**。 {scene}
+
+<span class="ask">问：经纪人违反了什么义务？</span> {f}
+
+✅ 对**保险公司**的义务：不隐瞒重要事实；保险公司在风险质量上被蒙在鼓里。 {ans f}
+
+Note:
+约 2 分钟。这是官方练习卷第 23 题的核心：经纪人两头都有义务。干扰项有「只为客户的最大利益行事」「必须找最便宜的保险公司」「对所代表的保险公司没有任何义务」，都错。
+
+---
+
+## 🎯 课堂快问 ②
+
+Why are brokers often referred to as "first line underwriters"? {quiz-q}
+
+<div class="opts">
+
+- A. They make the final decision to accept or reject every risk
+- B. They are employed by the insurer's underwriting department
+- C. They set the premium rates for all commercial risks
+- D. They are first to assess the risk and check the insurer's eligibility rules
+
+</div>
+
+✅ **D** — 经纪人最先评估风险、检查是否符合保险公司的承保规则，所以叫首线核保人；最终拍板的是核保人。 {ans f}
+
+Note:
+约 2 分钟。A 把经纪人说成有最终决定权，B 说成保险公司的雇员，C 说成定价者，都是把核保人的职能套给经纪人。
+
+---
+
+## 🧑‍💼 核保人：保险公司的「选风险」岗位
+
+<div class="cards">
+
+- **🏢 身份** <br>保险公司**雇员**；不直接向消费者卖保险，所以**不需要领牌**
+- **🎯 首要职能** <br>选出**最可能盈利**的风险
+- **🤝 和经纪人** <br>经纪人提交，**核保人决定**；关系越好越顺
+- **🧮 其他职能** <br>定价 · 保单持有人服务
+
+</div>
+
+Note:
+约 2 分钟。官方练习卷第 25 题：核保人的首要职能是选出对保险公司最可能盈利的风险，不是出单、不是绑定、不是退保。让学员判断：如果一个核保人只接最安全的业务，算不算完成任务？算，这就是风险选择。
+
+---
+
+## 📥 核保人的四个信息源
+
+```mermaid
+%% h=420
+flowchart TD
+    U(["🧑‍💼 核保人选风险"]):::ask --> A["📝 投保单<br/>往往就够表态"]:::step
+    U --> B["🗣️ 经纪人<br/>申请人的声誉"]:::step
+    U --> C["📊 损失经验数据<br/>过去 3 到 5 年"]:::step
+    U --> D["🔎 检查报告<br/>外勤代表、独立检查"]:::step
+```
+
+Note:
+约 3 分钟。投保单例子：三十年木结构楼里的焊接铺，对多数核保人没吸引力；防火结构、装了自动灭火和防盗报警的书店，哪家公司都愿意接。损失经验看过去 3 到 5 年：焊接铺赔款明显超过该类业务收的保费，核保人可能拒保。检查报告可来自公司外勤代表，也可来自独立检查机构。
+
+---
+
+## 🎯 课堂快问 ③
+
+What is the primary role of the underwriter? {quiz-q}
+
+<div class="opts">
+
+- A. To bind coverage on all risks submitted by brokers to the insurer
+- B. To pick the risks expected to be most profitable for the insurer
+- C. To process cancellations and issue premium refund cheques
+- D. To settle claims arising under the policies the insurer issues
+
+</div>
+
+✅ **B** — 核保人的首要职能是选出对保险公司最可能盈利的风险；绑定、退保、理赔都不是核保人的首要职能。 {ans f}
+
+Note:
+约 2 分钟。就是官方练习卷第 25 题的考点。四个选项都是保险公司里的真实工作，只有 B 是核保人的首要职能。
+
+---
+
+## 🔥 两类危险
+
+<div class="cols">
+<div class="col exam">
+
+### Physical 物质危险
+- 关于**场所**：建筑结构、占用性质、内务管理
+- 例：地毯翘起、楼里堆废料
+- **看得见**，常可**降低**
+
+</div>
+<div class="col bad">
+
+### Moral 道德危险
+- 关于**人**：财务状况、品行、对损失漠不关心
+- 例：「反正都保了」
+- **极难发现**
+
+</div>
+</div>
+
+Hazard＝可能引发风险事故的**条件**。 {takeaway}
+
+Note:
+约 3 分钟。hazard 是条件，peril 是事故：这是个常考的区分。物质危险看得见，易燃物妥善存放就能降低火灾可能。道德危险是主观特征，不仔细调查很难发现。
+
+---
+
+## ❌ vs ✅ 物质还是道德
+
+<div class="xv">
+
+- ❌ 核保人查申请人**以往理赔与财务状况**，看的是物质危险 {f}
+- ✅ 查的是**人**，是**道德危险**（官方练习卷第 26 题） {f}
+- ❌ 「对损失漠不关心」是另一类，不属于道德危险 {f}
+- ✅ 按 FOI 考试口径，它**归在道德危险之下** {f}
+
+</div>
+
+Note:
+约 2 分钟。有的复习材料把对损失漠不关心单列为 morale hazard，本站按考试口径归在道德危险里，答题照这个来。快速判断法：查的是场所就是物质，查的是人就是道德。
+
+---
+
+## 🎯 课堂快问 ④
+
+When the broker suggests adding deadbolt locks, an applicant says, "Why bother? Everything's insured." This attitude indicates: {quiz-q}
+
+<div class="opts">
+
+- A. A moral hazard: indifference to loss because insurance exists
+- B. A physical hazard, because the premises lack proper locks
+- C. Utmost good faith, because the applicant is being candid
+- D. No hazard, because the applicant has disclosed his attitude
+
+</div>
+
+✅ **A** — 以为有保险就不必防损，是对损失漠不关心，按考试口径归为道德危险。 {ans f}
+
+Note:
+约 2 分钟。选项 C 很迷惑人：申请人坦白说出态度，不等于最大诚信，态度本身就是道德危险的迹象。
+
+---
+
+## ✅ 核保五种决定
+
+```mermaid
+%% h=420
+flowchart TD
+    D(["🧑‍💼 核保决定"]):::ask --> A["拒保"]:::warn
+    D --> B["原样接受"]:::good
+    D --> C["加费率接受"]:::step
+    D --> E["提高免赔额接受"]:::step
+    D --> F["附条件接受"]:::step
+```
+
+有的复习材料写成「四种」，答题按 **5 种**。 {muted}
+
+Note:
+约 2 分钟。核保不是精确科学，永远不可能掌握全部事实，所以会做出最好的决定，五种之一。注意：「如果经纪人保证赔款就接受」不在清单里。下一页就是这个干扰项。
+
+---
+
+## 🎯 课堂快问 ⑤
+
+An underwriter may make any of the following decisions about a risk EXCEPT: {quiz-q}
+
+<div class="opts">
+
+- A. Accept the risk with an increase in the deductible
+- B. Accept the risk if the broker guarantees any losses
+- C. Accept the risk subject to certain conditions
+- D. Reject the risk as it has been presented
+
+</div>
+
+✅ **B** — 经纪人不能靠「保证赔款」换承保；其余三项都在五种核保决定里。 {ans f}
+
+Note:
+约 2 分钟。找例外：把五种决定背出来，剩下的就是例外。提醒学员：核保决定里没有「经纪人保证」这一项。
+
+---
+
+## 💲 谁来定价
+
+<div class="cards c3">
+
+- **🏠 个人财产险** <br>房主、租客、共管单元：保险公司给**费率手册**，**经纪人**自己算
+- **🏪 小企业专用保单** <br>投保单附**费率表**，经纪人很容易填
+- **🏭 较复杂的商业风险** <br>**全部由核保人**定价
+
+</div>
+
+一家家具店属于最后一类：经纪人要向两家以上保险公司要报价。 {muted}
+
+Note:
+约 2 分钟。核保人还负责保单持有人服务：改保单、准备取消通知、准备续保证明。经纪人把核保人当专业人士对待，核保人更配合，紧迫期限内也能加快。
+
+---
+
+## 🚨 出险：两步报案
+
+```mermaid
+%% h=300
+flowchart LR
+    A["💥 被保险人<br/>报给经纪行"]:::warn --> B["经纪行<br/>报给保险公司"]:::step
+    B --> C["理赔人<br/>理算"]:::good
+```
+
+**再小的报案，客户都当回事。** {takeaway}
+
+Note:
+约 2 分钟。不管案子看起来多不起眼，客户既然报了，就说明他觉得重要。经纪行判断可能在保障之内的，就通知保险公司。同时要持续跟进理赔进度，体现同情、同理和关心。
+
+---
+
+## ⚔️ 两种理赔人
+
+<div class="cols">
+<div class="col good">
+
+### 公司理赔人
+- 保险公司**内部**员工
+- 处理**大部分**理赔
+
+</div>
+<div class="col exam">
+
+### 独立理赔人
+- **独立公司**的理赔人
+- 内部人手不够，或要**特别专长**时用
+- 公司**有时允许经纪行指定**
+
+</div>
+</div>
+
+Note:
+约 2 分钟。大风暴后公司理赔员忙不过来，正确的说法是可以请独立理赔人。注意独立理赔人不等于经纪行的人，是否由经纪行指定要看保险公司是否允许。
+
+---
+
+## 🎬 情景：邻居孩子打碎了窗户
+
+客户打电话到经纪行，说邻居家的孩子打碎了一块价值约 **$300** 的窗户。 {scene}
+
+<span class="ask">问：经纪行该怎么办？</span> {f}
+
+✅ **照常处理并通知保险公司**——再小的报案，客户都当回事；经纪行不要自己判断赔不赔。 {ans f}
+
+Note:
+约 2 分钟。重点是态度：不管金额小，只要看起来可能在保障之内，就报保险公司；同时告诉客户后续怎么走。BC 实务提示：理算是持牌理赔人的事，不要替保险公司对赔不赔下结论。
+
+---
+
+<!-- .slide: class="warm" data-background-color="#FFF6E5" -->
+## 📏 考试口径 vs 实务现行
+
+<div class="cols">
+<div class="col exam">
+
+### 🧾 考场答（考试口径）
+- E&O：「有些省」要求经纪行买；经纪行的保单覆盖全体，个人**不必另买**
+- Agent 与 Broker **两点区别**
+
+</div>
+<div class="col now">
+
+### 💼 工作中用（BC 现行）
+- **每位持牌人**都要被 E&O 覆盖，最低每宗 **$1,000,000**／累计 **$2,000,000**
+- 牌照分 **Level 1 Salesperson**、Level 2／3 Agent；broker 是行业用语
+- 理赔人也要领牌（FIA s.180）
+
+</div>
+</div>
+
+无保超过 30 个日历日，牌照自动停。 {takeaway}
+
+Note:
+约 3 分钟。并列并标明用哪个。答卷按考试口径。BC 现行依据 Insurance Council Rules 第 7(11) 条：失保须 5 个工作日内通知 Council 并立即停业，无保超过 30 个日历日自动停牌。Level 1 销售员不得代保险人签署保险合同，只能在一般保险 agent 监督下营业。给 BC 客户讲这一讲，三句实务话：一，换行时问清新雇主的保单是否覆盖你；二，保障不足是头号原因，每次都把主要除外讲给客户，客户拒绝建议的保障时留书面记录；三，出险时转报保险公司，不要替它对赔不赔下结论。
+
+---
+
+<!-- .slide: class="dark" data-background-color="#0B3C5D" -->
+## 🧠 一页总结
+
+<div class="cards">
+
+- **保险不是商品** <br>要**申请**；价格因人而异
+- **经纪人** <br>Broker 偏向客户（Agent 偏向保险公司）；**合理的技能、谨慎与勤勉**
+- **E&O** <br>头号原因**保障不足**，近 50%
+- **对保险公司** <br>说真话、不隐瞒＝**首线核保人**
+- **核保人** <br>选**最可能盈利**的风险；4 个信息源；5 种决定
+- **危险与理赔** <br>物质看场所，道德看人；报案两步，理赔人两种
+
+</div>
+
+Note:
+约 3 分钟。收尾：让学员合上笔记，说出两类危险各看什么。布置作业：做本讲 26 道英文题。下一讲预告：从这一讲起转入产品，所有财产险保单共有的八根骨头。
+</script>
+</section>
+</div></div>
+<div class="footer-tag">第 4 讲 · 保险流程：从投保到理赔 · 空格/方向键翻页 · S 讲稿视图 · O 总览 · F 全屏</div>
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/mermaid/mermaid.min.js"></script>
+<script>
+(function(){
+  var deck = new Reveal({
+    hash:true, width:1280, height:720, margin:0.04, minScale:0.2, maxScale:2.0,
+    center:true, transition:'slide', backgroundTransition:'fade', controls:true, progress:true,
+    slideNumber:'c/t', pdfSeparateFragments:false, showNotes:false,
+    plugins:[RevealMarkdown, RevealNotes]
+  });
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'loose',
+    themeVariables:{fontFamily:'"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif', fontSize:'24px',
+      primaryColor:'#EAF2FB', primaryBorderColor:'#2B6CB0', primaryTextColor:'#1A365D', lineColor:'#4A5568',
+      secondaryColor:'#E6F6EC', tertiaryColor:'#FFF7E6', clusterBkg:'#F4F8FB', clusterBorder:'#9CC9E6',
+      edgeLabelBackground:'#ffffff', noteBkgColor:'#FFF7E6', noteTextColor:'#7B341E'},
+    flowchart:{htmlLabels:true, curve:'basis', padding:10, nodeSpacing:34, rankSpacing:44, useMaxWidth:false},
+    mindmap:{padding:14, useMaxWidth:false}, timeline:{useMaxWidth:false}, er:{useMaxWidth:false},
+    sequence:{useMaxWidth:false}, state:{useMaxWidth:false}
+  });
+  window.__mm = {total:0, done:0, errors:[]};
+  var seq = 0;
+  function collect(){
+    var out = [];
+    document.querySelectorAll('.slides pre > code.language-mermaid, .slides pre > code.mermaid').forEach(function(code){
+      var pre = code.parentNode, div = document.createElement('div');
+      div.className = 'mermaid'; div.dataset.src = code.textContent;
+      pre.parentNode.replaceChild(div, pre); out.push(div);
+    });
+    return out;
+  }
+  function fit(div){
+    var svg = div.querySelector('svg'); if(!svg) return;
+    var vb = (svg.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+    if(vb.length<4 || !vb[2] || !vb[3]) return;
+    var m = /%%\s*h=(\d+)/.exec(div.dataset.src), mw = /%%\s*w=(\d+)/.exec(div.dataset.src);
+    var maxH = m ? +m[1] : 420, maxW = mw ? +mw[1] : 1120;
+    var s = Math.min(maxW/vb[2], maxH/vb[3], 3.2);
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    svg.style.width = Math.round(vb[2]*s)+'px'; svg.style.height = Math.round(vb[3]*s)+'px';
+    svg.style.maxWidth = 'none';
+  }
+  async function renderOne(div){
+    if(div.dataset.done) return;
+    div.dataset.done = '1';
+    var src = div.dataset.src;
+    if(/^\s*(%%.*\n\s*)*(flowchart|graph)\b/.test(src) && src.indexOf('classDef step')<0){
+      src += '\n classDef step fill:#EAF2FB,stroke:#2B6CB0,color:#1A365D,stroke-width:2px\n classDef ask fill:#FFF7E6,stroke:#C05621,color:#7B341E,stroke-width:2px\n classDef good fill:#E6F6EC,stroke:#2F855A,color:#22543D,stroke-width:2px\n classDef warn fill:#FDECEC,stroke:#C53030,color:#742A2A,stroke-width:2px\n';
+    }
+    try{
+      var r = await mermaid.render('mm'+(++seq), src);
+      div.innerHTML = r.svg; fit(div); div.dataset.ok = '1';
+      window.__mm.done++;
+    }catch(e){
+      div.classList.add('err'); div.dataset.err = '1'; div.textContent = 'Mermaid 错误：'+(e&&e.message||e);
+      window.__mm.errors.push(String(e&&e.message||e).slice(0,200));
+    }
+  }
+
+  var MARKS = {f:'fragment', ans:'ans', ask:'ask', takeaway:'takeaway', muted:'muted', scene:'scene', 'quiz-q':'quiz-q'};
+  function applyMarks(){
+    var w = document.createTreeWalker(document.querySelector('.slides'), NodeFilter.SHOW_TEXT), nodes=[], n;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(t){
+      var m = /\s*\{((?:f|ans|ask|takeaway|muted|scene|quiz-q)(?:\s+(?:f|ans|ask|takeaway|muted|scene|quiz-q))*)\}\s*$/.exec(t.nodeValue);
+      if(!m) return;
+      var el = t.parentNode.closest('li,p,h3,div'); if(!el) return;
+      t.nodeValue = t.nodeValue.slice(0, m.index);
+      m[1].split(/\s+/).forEach(function(k){ el.classList.add(MARKS[k]); });
+    });
+  }
+  var all = [];
+  deck.on('ready', async function(){
+    applyMarks(); deck.sync();
+    all = collect(); window.__mm.total = all.length;
+    for(var i=0;i<all.length;i++){ await renderOne(all[i]); }
+    window.__mmReady = true;
+    deck.layout();
+  });
+  window.__deck = deck;
+  deck.initialize();
+})();
+</script>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('../sw.js').catch(()=>{}))}</script>
+</body>
+</html>
